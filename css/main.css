@@ -1,0 +1,28 @@
+.responsive-page {
+    width: 100%;
+    margin: 0 auto
+}
+
+.responsive-container {
+    max-width: 1100px;
+    width: 90%;
+    margin: auto
+}
+
+.nav {
+  list-style: none!
+  margin: 0;
+}
+
+.nav li {
+  display: inline-block;
+  margin: 20px;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
