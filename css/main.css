@@ -1,3 +1,8 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .responsive-page {
     width: 100%;
     margin: 0 auto
@@ -12,11 +17,18 @@
 .nav {
   list-style: none!
   margin: 0;
+  font-family: "RobotoCondensed";
 }
 
 .nav li {
   display: inline-block;
   margin: 20px;
+  font-size: 22px;
+  float: right;
+}
+
+.clear {
+  clear: both;
 }
 
 .align-center {
@@ -25,4 +37,53 @@
 
 .uppercase {
   text-transform: uppercase;
+}
+
+@font-face {
+    font-family: "Helvetica";
+    src: url('../fonts/Helvetica/Helvetica.otf') format("opentype");
+}
+
+@font-face {
+    font-family: "RobotoCondensed";
+    src: url('../fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: "CaptureIt";
+    src: url('../fonts/Capture-it/Capture_it.ttf') format("truetype");
+}
+
+h1 {
+  font-family: "CaptureIt";
+}
+
+h2 {
+  font-family: "RobotoCondensed";
+  font-size: 3em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+p {
+  font-family: "RobotoCondensed";
+  font-size: 2em;
+  line-height: 1.4em;
+}
+
+.second-fold {
+  padding: 30px;
+  min-height: 600px;
+  background: #1B0F0C;
+  color: #fff;
+  position: relative;
+}
+
+.second-fold img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    right: 0;
 }
