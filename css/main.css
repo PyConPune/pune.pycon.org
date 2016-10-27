@@ -1,6 +1,6 @@
 body {
-  margin: 0;
-  box-sizing: border-box;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 .responsive-page {
@@ -15,28 +15,27 @@ body {
 }
 
 .nav {
-  list-style: none!
-  margin: 0;
-  font-family: "RobotoCondensed";
+    list-style: none! margin: 0;
+    font-family: "RobotoCondensed";
 }
 
 .nav li {
-  display: inline-block;
-  margin: 20px;
-  font-size: 22px;
-  float: right;
+    display: inline-block;
+    margin: 20px;
+    font-size: 22px;
+    float: right;
 }
 
 .clear {
-  clear: both;
+    clear: both;
 }
 
 .align-center {
-  text-align: center;
+    text-align: center;
 }
 
 .uppercase {
-  text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 @font-face {
@@ -55,28 +54,28 @@ body {
 }
 
 h1 {
-  font-family: "CaptureIt";
+    font-family: "CaptureIt";
 }
 
 h2 {
-  font-family: "RobotoCondensed";
-  font-size: 3em;
-  text-transform: uppercase;
-  font-weight: 400;
+    font-family: "RobotoCondensed";
+    font-size: 3em;
+    text-transform: uppercase;
+    font-weight: 400;
 }
 
 p {
-  font-family: "RobotoCondensed";
-  font-size: 2em;
-  line-height: 1.4em;
+    font-family: "RobotoCondensed";
+    font-size: 2em;
+    line-height: 1.4em;
 }
 
 .second-fold {
-  padding: 30px;
-  min-height: 600px;
-  background: #1B0F0C;
-  color: #fff;
-  position: relative;
+    padding: 30px;
+    min-height: 600px;
+    background: #1B0F0C;
+    color: #fff;
+    position: relative;
 }
 
 .second-fold img {
@@ -86,4 +85,70 @@ p {
     margin-left: auto;
     margin-right: auto;
     right: 0;
+    width: 25%;
+}
+
+.skew-up {
+    width: 100%;
+    background: #fff;
+    height: 200px;
+    float: left;
+    position: absolute;
+    transform: skew(0deg, 2deg);
+    z-index: 1;
+}
+
+.skew-down {
+    width: 100%;
+    background: #fff;
+    height: 200px;
+    float: left;
+    position: absolute;
+    transform: skew(0deg, -2deg);
+    z-index: 1;
+}
+
+.third-fold .fold-1 {
+    min-height: 500px;
+    color: #fff;
+    position: relative;
+}
+
+.third-fold .fold-1 .blue-fold {
+    position: relative;
+    z-index: 0;
+    background: #40C4FF;
+    top: 90px;
+}
+
+.third-fold .fold-1 .green-fold {
+    position: relative;
+    z-index: 0;
+    background: #AED581;
+    top: 90px;
+}
+
+.third-fold .fold-1 .yellow-fold {
+    position: relative;
+    z-index: 0;
+    background: #ffff8d;
+    color: #9ca3a8;
+    top: 90px;
+}
+
+.blue-fold .skew-down {
+  top: -30px;
+}
+
+.green-fold .skew-up {
+    top: -90px;
+}
+
+.yellow-fold .skew-down {
+  top: -120px;
+}
+
+.content {
+    width: 50%;
+    padding: 150px 100px;
 }
