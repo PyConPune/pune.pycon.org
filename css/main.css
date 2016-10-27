@@ -53,8 +53,15 @@ body {
     src: url('../fonts/Capture-it/Capture_it.ttf') format("truetype");
 }
 
-h1 {
+.capture-it {
     font-family: "CaptureIt";
+}
+
+h1 {
+    font-size: 3em;
+    font-family: "CaptureIt";
+    text-transform: uppercase;
+    font-weight: 400;
 }
 
 h2 {
@@ -152,3 +159,4 @@ p {
     width: 50%;
     padding: 150px 100px;
 }
+
