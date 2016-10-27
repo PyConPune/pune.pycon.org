@@ -15,7 +15,7 @@
 
 <body>
     <div class="responsive-page">
-        <div class="responsive-container">
+        <div class="responsive-container cover">
             <div class="first-fold">
                 <div class="nav">
                     <ul>
@@ -41,6 +41,15 @@
         </div>
         <!-- responsive-container -->
 
+        <div class="parallax-container">
+            <div class="parallax-layer layer-0" data-parallax-speed="0.05" data-max-scroll="565"></div>
+            <div class="parallax-layer layer-1" data-parallax-speed="0.1" data-max-scroll="565"></div>
+            <div class="parallax-layer layer-2" data-parallax-speed="0.3" data-max-scroll="565"></div>
+            <div class="parallax-layer layer-3" data-parallax-speed="0.5" data-max-scroll="565"></div>
+            <div class="parallax-layer layer-4" data-parallax-speed="0.7" data-max-scroll="565"></div>
+            <div class="parallax-layer layer-5" data-parallax-speed="0.9" data-max-scroll="565"></div>
+        </div>
+
         <div class="second-fold align-center">
             <div class="responsive-container">
                 <h2>About</h2>
@@ -48,41 +57,45 @@
                     PyCon is the largest annual gathering for the community using and developing the open-source Python programming language. PyCon is organized by the Python community for the community. We try to keep registration far cheaper than most comparable technology conferences, to make PyCon accessible to the widest group possible. PyCon is a diverse conference dedicated to providing an enjoyable experience to everyone. Our code of conduct is intended to help everyone maintain the PyCon spirit. We thank all attendees and staff for observing it.
                 </p>
                 <img src="images/fort_white.png">
-            </div><!-- responsive-container -->
+            </div>
+            <!-- responsive-container -->
         </div>
-        
         <div class="third-fold">
-	        <div class="fold-1">
-		    	<div class="skew-down"></div>
+            <div class="fold-1">
+                <div class="skew-down"></div>
                 <div class="blue-fold">
-		        	<p class="content">
-		        		PyCon is proud to once again offer a stellar array of tutorials prior to PyCon's main conference days! These are multi-hour tutorial taught by experienced Pythonistas and instructors.
-		        	</p>
-                </div><!-- blue-fold -->
-
-	        	<div class="green-fold">
-		        	<div class="skew-up"></div>
-		        	<p class="content float-right">
-		        		PyCon is the largest annual gathering for the community using and developing the open-source Python programming language.
-		        	</p>
-                </div><!-- green-fold -->
-
+                    <p class="content">
+                        PyCon is proud to once again offer a stellar array of tutorials prior to PyCon's main conference days! These are multi-hour tutorial taught by experienced Pythonistas and instructors.
+                    </p>
+                </div>
+                <!-- blue-fold -->
+                <div class="green-fold">
+                    <div class="skew-up"></div>
+                    <p class="content float-right">
+                        PyCon is the largest annual gathering for the community using and developing the open-source Python programming language.
+                    </p>
+                </div>
+                <!-- green-fold -->
                 <div class="yellow-fold">
-			    	<div class="skew-down"></div>
-		        	<p class="content">
-		        		Development sprints is the key part of PyCon, and a chance for the contributors to open-source projects together face-to-face for up to four days of intensive learning, development and camaraderie. 
-		        	</p>
-                </div><!-- yellow-fold -->
-	        	<div class="clear"></div>
-        	</div>
+                    <div class="skew-down"></div>
+                    <p class="content">
+                        Development sprints is the key part of PyCon, and a chance for the contributors to open-source projects together face-to-face for up to four days of intensive learning, development and camaraderie.
+                    </p>
+                </div>
+                <!-- yellow-fold -->
+                <div class="clear"></div>
+            </div>
         </div>
-
     </div>
     <!-- second-fold -->
     </div>
     </div>
     <!-- responsive-page -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/parallax.js"></script>
+    <script type="text/javascript">
+	    new ParallaxManager('.parallax-layer');
+    </script>
 </body>
 
 </html>
