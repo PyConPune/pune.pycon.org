@@ -78,12 +78,12 @@ p {
 }
 
 .cover {
-  position: relative;
-  z-index: 1;
+    position: relative;
+    z-index: 1;
 }
 
 .first-fold {
-  min-height: 600px;
+    min-height: 600px;
 }
 
 .second-fold {
@@ -92,6 +92,7 @@ p {
     background: #1B0F0C;
     color: #fff;
     position: relative;
+    z-index: 10;
 }
 
 .second-fold img {
@@ -128,10 +129,10 @@ p {
     min-height: 500px;
     color: #fff;
     position: relative;
-} 
+}
 
 .third-fold .fold-1 {
-  top: -100px;
+    top: -100px;
 }
 
 .third-fold .fold-1 .blue-fold {
@@ -157,7 +158,7 @@ p {
 }
 
 .blue-fold .skew-down {
-  top: -30px;
+    top: -30px;
 }
 
 .green-fold .skew-up {
@@ -165,7 +166,7 @@ p {
 }
 
 .yellow-fold .skew-down {
-  top: -120px;
+    top: -120px;
 }
 
 .content {
@@ -174,48 +175,63 @@ p {
 }
 
 .parallax-container {
-  position: fixed;
-  overflow: visible;
-  width: 100%;
-  height: 850px;
+    position: fixed;
+    overflow: visible;
+    width: 100%;
+    height: 850px;
 }
+
 .parallax-layer {
-  width: 100%;
-  height: 500px;
-  position: fixed;
-  left: 0;
-  top: 0;
-  background-position: bottom center;
-  background-repeat: no-repeat;
-  background-size: 1300px 300px;
+    width: 100%;
+    height: 500px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: 1300px 300px;
 }
-  .layer-0 {
+
+.layer-0 {
     top: 0;
     z-index: 5;
     background: #fefefe url('../images/sun.png') no-repeat top 40px center;
     background-size: 120px 138.5px;
-  }
-  .layer-2 {
+}
+
+.layer-1 {
+    top: 160px;
+    z-index: 10;
+    background-image: url('../images/shaniwarwada.png');
+    background-repeat: no-repeat;
+    background-size: auto;
+    z-index: 20;
+}
+
+.layer-2 {
     /*top: -50px;*/
     z-index: 10;
     top: 160px;
     background-image: url('../images/rock4.png');
-  }
-  .layer-3 {
+}
+
+.layer-3 {
     /*top: -10px;*/
     z-index: 15;
     top: 160px;
     background-image: url('../images/rock3.png');
-  }
-  .layer-4 {
+}
+
+.layer-4 {
     /*top: 65px;*/
     z-index: 20;
     top: 160px;
     background-image: url('../images/rock2.png');
-  }
-  .layer-5 {
+}
+
+.layer-5 {
     /*top: 160px;*/
     top: 160px;
     z-index: 25;
     background-image: url('../images/rock1.png');
-  }
+}
