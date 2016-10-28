@@ -17,6 +17,7 @@ body {
 .nav {
     list-style: none! margin: 0;
     font-family: "RobotoCondensed";
+    color: #455a64;
 }
 
 .nav li {
@@ -82,6 +83,27 @@ p {
     z-index: 1;
 }
 
+.heading-block {
+    color: #546e7a;
+}
+
+.circle {
+    width: 250px;
+    height: 250px;
+    font-family: "CaptureIt";
+    background: white;
+    border-radius: 50%;
+    float: left;
+    position: absolute;
+    top: 40px;
+    text-align: center;
+    font-size: 3em;
+    left: 50px;
+    line-height: 4em;
+    color: #ccc;
+    z-index: 10;
+}
+
 .first-fold {
     min-height: 600px;
 }
@@ -118,7 +140,7 @@ p {
 .skew-down {
     width: 100%;
     background: #fff;
-    height: 200px;
+    height: 250px;
     float: left;
     position: absolute;
     transform: skew(0deg, -2deg);
@@ -139,14 +161,14 @@ p {
     position: relative;
     z-index: 0;
     background: #40C4FF;
-    top: 90px;
+    top: 160px;
 }
 
 .third-fold .fold-1 .green-fold {
     position: relative;
     z-index: 0;
     background: #AED581;
-    top: 90px;
+    top: 160px;
 }
 
 .third-fold .fold-1 .yellow-fold {
@@ -154,7 +176,7 @@ p {
     z-index: 0;
     background: #ffff8d;
     color: #9ca3a8;
-    top: 90px;
+    top: 160px;
 }
 
 .blue-fold .skew-down {
@@ -165,8 +187,19 @@ p {
     top: -90px;
 }
 
+.green-fold .circle {
+  right: 50px;
+  top: -100px;
+  left: inherit;
+}
+
 .yellow-fold .skew-down {
     top: -120px;
+    height: 200px;
+}
+
+.yellow-fold .circle {
+  top: -120px;
 }
 
 .content {
