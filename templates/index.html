@@ -1,23 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base/base.html' %}
 
-<head>
-    <title> PyCon Pune 2017 </title>
-    
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="images/favicon.ico">
-    <link href="css/main.css" rel="stylesheet">
-    
-</head>
+{% block title %} PyCon Pune 2017 {% endblock %}
 
-<body>
-    <div class="responsive-page">
-      
+{% block body %}
 <div class="responsive-container cover">
     <div class="first-fold">
         <div class="nav">
@@ -87,13 +72,4 @@
         <div class="clear"></div>
     </div>
 </div><!-- third-fold -->
-
-    </div><!-- responsive-page -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/parallax.js"></script>
-    <script type="text/javascript">
-	     new ParallaxManager('.parallax-layer');
-    </script>
-</body>
-
-</html>
+{% endblock %}

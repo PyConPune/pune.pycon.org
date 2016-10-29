@@ -50,8 +50,8 @@ body {
 }
 
 @font-face {
-    font-family: "CaptureIt";
-    src: url('../fonts/Capture-it/Capture_it.ttf') format("truetype");
+    font-family: "Rampung";
+    src: url('../fonts/Rampung/Rampung.ttf') format("truetype");
 }
 
 .capture-it {
@@ -60,7 +60,7 @@ body {
 
 h1 {
     font-size: 3em;
-    font-family: "CaptureIt";
+    font-family: "Rampung";
     text-transform: uppercase;
     font-weight: 400;
 }
@@ -267,4 +267,24 @@ p {
     top: 160px;
     z-index: 25;
     background-image: url('../images/rock1.png');
+}
+
+.nav a {
+  text-decoration: none;
+  color: #455a64;
+  cursor: pointer;
+}
+
+.nav h1 {
+  font-family: "Rampung";
+  font-size: 3em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.nav h2 {
+  font-family: "Rampung";
+  font-size: 2.5em;
+  text-transform: uppercase;
+  font-weight: 400;
 }
