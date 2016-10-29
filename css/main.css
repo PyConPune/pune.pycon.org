@@ -27,6 +27,10 @@ body {
     float: right;
 }
 
+.m-t-100 {
+  margin-top: 100px;
+}
+
 .clear {
     clear: both;
 }
@@ -83,6 +87,10 @@ p {
     z-index: 1;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
 .heading-block {
     color: #546e7a;
 }
@@ -95,10 +103,10 @@ p {
     border-radius: 50%;
     float: left;
     position: absolute;
-    top: 40px;
+    top: 50px;
     text-align: center;
     font-size: 3em;
-    left: 50px;
+    left: 180px;
     line-height: 5em;
     color: #ccc;
     z-index: 10;
@@ -158,10 +166,10 @@ p {
     top: -100px;
 }
 
-.third-fold .fold-1 .blue-fold {
+.third-fold .fold-1 .white-fold {
     position: relative;
     z-index: 0;
-    background: #40C4FF;
+    background: #FFFFFF;
     top: 160px;
 }
 
@@ -180,7 +188,7 @@ p {
     top: 160px;
 }
 
-.blue-fold .skew-down {
+.white-fold .skew-down {
     top: -30px;
 }
 
@@ -288,4 +296,80 @@ p {
   font-size: 2.5em;
   text-transform: uppercase;
   font-weight: 400;
+}
+
+/* Third Fold */
+
+.third-fold .white-fold img {
+  height: 150px;
+  width: 150px;
+  border-radius: 80px;
+}
+
+.third-fold .speaker-info {
+  width: 70%;
+  font-size: 0.7em;
+  margin-left: 30px;
+  vertical-align: text-bottom;
+  color: #585757;
+}
+
+.third-fold .s-left {
+  padding-right: 145px;
+  position: relative;
+}
+
+.third-fold .s-right {
+  padding-left: 145px;
+  position: relative;
+}
+
+.third-fold .oval {
+  width: 40px;
+  height: 70px;
+  border-radius: 40px / 60px;
+  position: absolute;
+  top: 1.4em;
+  right: 8em;
+  z-index: -1;
+}
+
+.third-fold .pink {
+  background: pink;
+}
+
+.third-fold .blue {
+  background: #8de8ff;
+}
+
+.third-fold .yellow {
+  background: #ffff8d;
+}
+
+.third-fold h3 {
+  font-family: "RobotoCondensed";
+  font-size: 2.5em;
+  font-weight: 400;
+}
+
+.third-fold .line {
+  width: 13em;
+  border-bottom: 12px solid #aed581;
+  position: absolute;
+  left: 3em;
+  z-index: -1;
+}
+
+.third-fold .left-line {
+  top: 13em;
+  -webkit-transform: rotate(60deg);
+}
+
+.third-fold .right-line {
+  bottom: 13em;
+  -webkit-transform: rotate(-60deg);
+}
+
+.third-fold .speakers-block {
+  padding: 100px 0px;
 }
