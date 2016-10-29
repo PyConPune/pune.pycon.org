@@ -2,10 +2,10 @@ Setup
 =====
 
 - Install the package
-`pip install staticninja`
+`pip install staticjinja`
 
 - Build and watch the templates
-`staticninja watch`
+`staticjinja watch`
 
 - Start Python Simple HTTP Server
 `python -m SimpleHTTPServer`
