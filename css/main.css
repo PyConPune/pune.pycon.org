@@ -90,7 +90,7 @@ p {
 .circle {
     width: 250px;
     height: 250px;
-    font-family: "CaptureIt";
+    font-family: "RobotoCondensed";
     background: white;
     border-radius: 50%;
     float: left;
@@ -99,9 +99,10 @@ p {
     text-align: center;
     font-size: 3em;
     left: 50px;
-    line-height: 4em;
+    line-height: 5em;
     color: #ccc;
     z-index: 10;
+    font-weight: 600;
 }
 
 .first-fold {
