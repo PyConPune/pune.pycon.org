@@ -8,7 +8,7 @@ a {
 }
 
 .logo {
-  height: 45px;
+  height: 60px;
   position: absolute;
   left: 0;
   top: 5px;
@@ -379,7 +379,7 @@ span.s-y-t a:hover {
 
 .third-fold h3 {
   font-family: "RobotoCondensed";
-  font-size: 2.5em;
+  font-size: 20px;
   font-weight: 400;
 }
 
@@ -407,6 +407,10 @@ span.s-y-t a:hover {
 
 .third-fold .speakers-block {
   padding: 100px 0px;
+}
+
+.speaker p {
+  font-size: 17px;
 }
 
 .green-fold .content,
