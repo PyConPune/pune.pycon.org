@@ -93,13 +93,12 @@ p {
 }
 
 .s-y-t {
-  padding: 5px;
+  padding: 5px 7px 5px 7px;
   border: 2px white solid;
   border-radius: 5px;
 }
 
 span.s-y-t:hover {
-  padding: 5px 7px 5px 7px;
   background: white;
   cursor: pointer;
   transition: all 500ms ease;
