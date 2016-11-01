@@ -12,6 +12,7 @@
     <meta name="author" content="">
     <link rel="icon" href="images/favicon.ico">
     <link href="css/main.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
     
 </head>
 
@@ -22,10 +23,10 @@
     <div class="first-fold">
         <div class="nav">
             <ul>
-                <li><a href="/about/">About</a></li>
-                <li><a href="/sponsors/">Sponsors</a></li>
-                <li><a href="#">Venue</a></li>
-                <li><a href="/psf/">PSF</li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#sponsors">Sponsors</a></li>
+                <li><a href="#venue">Venue</a></li>
+                <li><a href="https://www.python.org/psf/">PSF</li>
                 <li><a href="https://github.com/PyConPune/website/blob/master/code-of-conduct.md">CoC</a></li>
             </ul>
             <div class="clear"></div>
@@ -40,14 +41,14 @@
 
 <div class="parallax-container">
     <div class="parallax-layer layer-0" data-parallax-speed="0.05" data-max-scroll="565"></div>
-    <div class="parallax-layer layer-1" data-parallax-speed="0.1" data-max-scroll="565"></div>
+    <div class="parallax-layer layer-1" data-parallax-speed="0.9" data-max-scroll="565"></div>
     <div class="parallax-layer layer-2" data-parallax-speed="0.1" data-max-scroll="565"></div>
     <div class="parallax-layer layer-3" data-parallax-speed="0.5" data-max-scroll="565"></div>
     <div class="parallax-layer layer-4" data-parallax-speed="0.7" data-max-scroll="565"></div>
     <div class="parallax-layer layer-5" data-parallax-speed="0.9" data-max-scroll="565"></div>
 </div>
 
-<div class="second-fold align-center">
+<div class="second-fold align-center" id="about">
     <div class="responsive-container">
         <h2>About</h2>
         <p>
@@ -61,59 +62,112 @@
 </div><!-- second fold -->
 <div class="third-fold">
     <div class="fold-1">
-        <div class="skew-down"></div>
-        <div class="circle">Speakers</div>
-        <div class="white-fold">
-          <div class="responsive-container">
-              <div class="speakers-block">
-                <div class="speaker">
-                    <div class="inline-block s-left"><img alt="keynote-speaker" src="/images/praveenpatil.jpg" /><div class="oval pink"></div><div class="line left-line"></div></div>
-                    <div class="inline-block speaker-info">
-                      <h3>Praveen Patil</h3>
-                      <p>A Physics Teacher who loves FOSS, Fedora, Python and believes that 'A Clean House is a Sign of a Wasted Life !'</p>
-                    </div>
+      <div class="tf skew-down"></div>
+      <div class="circle">Speakers</div>
+      <div class="white-fold">
+        <div class="responsive-container">
+          <div class="speakers-block">
+            <div class="speaker">
+              <div class="inline-block s-left"><img alt="keynote-speaker" src="/images/nickcoghlan.jpg" /><div class="oval pink"></div><div class="line left-line"></div></div>
+              <div class="inline-block speaker-info">
+                  <h3>Nick Coghlan</h3>
+                  <p>Nick Coghlan works on software supply chain management tools for Red Hat, and has been a CPython core developer since 2005. Prior to joining Red Hat in June 2011, Nick spent over 12 years working as a software developer, system integrator and system architect in Australia's aerospace & defence sector.</p>
+              </div>
+            </div>
+            <div class="speaker m-t-100">
+                <div class="inline-block s-right"><img alt="keynote-speaker" src="/images/praveenpatil.jpg" /><div class="oval blue"></div></div>
+                <div class="inline-block speaker-info">
+                  <h3>Praveen Patil</h3>
+                  <p>A Physics Teacher who loves FOSS, Fedora, Python and believes that 'A Clean House is a Sign of a Wasted Life !'</p>
                 </div>
-                <div class="speaker m-t-100">
-                    <div class="inline-block s-right"><img alt="keynote-speaker" src="/images/praveenpatil.jpg" /><div class="oval blue"></div></div>
-                    <div class="inline-block speaker-info">
-                      <h3>Praveen Patil</h3>
-                      <p>A Physics Teacher who loves FOSS, Fedora, Python and believes that 'A Clean House is a Sign of a Wasted Life !'</p>
-                    </div>
+            </div>
+            <!-- <div class="speaker m-t-100">
+                <div class="inline-block s-left"><img alt="keynote-speaker" src="/images/praveenpatil.jpg" /><div class="oval yellow"></div><div class="line right-line"></div></div>
+                <div class="inline-block speaker-info">
+                  <h3>Praveen Patil</h3>
+                  <p>A Physics Teacher who loves FOSS, Fedora, Python and believes that 'A Clean House is a Sign of a Wasted Life !'</p>
                 </div>
-                <div class="speaker m-t-100">
-                    <div class="inline-block s-left"><img alt="keynote-speaker" src="/images/praveenpatil.jpg" /><div class="oval yellow"></div><div class="line right-line"></div></div>
-                    <div class="inline-block speaker-info">
-                      <h3>Praveen Patil</h3>
-                      <p>A Physics Teacher who loves FOSS, Fedora, Python and believes that 'A Clean House is a Sign of a Wasted Life !'</p>
-                    </div>
-                </div>
+            </div> -->
           </div>
-        </div><!-- blue-fold -->
+        </div>
+      </div><!-- blue-fold -->
 
-        <div class="green-fold">
-            <div class="skew-up"></div>
-            <div class="circle">Conference</div>
-            <p class="content float-right">
-                PyCon is the largest annual gathering for the community using and developing the open-source Python programming language.
-            </p>
-        </div><!-- green-fold -->
+      <div class="green-fold" id="cfp">
+          <div class="skew-up"></div>
+          <div class="circle">Talks</div>
+          <div class="b-f content">
+            The Call for Proposals for PyCon Pune 2017 is now open. <span class="s-y-t"><a href="https://pyconpune.talkfunnel.com/2017/">Submit your talk</a></span> now!
+          </div>
+      </div><!-- green-fold -->
 
-        <div class="yellow-fold">
-            <div class="skew-down"></div>
-            <div class="circle">Sprints</div>
-            <p class="content">
-                Development sprints is the key part of PyCon, and a chance for the contributors to open-source projects together face-to-face for up to four days of intensive learning, development and camaraderie.
-            </p>
-        </div><!-- yellow-fold -->
-        <div class="clear"></div>
+      <div class="yellow-fold" id="sprints">
+          <div class="skew-down"></div>
+          <div class="circle">Sprints</div>
+          <div class="b-f content">
+            Development sprints are a key part of PyCon, and a chance for the contributors to open-source projects to get together face-to-face for up to four days of intensive learning, development and camaraderie.
+          </div>
+      </div><!-- green-fold -->
+
+      <div class="venue-fold" id="venue">
+        <div class="skew-up"></div>
+        <div class="circle">Venue</div>
+        <div id="venue">
+          <div id="ds-venue"></div>
+          <div id="cf-venue"></div>
+          <div class="clear"></div>
+        </div>
+      </div>
+
+      <div id="sponsors" class="sponsors-fold">
+        <div class="b-f center p-t-100">Looking to sponsor the event?</div>
+        <button class="b-f button"><a href="mailto:sponsors@pune.pycon.org?subject=Sponsor for PyCon Pune 2017" class="no-underline">Become a sponsor</a></button>
+      </div>
+
+      <div class="footer">
+        <img src="../images/footer.png" />
+        <div class="extended-footer">
+          <div class="organized">
+            <span class="b-f f-w">Co-organized by Department of Computer Engineering and IT, COEP</span>
+          </div>
+      </div>
+
+      <div class="clear"></div>
     </div>
 </div><!-- third-fold -->
 
     </div><!-- responsive-page -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
     <script src="js/parallax.js"></script>
     <script type="text/javascript">
 	     new ParallaxManager('.parallax-layer');
+    </script>
+    <script>
+        var dsvenue = L.map('ds-venue').setView([18.531161, 73.8448685], 13);
+
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw', {
+          maxZoom: 18,
+          attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+            '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+            'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+          id: 'mapbox.streets'
+        }).addTo(dsvenue);
+
+        L.marker([18.53007, 73.85589]).addTo(dsvenue)
+          .bindPopup("<b>Conference Venue</b><br />College of Engineering, Pune").openPopup();
+
+        var cfvenue = L.map('cf-venue').setView([18.51,73.92], 13);
+
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw', {
+          maxZoom: 18,
+          attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+            '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+            'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+          id: 'mapbox.streets'
+        }).addTo(cfvenue);
+
+        L.marker([18.51664,73.92782]).addTo(cfvenue)
+          .bindPopup("<b>DevSprint Venue</b><br />Red Hat India Pvt. Ltd., Pune").openPopup();
     </script>
 </body>
 
