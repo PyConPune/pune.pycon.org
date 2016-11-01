@@ -24,17 +24,51 @@ a {
     margin: auto
 }
 
-.nav {
+.topnav {
     list-style: none! margin: 0;
     font-family: "RobotoCondensed";
     color: #455a64;
 }
 
-.nav li {
+.topnav li {
     display: inline-block;
     margin: 20px;
     font-size: 22px;
     float: right;
+}
+
+.topnav li.icon {
+    display: none;
+}
+
+/* When the screen is less than 750 pixels wide, hide all list items, 
+except for the last one (logo). Show the list item that contains the link to open and 
+close the topnav (li.icon) */
+@media screen and (max-width:750px) {
+  .topnav li:not(:last-child) {display: none;}
+  .topnav li.icon {
+    float: right;
+    display: inline-block;
+  }
+}
+
+/* The "responsive" class is added to the nav with JavaScript when the user clicks on the icon. 
+This class makes the nav look good on small screens */
+@media screen and (max-width:750px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive li {
+    float: none;
+    display: inline;
+  }
+  .topnav.responsive li a {
+    display: block;
+    text-align: center;
+  }
 }
 
 .m-t-100 {
