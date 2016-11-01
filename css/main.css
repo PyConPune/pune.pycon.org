@@ -7,6 +7,12 @@ a {
   text-decoration: none;
 }
 
+.logo {
+  height: 45px;
+  position: absolute;
+  left: 0;
+  top: 5px;
+}
 .responsive-page {
     width: 100%;
     margin: 0 auto
