@@ -549,3 +549,12 @@ span.s-y-t a:hover {
 .venue-fold .circle {
   top: -35px;
 }
+
+.map-overlay {
+   background:transparent; 
+   position:absolute; 
+   width:100%;
+   height:500px;
+   top:120px;
+   z-index: 1;
+}
