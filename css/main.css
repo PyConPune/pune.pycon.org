@@ -558,3 +558,22 @@ span.s-y-t a:hover {
    top:120px;
    z-index: 1;
 }
+
+/* Changes in padding and overflow in mobile view*/
+@media screen and (max-width:750px) {
+  .green-fold .content, .yellow-fold .content {
+    width: 55%;
+    padding: 230px 115px;
+  }
+
+  body {
+    overflow-x:hidden !important;
+  }
+}
+
+/* This classes on being added are not shown in responsive(smaller) screens*/
+@media screen and (max-width:750px) {
+  .hide-resp {
+    display:none;
+  }
+}
