@@ -606,6 +606,10 @@ span.s-y-t a:hover {
     background-size: 100% 100%;
   }
 
+  .responsive-container.non-parallax{
+    background-image: none;
+  }
+
   body {
     overflow-x:hidden !important;
   }
