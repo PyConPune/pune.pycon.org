@@ -563,7 +563,17 @@ span.s-y-t a:hover {
 @media screen and (max-width:750px) {
   .green-fold .content, .yellow-fold .content {
     width: 55%;
-    padding: 230px 115px;
+    padding-left: 25%;
+    padding-right:0;
+  }
+
+  .circle {
+    left:0px;
+  }
+
+  .first-fold {
+    background-image: url(../images/mob_slide1.png);
+    background-size: 100% 100%;
   }
 
   body {
