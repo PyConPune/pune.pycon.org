@@ -2,23 +2,26 @@
 <html lang="en">
 
 <head>
-    <link rel="apple-touch-icon" sizes="57x57" href="../images/favicons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="../images/favicons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/favicons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="../images/favicons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/favicons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="../images/favicons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="../images/favicons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="../images/favicons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="../images/favicons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="../images/favicons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="../images/favicons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicons/favicon-16x16.png">
-    <link rel="manifest" href="../images/favicons/manifest.json">
+  
+    <link rel="apple-touch-icon" sizes="57x57" href="images/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="images/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="images/favicons/manifest.json">
+
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="../images/favicons/ms-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="images/favicons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+
     <title> PyCon Pune 2017 </title>
     
     <meta charset="utf-8">
@@ -166,12 +169,21 @@
     </div><!-- responsive-page -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+    <script src="js/leaflet_sleep.js"></script>
     <script src="js/parallax.js"></script>
     <script type="text/javascript">
 	     new ParallaxManager('.parallax-layer');
     </script>
     <script>
-        var dsvenue = L.map('ds-venue').setView([18.531161, 73.8448685], 13);
+        var dsvenue = L.map('ds-venue', {
+            sleep: true,
+            sleepTime: 750,
+            wakeTime: 750,
+            sleepNote: false,
+            sleepNoteStyle: { color: 'red' },
+            hoverToWake: false,
+            sleepOpacity: 1,
+        }).setView([18.531161, 73.8448685], 13);
 
         L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw', {
           maxZoom: 18,
@@ -184,7 +196,15 @@
         L.marker([18.53007, 73.85589]).addTo(dsvenue)
           .bindPopup("<b>Conference Venue</b><br />College of Engineering, Pune").openPopup();
 
-        var cfvenue = L.map('cf-venue').setView([18.51,73.92], 13);
+        var cfvenue = L.map('cf-venue', {
+            sleep: true,
+            sleepTime: 750,
+            wakeTime: 750,
+            sleepNote: false,
+            sleepNoteStyle: { color: 'red' },
+            hoverToWake: false,
+            sleepOpacity: 1,
+        }).setView([18.51,73.92], 13);
 
         L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw', {
           maxZoom: 18,
