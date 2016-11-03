@@ -558,6 +558,12 @@ span.s-y-t a:hover {
    z-index: 1;
 }
 
+.responsive-container.non-parallax{
+  max-width:none;
+  background-image: url(../images/mob_slide1.png);
+  background-size: 100% 100%;
+}
+
 /* Changes in padding and overflow in mobile view*/
 @media screen and (max-width:750px) {
   .green-fold .content, .yellow-fold .content {
