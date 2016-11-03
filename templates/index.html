@@ -1,24 +1,15 @@
 {% extends 'base/base.html' %}
 
+{% import 'base/navbar.html' as navbar with context %}
+{% import 'base/footer.html' as footer with context %}
+
 {% block title %} PyCon Pune 2017 {% endblock %}
 
 {% block body %}
 <div class="responsive-container cover">
     <div class="first-fold">
         <div class="nav">
-            <ul class="topnav" id="topNav">
-                <li class="icon">
-                  <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
-                </li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#sponsors">Sponsors</a></li>
-                <li><a href="#venue">Venue</a></li>
-                <li><a href="#sprints">Sprints</a></li>
-                <li><a href="#cfp">Talks</a></li>
-                <li><a href="https://www.python.org/psf/">PSF</li>
-                <li><a href="https://github.com/PyConPune/website/blob/master/code-of-conduct.md">CoC</a></li>
-                <li><a href="/"><img class="logo" src="../images/logo.png"></a></li>
-            </ul>
+            {{ navbar.render_nav() }}
             <div class="clear"></div>
             <div class="align-center uppercase heading-block" id="headerDetails">
                 <h1>Pycon Pune 2017</h1>
@@ -114,15 +105,6 @@
         <button class="b-f button"><a href="mailto:pyconpune@gmail.com?subject=Sponsor for PyCon Pune 2017" class="no-underline">Become a sponsor</a></button>
       </div>
 
-      <div class="footer">
-        <img src="../images/footer.png" />
-        <div class="extended-footer">
-          <div class="organized">
-            <span class="b-f f-w">Co-organized by Department of Computer Engineering and IT, COEP</span>
-          </div>
-      </div>
-
-      <div class="clear"></div>
-    </div>
+      {{ footer.render_footer() }}
 </div><!-- third-fold -->
 {% endblock %}
