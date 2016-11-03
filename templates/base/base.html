@@ -46,12 +46,21 @@
     </div><!-- responsive-page -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+    <script src="js/leaflet_sleep.js"></script>
     <script src="js/parallax.js"></script>
     <script type="text/javascript">
 	     new ParallaxManager('.parallax-layer');
     </script>
     <script>
-        var dsvenue = L.map('ds-venue').setView([18.531161, 73.8448685], 13);
+        var dsvenue = L.map('ds-venue', {
+            sleep: true,
+            sleepTime: 750,
+            wakeTime: 750,
+            sleepNote: true,
+            sleepNoteStyle: { color: 'red' },
+            hoverToWake: true,
+            sleepOpacity: 1,
+        }).setView([18.531161, 73.8448685], 13);
 
         L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw', {
           maxZoom: 18,
@@ -64,7 +73,15 @@
         L.marker([18.53007, 73.85589]).addTo(dsvenue)
           .bindPopup("<b>Conference Venue</b><br />College of Engineering, Pune").openPopup();
 
-        var cfvenue = L.map('cf-venue').setView([18.51,73.92], 13);
+        var cfvenue = L.map('cf-venue', {
+            sleep: true,
+            sleepTime: 750,
+            wakeTime: 750,
+            sleepNote: true,
+            sleepNoteStyle: { color: 'red' },
+            hoverToWake: true,
+            sleepOpacity: 1,
+        }).setView([18.51,73.92], 13);
 
         L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw', {
           maxZoom: 18,
