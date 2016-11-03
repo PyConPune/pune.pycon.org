@@ -40,8 +40,8 @@ a {
     display: none;
 }
 
-/* When the screen is less than 750 pixels wide, hide all list items, 
-except for the last one (logo). Show the list item that contains the link to open and 
+/* When the screen is less than 750 pixels wide, hide all list items,
+except for the last one (logo). Show the list item that contains the link to open and
 close the topnav (li.icon) */
 @media screen and (max-width:750px) {
   .topnav li:not(:last-child) {display: none;}
@@ -51,7 +51,7 @@ close the topnav (li.icon) */
   }
 }
 
-/* The "responsive" class is added to the nav with JavaScript when the user clicks on the icon. 
+/* The "responsive" class is added to the nav with JavaScript when the user clicks on the icon.
 This class makes the nav look good on small screens */
 @media screen and (max-width:750px) {
   .topnav.responsive {position: relative;}
@@ -519,6 +519,15 @@ span.s-y-t a:hover {
   height: 100px;
 }
 
+
+.fs-3-5 {
+  font-size: 3.5em !important;
+}
+
+.fs-2 {
+  font-size: 2em !important;
+}
+
 .extended-footer {
   position: relative;
   color: black;
@@ -550,8 +559,8 @@ span.s-y-t a:hover {
 }
 
 .map-overlay {
-   background:transparent; 
-   position:absolute; 
+   background:transparent;
+   position:absolute;
    width:100%;
    height:500px;
    top:120px;
