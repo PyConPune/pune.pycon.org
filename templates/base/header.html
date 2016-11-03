@@ -1,0 +1,16 @@
+{% import 'base/navbar.html' as navbar with context %}
+{% macro render_header(test='') %}
+	<div class="responsive-container cover non-parallax">
+	    <div class="first-fold">
+	        <div class="nav">
+	            {{ navbar.render_nav() }}
+	            <div class="clear"></div>
+	            <div class="align-left uppercase heading-block" id="headerDetails">
+	                <h2>Pycon Pune 2017</h2>
+	                <h2>Pune, India</h2>
+	                <h2>February 16th - 19th</h2>
+	            </div>
+	        </div><!-- nav -->
+	    </div><!-- first-fold -->
+	</div><!-- responsive-container -->
+{% endmacro %}
