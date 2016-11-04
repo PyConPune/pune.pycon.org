@@ -569,8 +569,33 @@ span.s-y-t a:hover {
 
 .responsive-container.non-parallax{
   max-width:none;
-  background-image: url(../images/mob_slide1.png);
-  background-size: 100% 100%;
+  background-image: url(../images/header.png);
+  background-size: 100% auto;
+}
+
+.non-parallax .first-fold {
+  min-height: 21.5vw;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.non-parallax .heading-block.align-left {
+  width: 15em;
+  line-height: 0.51em;
+  margin-top: 3em;
+  text-align: center;
+}
+
+.non-parallax .nav .logo {
+  margin-left: 5vw;
+}
+
+.non-parallax h1{
+  font-size: 1.5em;
+}
+
+.non-parallax h2{
+  font-size: 1.25em;
 }
 
 /* Changes in padding and overflow in mobile view*/
@@ -588,6 +613,10 @@ span.s-y-t a:hover {
   .first-fold {
     background-image: url(../images/mob_slide1.png);
     background-size: 100% 100%;
+  }
+
+  .responsive-container.non-parallax{
+    background-image: none;
   }
 
   body {

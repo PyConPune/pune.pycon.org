@@ -1,38 +1,22 @@
 {% extends 'base/base.html' %}
 
-{% import 'base/navbar.html' as navbar with context %}
+{% import 'base/header.html' as header with context %}
 {% import 'base/footer.html' as footer with context %}
 
 {% block title %} PyCon Pune 2017 {% endblock %}
 
 {% block body %}
-<div class="responsive-container cover non-parallax">
-    <div class="first-fold">
-        <div class="nav">
-            {{ navbar.render_nav() }}
-            <div class="clear"></div>
-            <div class="align-center uppercase heading-block" id="headerDetails">
-                <h1>Pycon Pune 2017</h1>
-                <h2>Pune, India</h2>
-                <h2>February 16th - 19th</h2>
-            </div>
-        </div><!-- nav -->
-    </div><!-- first-fold -->
-</div><!-- responsive-container -->
-
-
+{{ header.render_header() }}
 <div class="third-fold">
     <div class="fold-1">
       <div class="white-fold">
         <div class="responsive-container">
-          <div class="content" style="background-color: #bfbcbc;width:80%;min-height:50vh;">
+          <div class="content" style="background-color: #bfbcbc;width:20%;min-height:50vh;margin:auto;">
             Content
           </div>
         </div>
       </div>
-
-      
-
       {{ footer.render_footer() }}
+    </div>
 </div><!-- third-fold -->
 {% endblock %}
