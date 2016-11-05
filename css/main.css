@@ -24,9 +24,10 @@ a {
 }
 
 .topnav {
-    list-style: none! margin: 0;
+    
     font-family: "RobotoCondensed";
     color: #455a64;
+
 }
 
 .topnav li {
@@ -34,12 +35,34 @@ a {
     margin: 20px;
     font-size: 22px;
     float: right;
+
 }
 
 .topnav li.icon {
     display: none;
+
 }
 
+.navplaceholder{
+  list-style: none! margin: 0;
+
+}
+
+.fixed {
+  position: fixed;
+  top: -16px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: white;
+  
+}
+
+.fixed .navinner{
+  max-width: 750px;
+  margin: auto;
+ 
+}
 /* When the screen is less than 750 pixels wide, hide all list items,
 except for the last one (logo). Show the list item that contains the link to open and
 close the topnav (li.icon) */
@@ -346,6 +369,7 @@ span.s-y-t a:hover {
   text-decoration: none;
   color: #455a64;
   cursor: pointer;
+
 }
 
 .nav h1 {
