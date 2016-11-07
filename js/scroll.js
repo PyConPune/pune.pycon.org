@@ -14,9 +14,6 @@ jQuery(document).ready(function(){
 jQuery(window).scroll(function(){
 
 	var scrollpos = jQuery(window).scrollTop();
-
-	//console.log(scrollpos);
-
 		if (scrollpos >= offSet) {
 		$(topNav).addClass("fixed");
 		} else{
