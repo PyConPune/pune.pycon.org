@@ -5,6 +5,7 @@ body {
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 .logo {
@@ -84,6 +85,26 @@ This class makes the nav look good on small screens */
 
 .uppercase {
     text-transform: uppercase;
+}
+
+.gray {
+  color: #ababab;
+}
+
+.f-c {
+  color: #585757
+}
+
+.underline {
+  border-bottom: 1px solid #ababab;
+}
+
+.override-a a:link, .overrid-a a:visited {
+    color: #585757;
+}
+
+.override-a a:hover {
+  color: white;
 }
 
 @font-face {
@@ -272,6 +293,11 @@ span.s-y-t a:hover {
   left: inherit;
 }
 
+.circle.right {
+  right: 100px;
+  left: inherit;
+}
+
 .yellow-fold .skew-down {
   top: -115px;
 }
@@ -360,6 +386,118 @@ span.s-y-t a:hover {
   font-size: 2.5em;
   text-transform: uppercase;
   font-weight: 400;
+}
+
+.segment {
+  padding: 100px 0;
+  margin-bottom: 100px;
+  color: #585757;
+  font-family: "RobotoCondensed";
+}
+
+.title {
+  background-color: #aed581;
+  padding: 30px;
+  color: white;
+  font-family: "RobotoCondensed";
+}
+
+.title .big {
+  font-size: 2em;
+}
+
+.title-small {
+  font-size: 1em;
+}
+
+.title .col {
+    padding: 15px 0;
+    text-align: center;
+    border-left: 1px solid white;
+}
+
+.center {
+  text-align: center;
+}
+
+input.ticket-inp {
+    width: 10vh;
+    text-align: center;
+    font-size: 0.9em;
+    height: 7vh;
+}
+
+.signs {
+  font-size: 1.2em;
+  cursor: pointer;
+  padding: 0 10px;
+}
+
+.submit-btn:hover {
+  cursor: pointer;
+  transition: all 500ms ease;
+}
+
+.submit-btn {
+  padding: 5px 7px 5px 7px;
+  border-radius: 5px;
+  font-size: 1.2em;
+  width: 15%;
+  margin: auto;
+  text-align: center;
+}
+
+.submit-btn.green:hover{
+  background: #AED581;
+  color: white;
+}
+
+.submit-btn.green {
+  border: 2px #AED581 solid;
+  color: #AED581;
+}
+
+.submit-btn.blue:hover{
+  background: #8de8ff;
+  color: white;
+}
+
+.submit-btn.blue {
+  border: 2px #8de8ff solid;
+  color: #8de8ff;
+}
+
+.submit-btn.pink:hover{
+  background: pink;
+  color: white;
+}
+
+.submit-btn.pink {
+  border: 2px pink solid;
+  color: pink;
+}
+
+/*** Grid System ***/
+
+.row {
+  overflow: hidden;
+  padding: 1.2em;
+}
+
+.row .col{
+  float: left;
+  min-width: 85px;
+}
+
+.col-6 { width: 60%; }
+.col-5 { width: 50%; }
+.col-4 { width: 40%; }
+.col-3 { width: 30%; }
+.col-2 { width: 20%; }
+.col-1 { width: 10%; }
+
+.col-text {
+  font-size: 1.2em;
 }
 
 /* Third Fold */
@@ -528,6 +666,10 @@ span.s-y-t a:hover {
   font-size: 2em !important;
 }
 
+.fs-1-5 {
+  font-size: 1.5em !important;
+}
+
 .extended-footer {
   position: relative;
   color: black;
@@ -598,8 +740,46 @@ span.s-y-t a:hover {
   font-size: 1.25em;
 }
 
+.ticket-title {
+  font-size: 2em;
+  font-weigh: 700;
+}
+
+.ticket-price {
+  font-size: 2em;
+}
+
+.register-btn {
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 30px;
+  font-family: "RobotoCondensed";
+}
+
+.register-btn:hover {
+  background: #3e2723;
+  color: white !important;
+  cursor: pointer;
+}
+
+.heading-block .register-btn:hover {
+  background: #455a64;
+}
+
+a.register-link {
+  color: #585757;
+}
+
+a.register-link:hover {
+  color: white;
+}
+
 /* Changes in padding and overflow in mobile view*/
 @media screen and (max-width:750px) {
+  .row .col {
+    margin-left: 10px;
+  }
+
   .green-fold .content, .yellow-fold .content {
     width: 55%;
     padding-left: 25%;

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  
+
     <link rel="apple-touch-icon" sizes="57x57" href="images/favicons/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="images/favicons/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/favicons/apple-icon-72x72.png">
@@ -23,7 +23,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <title> PyCon Pune 2017 </title>
-    
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,130 +35,96 @@
     <meta property="og:site_name" content="PyCon Pune 2017"/>
     <meta property="og:description" content="PyCon, the gathering for the community using and developing the open-source Python programming language. This is the first year of the PyCon Pune where the community will meet for two days of talks and working on upstream projects in two days of dev sprint."/>
     <link rel="icon" href="images/favicon.ico">
-    <link href="css/main.css" rel="stylesheet">
+    <link href="{{ url }}/css/main.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
-    
+
 </head>
 
 <body>
     <div class="responsive-page">
-      
-<div class="responsive-container cover">
-    <div class="first-fold">
-        <div class="nav">
-            
+
+
+	<div class="responsive-container cover non-parallax">
+	    <div class="first-fold">
+	        <div class="nav">
+	        	<style type="text/css">
+	        		.topnav {
+	        			margin: 0;
+	        		}
+	        		.logo {
+	        			top: 15px;
+	        		}
+	        	</style>
+
 	<ul class="topnav" id="topNav">
         <li class="icon">
           <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
         </li>
-        <li><a href="http://localhost:8000/#about">About</a></li>
-        <li><a href="http://localhost:8000/#sponsors">Sponsors</a></li>
-        <li><a href="http://localhost:8000/#venue">Venue</a></li>
-        <li><a href="http://localhost:8000/#sprints">Sprints</a></li>
-        <li><a href="http://localhost:8000/#cfp">Talks</a></li>
-        <li><a href="http://localhost:8000/registration/">Registration</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#sponsors">Sponsors</a></li>
+        <li><a href="#venue">Venue</a></li>
+        <li><a href="#sprints">Sprints</a></li>
+        <li><a href="#cfp">Talks</a></li>
         <li><a href="https://www.python.org/psf/">PSF</li>
         <li><a href="https://github.com/PyConPune/website/blob/master/code-of-conduct.md">CoC</a></li>
         <li><a href="/"><img class="logo" src="../images/logo.png"></a></li>
     </ul>
 
-            <div class="clear"></div>
-            <div class="align-center uppercase heading-block" id="headerDetails">
-                <h1 class="fs-3-5">Pycon Pune 2017</h1>
-                <h2 class="fs-2">College of Engineering, Pune, India</h2>
-                <h2>February 16th - 19th</h2>
-                <a class="col-text register-btn fs-2" href="/registration/">Register Now</a>
-            </div>
-        </div><!-- nav -->
-    </div><!-- first-fold -->
-</div><!-- responsive-container -->
+	            <div class="clear"></div>
+	            <div class="align-left uppercase heading-block" id="headerDetails">
+	                <h2>Pycon Pune 2017</h2>
+	                <h2>Pune, India</h2>
+	                <h2>February 16th - 19th</h2>
+	            </div>
+	        </div><!-- nav -->
+	    </div><!-- first-fold -->
+	</div><!-- responsive-container -->
 
-<div class="parallax-container hide-resp">
-    <div class="parallax-layer layer-0" data-parallax-speed="0.05" data-max-scroll="565"></div>
-    <div class="parallax-layer layer-1" data-parallax-speed="0.9" data-max-scroll="565"></div>
-    <div class="parallax-layer layer-2" data-parallax-speed="0.1" data-max-scroll="565"></div>
-    <div class="parallax-layer layer-3" data-parallax-speed="0.5" data-max-scroll="565"></div>
-    <div class="parallax-layer layer-4" data-parallax-speed="0.7" data-max-scroll="565"></div>
-    <div class="parallax-layer layer-5" data-parallax-speed="0.9" data-max-scroll="565"></div>
-</div>
-
-<div class="second-fold align-center" id="about">
-    <div class="responsive-container">
-        <h2>About</h2>
-        <p>
-          PyCon,  the gathering for the community using and developing the open-source
-          Python programming language. This is the first year of the PyCon Pune where
-          the community will meet for two days of talks and working on upstream
-          projects in two days of dev sprint.
-        </p>
-        <img src="images/fort_white.png">
-    </div><!-- responsive-container -->
-</div><!-- second fold -->
 <div class="third-fold">
     <div class="fold-1">
-      <div class="tf skew-down"></div>
-      <div class="circle">Speakers</div>
       <div class="white-fold">
         <div class="responsive-container">
-          <div class="speakers-block">
-            <div class="speaker">
-              <div class="inline-block s-left"><img alt="keynote-speaker" src="/images/nickcoghlan.jpg" /><div class="oval pink"></div><div class="line left-line hide-resp"></div></div>
-              <div class="inline-block speaker-info">
-                  <h3>Nick Coghlan</h3>
-                  <p>Nick Coghlan works on software supply chain management tools for Red Hat, and has been a CPython core developer since 2005. Prior to joining Red Hat in June 2011, Nick spent over 12 years working as a software developer, system integrator and system architect in Australia's aerospace & defence sector.</p>
+          <div class="segment">
+            <div class="row">
+              <div class="col col-6">
+                <div class="col-text ticket-title">PyCon Pune 2017 Conference Ticket</div>
+                <div class="col-text gray">This ticket includes 2-day of the conference, 16th and 17th February 2016</div>
+              </div>
+              <div class="col col-2">
+                <div class="col-text center">₹<span class="ticket-price">1000</span></div>
+              </div>
+              <div class="col col-2">
+                <div class="col-text center register-btn"><span>Register</span></div>
               </div>
             </div>
-            <div class="speaker m-t-100">
-                <div class="inline-block s-right"><img alt="keynote-speaker" src="/images/honza.jpg" /><div class="oval blue"></div></div>
-                <div class="inline-block speaker-info">
-                  <h3>Honza Král</h3>
-                  <p>Honza is a Python programmer and Django core developer – since he is scared of the bright and shiny world of browsers, designers, and users he prefers to stay buried deep in the infrastructure code and just provides others with tools to do the actual site-building.
-                    Since 2008 Honza has been building content web sites for fun and profit. During this time he discovered Elasticsearch which lead to him joining the company behind it in 2013 to work on the Python drivers.</p>
-                </div>
+            <div class="row">
+              <div class="col col-6">
+                <div class="col-text ticket-title">PyCon Pune 2017 Conference & Dev Sprint Ticket</div>
+                <div class="col-text gray">This ticket includes 2-day of the conference and 2-days of devsprint, 16th and 17th February 2016</div>
+              </div>
+              <div class="col col-2">
+                <div class="col-text center">₹<span class="ticket-price">1000</span></div>
+              </div>
+              <div class="col col-2">
+                <div class="col-text center register-btn"><span>Register</span></div>
+              </div>
             </div>
-            <div class="speaker m-t-100">
-                <div class="inline-block s-left"><img alt="keynote-speaker" src="/images/praveenpatil.jpg" /><div class="oval yellow"></div><div class="line right-line hide-resp"></div></div>
-                <div class="inline-block speaker-info">
-                  <h3>Praveen Patil</h3>
-                  <p>A Physics Teacher who loves FOSS, Fedora, Python and believes that 'A Clean House is a Sign of a Wasted Life !'</p>
-                </div>
+            <div class="row">
+              <div class="col col-6">
+                <div class="col-text ticket-title">PyCon Pune 2017 Supporter Ticket</div>
+                <div class="col-text gray">This ticket includes 2-day of the conference and 2-days of devsprint, 16th and 17th February 2016</div>
+              </div>
+              <div class="col col-2">
+                <div class="col-text center">₹<span class="ticket-price">1000</span></div>
+              </div>
+              <div class="col col-2">
+                <div class="col-text center register-btn"><span>Register</span></div>
+              </div>
             </div>
           </div>
         </div>
-      </div><!-- blue-fold -->
-
-      <div class="green-fold" id="cfp">
-          <div class="skew-up"></div>
-          <div class="circle">Talks</div>
-          <div class="b-f content">
-            The Call for Proposals for PyCon Pune 2017 is open. <br/>Closes on 30th November 2016. <br><span class="s-y-t"><a href="https://pyconpune.talkfunnel.com/2017/">Submit your talk</a></span> now!
-          </div>
-      </div><!-- green-fold -->
-
-      <div class="yellow-fold" id="sprints">
-          <div class="skew-down"></div>
-          <div class="circle">Sprints</div>
-          <div class="b-f content">
-            Development sprints are a key part of PyCon, and a chance for the contributors to open-source projects to get together face-to-face for up to two days of intensive learning, development and camaraderie.
-          </div>
-      </div><!-- green-fold -->
-
-      <div class="venue-fold" id="venue">
-        <div class="skew-up"></div>
-        <div class="circle">Venue</div>
-        <div id="venue">
-          <div id="ds-venue"></div>
-          <div id="cf-venue"></div>
-          <div class="clear"></div>
-        </div>
       </div>
 
-      <div id="sponsors" class="sponsors-fold">
-        <div class="b-f center p-t-100">Looking to sponsor the event?</div>
-        <button class="b-f button"><a href="mailto:pyconpune@gmail.com?subject=Sponsor for PyCon Pune 2017" class="no-underline">Become a sponsor</a></button>
-      </div>
-
-      
 	<div class="footer">
         <img src="../images/footer.png" />
         <div class="extended-footer">
@@ -170,13 +136,14 @@
         <div class="clear"></div>
     </div>
 
+    </div>
 </div><!-- third-fold -->
 
     </div><!-- responsive-page -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
-    <script src="js/leaflet_sleep.js"></script>
-    <script src="js/parallax.js"></script>
+    <script src="{{ url }}/js/leaflet_sleep.js"></script>
+    <script src="{{ url }}/js/parallax.js"></script>
     <script type="text/javascript">
 	     new ParallaxManager('.parallax-layer');
     </script>
@@ -252,7 +219,7 @@
             var $inputElem = $(this).parent().find("input");
             var value = parseInt($inputElem.val()) + 1;
             if (value <= 10){
-                $inputElem.val(value).attr('value', value);                
+                $inputElem.val(value).attr('value', value);
                 var price = parseInt($("#" + ticket_parent_id + " .price span").html());
                 var total_price = price * value;
                 $("#" + ticket_parent_id + " .total-price span").html(total_price);
