@@ -486,6 +486,7 @@ input.ticket-inp {
 
 .row .col{
   float: left;
+  min-width: 85px;
 }
 
 .col-6 { width: 60%; }
@@ -767,6 +768,10 @@ input.ticket-inp {
 
 /* Changes in padding and overflow in mobile view*/
 @media screen and (max-width:750px) {
+  .row .col {
+    margin-left: 10px;
+  }
+
   .green-fold .content, .yellow-fold .content {
     width: 55%;
     padding-left: 25%;
