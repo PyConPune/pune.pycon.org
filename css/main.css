@@ -766,6 +766,14 @@ input.ticket-inp {
   background: #455a64;
 }
 
+a.register-link {
+  color: #585757;
+}
+
+a.register-link:hover {
+  color: white;
+}
+
 /* Changes in padding and overflow in mobile view*/
 @media screen and (max-width:750px) {
   .row .col {
