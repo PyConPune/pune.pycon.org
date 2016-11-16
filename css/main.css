@@ -8,6 +8,10 @@ a {
   cursor: pointer;
 }
 
+.no-text-transform {
+  text-transform: none;
+}
+
 .logo {
   height: 60px;
   position: absolute;
