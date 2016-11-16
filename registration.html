@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  
+
     <link rel="apple-touch-icon" sizes="57x57" href="images/favicons/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="images/favicons/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/favicons/apple-icon-72x72.png">
@@ -23,7 +23,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <title> PyCon Pune 2017 </title>
-    
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,14 +35,14 @@
     <meta property="og:site_name" content="PyCon Pune 2017"/>
     <meta property="og:description" content="PyCon, the gathering for the community using and developing the open-source Python programming language. This is the first year of the PyCon Pune where the community will meet for two days of talks and working on upstream projects in two days of dev sprint."/>
     <link rel="icon" href="images/favicon.ico">
-    <link href="css/main.css" rel="stylesheet">
+    <link href="http://localhost:8000/css/main.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
-    
+
 </head>
 
 <body>
     <div class="responsive-page">
-      
+
 
 	<div class="responsive-container cover non-parallax">
 	    <div class="first-fold">
@@ -55,7 +55,7 @@
 	        			top: 15px;
 	        		}
 	        	</style>
-	            
+
 	<ul class="topnav" id="topNav">
         <li class="icon">
           <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
@@ -82,73 +82,49 @@
 
 <div class="third-fold">
     <div class="fold-1">
-      <div class="circle right">Registration</div>
       <div class="white-fold">
         <div class="responsive-container">
           <div class="segment">
-            <div class="row title">
-              <div class="col col-4">
-                <div class="big">Ticket Name</div>
-              </div>
-              <div class="col col-1">
-                <div class="big">Price</div>
+            <div class="row">
+              <div class="col col-6">
+                <div class="col-text ticket-title">PyCon Pune 2017 Conference Ticket</div>
+                <div class="col-text gray">This ticket includes 2-day of the conference, 16th and 17th February 2016</div>
               </div>
               <div class="col col-2">
-                <div id="tickets">
-                  <span class="big">0</span>
-                  <span class="small">Tickets</span>
-                </div>
-              </div>
-              <div class="col col-1">
-                <div id="totals">
-                  <span class="big">₹<span>0</span></span>
-                  <span class="small">Total</span>
-                </div>
-              </div>
-            </div>
-            <div id="early-bird" class="row">
-              <div class="col col-4">
-                <div class="col-text">Early Bird</div>
-              </div>
-              <div class="col col-1">
-                <div class="col-text center price">₹<span>1000</span></div>
+                <div class="col-text center">₹<span class="ticket-price">1000</span></div>
               </div>
               <div class="col col-2">
-                <div class="col-text center">
-                  <span class="minus signs">-</span>
-                  <input class="ticket-inp" value="0">
-                  <span class="plus signs">+</span>
-                </div>
-              </div>
-              <div class="col col-1">
-                <div class="col-text center total-price">₹<span>0</span></div>
-              </div>
-            </div>
-            <div id="early-bird-workshop" class="row">
-              <div class="col col-4">
-                <div class="col-text">Early Bird - workshop</div>
-              </div>
-              <div class="col col-1">
-                <div class="col-text center price">₹<span>1000</span></div>
-              </div>
-              <div class="col col-2">
-                <div class="col-text center">
-                  <span class="minus signs">-</span>
-                  <input class="ticket-inp" value="0">
-                  <span class="plus signs">+</span>
-                </div>
-              </div>
-              <div class="col col-1">
-                <div class="col-text center total-price">₹<span>0</span></div>
+                <div class="col-text center register-btn"><span>Register</span></div>
               </div>
             </div>
             <div class="row">
-              <div class="submit-btn green">Proceed</div>
+              <div class="col col-6">
+                <div class="col-text ticket-title">PyCon Pune 2017 Conference & Dev Sprint Ticket</div>
+                <div class="col-text gray">This ticket includes 2-day of the conference and 2-days of devsprint, 16th and 17th February 2016</div>
+              </div>
+              <div class="col col-2">
+                <div class="col-text center">₹<span class="ticket-price">1000</span></div>
+              </div>
+              <div class="col col-2">
+                <div class="col-text center register-btn"><span>Register</span></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col col-6">
+                <div class="col-text ticket-title">PyCon Pune 2017 Supporter Ticket</div>
+                <div class="col-text gray">This ticket includes 2-day of the conference and 2-days of devsprint, 16th and 17th February 2016</div>
+              </div>
+              <div class="col col-2">
+                <div class="col-text center">₹<span class="ticket-price">1000</span></div>
+              </div>
+              <div class="col col-2">
+                <div class="col-text center register-btn"><span>Register</span></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      
+
 	<div class="footer">
         <img src="../images/footer.png" />
         <div class="extended-footer">
@@ -166,8 +142,8 @@
     </div><!-- responsive-page -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
-    <script src="js/leaflet_sleep.js"></script>
-    <script src="js/parallax.js"></script>
+    <script src="http://localhost:8000/js/leaflet_sleep.js"></script>
+    <script src="http://localhost:8000/js/parallax.js"></script>
     <script type="text/javascript">
 	     new ParallaxManager('.parallax-layer');
     </script>
@@ -243,7 +219,7 @@
             var $inputElem = $(this).parent().find("input");
             var value = parseInt($inputElem.val()) + 1;
             if (value <= 10){
-                $inputElem.val(value).attr('value', value);                
+                $inputElem.val(value).attr('value', value);
                 var price = parseInt($("#" + ticket_parent_id + " .price span").html());
                 var total_price = price * value;
                 $("#" + ticket_parent_id + " .total-price span").html(total_price);

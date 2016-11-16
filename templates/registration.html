@@ -1,81 +1,259 @@
-{% extends 'base/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% import 'base/header.html' as header with context %}
-{% import 'base/footer.html' as footer with context %}
+<head>
 
-{% block title %} PyCon Pune 2017 {% endblock %}
+    <link rel="apple-touch-icon" sizes="57x57" href="images/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="images/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="images/favicons/manifest.json">
 
-{% block body %}
-{{ header.render_header() }}
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="images/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <title> PyCon Pune 2017 </title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta property="og:title" content="PyCon Pune 2017"/>
+    <meta property="og:image" content="http://pune.pycon.org/images/twitter_cover.png"/>
+    <meta property="og:site_name" content="PyCon Pune 2017"/>
+    <meta property="og:description" content="PyCon, the gathering for the community using and developing the open-source Python programming language. This is the first year of the PyCon Pune where the community will meet for two days of talks and working on upstream projects in two days of dev sprint."/>
+    <link rel="icon" href="images/favicon.ico">
+    <link href="{{ url }}/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+
+</head>
+
+<body>
+    <div class="responsive-page">
+
+
+	<div class="responsive-container cover non-parallax">
+	    <div class="first-fold">
+	        <div class="nav">
+	        	<style type="text/css">
+	        		.topnav {
+	        			margin: 0;
+	        		}
+	        		.logo {
+	        			top: 15px;
+	        		}
+	        	</style>
+
+	<ul class="topnav" id="topNav">
+        <li class="icon">
+          <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+        </li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#sponsors">Sponsors</a></li>
+        <li><a href="#venue">Venue</a></li>
+        <li><a href="#sprints">Sprints</a></li>
+        <li><a href="#cfp">Talks</a></li>
+        <li><a href="https://www.python.org/psf/">PSF</li>
+        <li><a href="https://github.com/PyConPune/website/blob/master/code-of-conduct.md">CoC</a></li>
+        <li><a href="/"><img class="logo" src="../images/logo.png"></a></li>
+    </ul>
+
+	            <div class="clear"></div>
+	            <div class="align-left uppercase heading-block" id="headerDetails">
+	                <h2>Pycon Pune 2017</h2>
+	                <h2>Pune, India</h2>
+	                <h2>February 16th - 19th</h2>
+	            </div>
+	        </div><!-- nav -->
+	    </div><!-- first-fold -->
+	</div><!-- responsive-container -->
+
 <div class="third-fold">
     <div class="fold-1">
-      <div class="circle right">Registration</div>
       <div class="white-fold">
         <div class="responsive-container">
           <div class="segment">
-            <div class="row title">
-              <div class="col col-4">
-                <div class="big">Ticket Name</div>
-              </div>
-              <div class="col col-1">
-                <div class="big">Price</div>
+            <div class="row">
+              <div class="col col-6">
+                <div class="col-text ticket-title">PyCon Pune 2017 Conference Ticket</div>
+                <div class="col-text gray">This ticket includes 2-day of the conference, 16th and 17th February 2016</div>
               </div>
               <div class="col col-2">
-                <div id="tickets">
-                  <span class="big">0</span>
-                  <span class="small">Tickets</span>
-                </div>
-              </div>
-              <div class="col col-1">
-                <div id="totals">
-                  <span class="big">₹<span>0</span></span>
-                  <span class="small">Total</span>
-                </div>
-              </div>
-            </div>
-            <div id="early-bird" class="row">
-              <div class="col col-4">
-                <div class="col-text">Early Bird</div>
-              </div>
-              <div class="col col-1">
-                <div class="col-text center price">₹<span>1000</span></div>
+                <div class="col-text center">₹<span class="ticket-price">1000</span></div>
               </div>
               <div class="col col-2">
-                <div class="col-text center">
-                  <span class="minus signs">-</span>
-                  <input class="ticket-inp" value="0">
-                  <span class="plus signs">+</span>
-                </div>
-              </div>
-              <div class="col col-1">
-                <div class="col-text center total-price">₹<span>0</span></div>
-              </div>
-            </div>
-            <div id="early-bird-workshop" class="row">
-              <div class="col col-4">
-                <div class="col-text">Early Bird - workshop</div>
-              </div>
-              <div class="col col-1">
-                <div class="col-text center price">₹<span>1000</span></div>
-              </div>
-              <div class="col col-2">
-                <div class="col-text center">
-                  <span class="minus signs">-</span>
-                  <input class="ticket-inp" value="0">
-                  <span class="plus signs">+</span>
-                </div>
-              </div>
-              <div class="col col-1">
-                <div class="col-text center total-price">₹<span>0</span></div>
+                <div class="col-text center register-btn"><span>Register</span></div>
               </div>
             </div>
             <div class="row">
-              <div class="submit-btn green">Proceed</div>
+              <div class="col col-6">
+                <div class="col-text ticket-title">PyCon Pune 2017 Conference & Dev Sprint Ticket</div>
+                <div class="col-text gray">This ticket includes 2-day of the conference and 2-days of devsprint, 16th and 17th February 2016</div>
+              </div>
+              <div class="col col-2">
+                <div class="col-text center">₹<span class="ticket-price">1000</span></div>
+              </div>
+              <div class="col col-2">
+                <div class="col-text center register-btn"><span>Register</span></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col col-6">
+                <div class="col-text ticket-title">PyCon Pune 2017 Supporter Ticket</div>
+                <div class="col-text gray">This ticket includes 2-day of the conference and 2-days of devsprint, 16th and 17th February 2016</div>
+              </div>
+              <div class="col col-2">
+                <div class="col-text center">₹<span class="ticket-price">1000</span></div>
+              </div>
+              <div class="col col-2">
+                <div class="col-text center register-btn"><span>Register</span></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      {{ footer.render_footer() }}
+
+	<div class="footer">
+        <img src="../images/footer.png" />
+        <div class="extended-footer">
+          <div class="organized">
+            <span class="b-f f-w">Co-organized by Department of Computer Engineering and IT, COEP</span>
+          </div>
+        </div>
+
+        <div class="clear"></div>
+    </div>
+
     </div>
 </div><!-- third-fold -->
-{% endblock %}
+
+    </div><!-- responsive-page -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+    <script src="{{ url }}/js/leaflet_sleep.js"></script>
+    <script src="{{ url }}/js/parallax.js"></script>
+    <script type="text/javascript">
+	     new ParallaxManager('.parallax-layer');
+    </script>
+    <script>
+        var dsvenue = L.map('ds-venue', {
+            sleep: true,
+            sleepTime: 750,
+            wakeTime: 750,
+            sleepNote: false,
+            sleepNoteStyle: { color: 'red' },
+            hoverToWake: false,
+            sleepOpacity: 1,
+        }).setView([18.531161, 73.8448685], 13);
+
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw', {
+          maxZoom: 18,
+          attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+            '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+            'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+          id: 'mapbox.streets'
+        }).addTo(dsvenue);
+
+        L.marker([18.53007, 73.85589]).addTo(dsvenue)
+          .bindPopup("<b>Conference Venue</b><br />College of Engineering, Pune").openPopup();
+
+        var cfvenue = L.map('cf-venue', {
+            sleep: true,
+            sleepTime: 750,
+            wakeTime: 750,
+            sleepNote: false,
+            sleepNoteStyle: { color: 'red' },
+            hoverToWake: false,
+            sleepOpacity: 1,
+        }).setView([18.51,73.92], 13);
+
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw', {
+          maxZoom: 18,
+          attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+            '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+            'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+          id: 'mapbox.streets'
+        }).addTo(cfvenue);
+
+        L.marker([18.51664,73.92782]).addTo(cfvenue)
+          .bindPopup("<b>DevSprint Venue</b><br />Red Hat India Pvt. Ltd., Pune").openPopup();
+    </script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-86644340-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <script type="text/javascript">
+        function myFunction() {
+            var x = document.getElementById("topNav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+                document.getElementById('headerDetails').style.display = "none";
+            } else {
+                x.className = "topnav";
+                document.getElementById('headerDetails').style.display = "block";
+            }
+        }
+    </script>
+
+    <!--Registration JS -->
+    <script type="text/javascript">
+        $('.plus').click(function(){
+            var ticket_parent_id = $(this).parent().parent().parent().attr("id");
+            var $inputElem = $(this).parent().find("input");
+            var value = parseInt($inputElem.val()) + 1;
+            if (value <= 10){
+                $inputElem.val(value).attr('value', value);
+                var price = parseInt($("#" + ticket_parent_id + " .price span").html());
+                var total_price = price * value;
+                $("#" + ticket_parent_id + " .total-price span").html(total_price);
+                computeTotal();
+            }
+        });
+
+        $('.minus').click(function(){
+            var ticket_parent_id = $(this).parent().parent().parent().attr("id");
+            var $inputElem = $(this).parent().find("input");
+            var value = parseInt($inputElem.val()) - 1;
+            if (value >= 0) {
+                $inputElem.val(value).attr('value', value);
+                var price = parseInt($("#" + ticket_parent_id + " .price span").html());
+                var total_price = price * value;
+                $("#" + ticket_parent_id + " .total-price span").html(total_price);
+                computeTotal();
+            }
+        });
+
+        function computeTotal() {
+            var ticketElems = $('.row .col .ticket-inp');
+            var totalElems = $('.row .col .total-price span');
+            var tickets = 0;
+            var totalPrice = 0;
+            for (var i = 0; i < ticketElems.length; i++) {
+                tickets += parseInt($(ticketElems[i]).val());
+                totalPrice += parseInt($(totalElems[i]).html());
+            }
+
+            $('#tickets .big').html(tickets);
+            $('#totals .big span').html(totalPrice);
+        }
+    </script>
+</body>
+
+</html>

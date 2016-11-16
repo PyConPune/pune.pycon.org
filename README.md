@@ -5,7 +5,7 @@ Setup
 `pip install staticjinja`
 
 - Build and watch the templates
-`staticjinja watch`
+`python build.py`
 
 - Start Python Simple HTTP Server
 `python -m SimpleHTTPServer`

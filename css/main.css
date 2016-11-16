@@ -5,6 +5,7 @@ body {
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 .logo {
@@ -84,6 +85,26 @@ This class makes the nav look good on small screens */
 
 .uppercase {
     text-transform: uppercase;
+}
+
+.gray {
+  color: #ababab;
+}
+
+.f-c {
+  color: #585757
+}
+
+.underline {
+  border-bottom: 1px solid #ababab;
+}
+
+.override-a a:link, .overrid-a a:visited {
+    color: #585757;
+}
+
+.override-a a:hover {
+  color: white;
 }
 
 @font-face {
@@ -712,6 +733,27 @@ input.ticket-inp {
 
 .non-parallax h2{
   font-size: 1.25em;
+}
+
+.ticket-title {
+  font-size: 2em;
+  font-weigh: 700;
+}
+
+.ticket-price {
+  font-size: 2em;
+}
+
+.register-btn {
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 30px;
+}
+
+.register-btn:hover {
+  background: #3e2723;
+  color: white !important;
+  cursor: pointer;
 }
 
 /* Changes in padding and overflow in mobile view*/
