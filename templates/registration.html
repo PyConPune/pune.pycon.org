@@ -1,0 +1,81 @@
+{% extends 'base/base.html' %}
+
+{% import 'base/header.html' as header with context %}
+{% import 'base/footer.html' as footer with context %}
+
+{% block title %} PyCon Pune 2017 {% endblock %}
+
+{% block body %}
+{{ header.render_header() }}
+<div class="third-fold">
+    <div class="fold-1">
+      <div class="circle right">Registration</div>
+      <div class="white-fold">
+        <div class="responsive-container">
+          <div class="segment">
+            <div class="row title">
+              <div class="col col-4">
+                <div class="big">Ticket Name</div>
+              </div>
+              <div class="col col-1">
+                <div class="big">Price</div>
+              </div>
+              <div class="col col-2">
+                <div id="tickets">
+                  <span class="big">0</span>
+                  <span class="small">Tickets</span>
+                </div>
+              </div>
+              <div class="col col-1">
+                <div id="totals">
+                  <span class="big">₹<span>0</span></span>
+                  <span class="small">Total</span>
+                </div>
+              </div>
+            </div>
+            <div id="early-bird" class="row">
+              <div class="col col-4">
+                <div class="col-text">Early Bird</div>
+              </div>
+              <div class="col col-1">
+                <div class="col-text center price">₹<span>1000</span></div>
+              </div>
+              <div class="col col-2">
+                <div class="col-text center">
+                  <span class="minus signs">-</span>
+                  <input class="ticket-inp" value="0">
+                  <span class="plus signs">+</span>
+                </div>
+              </div>
+              <div class="col col-1">
+                <div class="col-text center total-price">₹<span>0</span></div>
+              </div>
+            </div>
+            <div id="early-bird-workshop" class="row">
+              <div class="col col-4">
+                <div class="col-text">Early Bird - workshop</div>
+              </div>
+              <div class="col col-1">
+                <div class="col-text center price">₹<span>1000</span></div>
+              </div>
+              <div class="col col-2">
+                <div class="col-text center">
+                  <span class="minus signs">-</span>
+                  <input class="ticket-inp" value="0">
+                  <span class="plus signs">+</span>
+                </div>
+              </div>
+              <div class="col col-1">
+                <div class="col-text center total-price">₹<span>0</span></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="submit-btn green">Proceed</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{ footer.render_footer() }}
+    </div>
+</div><!-- third-fold -->
+{% endblock %}

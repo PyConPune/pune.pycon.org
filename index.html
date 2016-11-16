@@ -242,6 +242,49 @@
             }
         }
     </script>
+
+    <!--Registration JS -->
+    <script type="text/javascript">
+        $('.plus').click(function(){
+            var ticket_parent_id = $(this).parent().parent().parent().attr("id");
+            var $inputElem = $(this).parent().find("input");
+            var value = parseInt($inputElem.val()) + 1;
+            if (value <= 10){
+                $inputElem.val(value).attr('value', value);                
+                var price = parseInt($("#" + ticket_parent_id + " .price span").html());
+                var total_price = price * value;
+                $("#" + ticket_parent_id + " .total-price span").html(total_price);
+                computeTotal();
+            }
+        });
+
+        $('.minus').click(function(){
+            var ticket_parent_id = $(this).parent().parent().parent().attr("id");
+            var $inputElem = $(this).parent().find("input");
+            var value = parseInt($inputElem.val()) - 1;
+            if (value >= 0) {
+                $inputElem.val(value).attr('value', value);
+                var price = parseInt($("#" + ticket_parent_id + " .price span").html());
+                var total_price = price * value;
+                $("#" + ticket_parent_id + " .total-price span").html(total_price);
+                computeTotal();
+            }
+        });
+
+        function computeTotal() {
+            var ticketElems = $('.row .col .ticket-inp');
+            var totalElems = $('.row .col .total-price span');
+            var tickets = 0;
+            var totalPrice = 0;
+            for (var i = 0; i < ticketElems.length; i++) {
+                tickets += parseInt($(ticketElems[i]).val());
+                totalPrice += parseInt($(totalElems[i]).html());
+            }
+
+            $('#tickets .big').html(tickets);
+            $('#totals .big span').html(totalPrice);
+        }
+    </script>
 </body>
 
 </html>
