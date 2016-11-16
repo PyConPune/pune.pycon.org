@@ -665,6 +665,10 @@ input.ticket-inp {
   font-size: 2em !important;
 }
 
+.fs-1-5 {
+  font-size: 1.5em !important;
+}
+
 .extended-footer {
   position: relative;
   color: black;
@@ -748,12 +752,17 @@ input.ticket-inp {
   padding: 10px;
   border: 1px solid;
   border-radius: 30px;
+  font-family: "RobotoCondensed";
 }
 
 .register-btn:hover {
   background: #3e2723;
   color: white !important;
   cursor: pointer;
+}
+
+.heading-block .register-btn:hover {
+  background: #455a64;
 }
 
 /* Changes in padding and overflow in mobile view*/
