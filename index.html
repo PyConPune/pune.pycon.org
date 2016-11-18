@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<<<<<<< HEAD
   <head>
     <link rel="apple-touch-icon" sizes="57x57" href="https://pune.pycon.org/images/favicons/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="https://pune.pycon.org/images/favicons/apple-icon-60x60.png">
@@ -16,13 +17,36 @@
     <link rel="icon" type="image/png" sizes="96x96" href="https://pune.pycon.org/images/favicons/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://pune.pycon.org/images/favicons/favicon-16x16.png">
     <link rel="manifest" href="https://pune.pycon.org/images/favicons/manifest.json">
+=======
+<head>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="images/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="images/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="images/favicons/manifest.json">
+>>>>>>> dc70042... Added info for Terri Oda in the speakers section
 
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="https://pune.pycon.org/images/favicons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
+<<<<<<< HEAD
     <title>PyCon Pune 2017 </title>
     
+=======
+    <title> PyCon Pune 2017 </title>
+
+>>>>>>> dc70042... Added info for Terri Oda in the speakers section
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,16 +60,21 @@
     <link rel="icon" href="https://pune.pycon.org/images/favicon.ico">
     <link href="https://pune.pycon.org/css/main.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+<<<<<<< HEAD
     
   </head>
+=======
+
+</head>
+>>>>>>> dc70042... Added info for Terri Oda in the speakers section
 
   <body>
     <div class="responsive-page">
-      
+
 <div class="responsive-container cover">
     <div class="first-fold">
         <div class="nav">
-            
+
 	<ul class="topnav" id="topNav">
         <li class="icon">
           <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
@@ -130,6 +159,14 @@
                   <p>An infrastructure and systems software programmer/architect turned to the dark side, now building hardware and embedded software systems that run on them, and a Perl guy, declared a Python programmer.</p>
                 </div>
             </div>
+            <div class="speaker m-t-100">
+                <div class="inline-block s-left"><img alt="keynote-speaker" src="/images/terrioda.jpg" /><div class="oval yellow"></div><div class="line right-line hide-resp"></div>
+                </div>
+                <div class="inline-block speaker-info">
+                  <h3>Terri Oda</h3>
+                  <p>Terri Oda gets paid to break things and tell people that they're wrong, all in the name of making open source software more secure. Her work on GNU Mailman helps open source developers communicate, her work with the Python Software Foundation helps introduce students to open source as part of Google Summer of Code, and her work in web security earned her a PhD.</p>
+                </div>
+            </div>
           </div>
         </div>
       </div><!-- blue-fold -->
@@ -165,7 +202,7 @@
         <button class="b-f button"><a href="mailto:pyconpune@gmail.com?subject=Sponsor for PyCon Pune 2017" class="no-underline">Become a sponsor</a></button>
       </div>
 
-      
+
 	<div class="footer">
         <img src="../images/footer.png" />
         <div class="extended-footer">
@@ -242,6 +279,7 @@
       ga('send', 'pageview');
     </script>
     <script type="text/javascript">
+<<<<<<< HEAD
       function myFunction() {
         var x = document.getElementById("topNav");
         if (x.className === "topnav") {
@@ -250,8 +288,54 @@
         } else {
           x.className = "topnav";
           document.getElementById('headerDetails').style.display = "block";
+=======
+        $('.plus').click(function(){
+            var ticket_parent_id = $(this).parent().parent().parent().attr("id");
+            var $inputElem = $(this).parent().find("input");
+            var value = parseInt($inputElem.val()) + 1;
+            if (value <= 10){
+                $inputElem.val(value).attr('value', value);
+                var price = parseInt($("#" + ticket_parent_id + " .price span").html());
+                var total_price = price * value;
+                $("#" + ticket_parent_id + " .total-price span").html(total_price);
+                computeTotal();
+            }
+        });
+
+        $('.minus').click(function(){
+            var ticket_parent_id = $(this).parent().parent().parent().attr("id");
+            var $inputElem = $(this).parent().find("input");
+            var value = parseInt($inputElem.val()) - 1;
+            if (value >= 0) {
+                $inputElem.val(value).attr('value', value);
+                var price = parseInt($("#" + ticket_parent_id + " .price span").html());
+                var total_price = price * value;
+                $("#" + ticket_parent_id + " .total-price span").html(total_price);
+                computeTotal();
+            }
+        });
+
+        function computeTotal() {
+            var ticketElems = $('.row .col .ticket-inp');
+            var totalElems = $('.row .col .total-price span');
+            var tickets = 0;
+            var totalPrice = 0;
+            for (var i = 0; i < ticketElems.length; i++) {
+                tickets += parseInt($(ticketElems[i]).val());
+                totalPrice += parseInt($(totalElems[i]).html());
+            }
+
+            $('#tickets .big').html(tickets);
+            $('#totals .big span').html(totalPrice);
+>>>>>>> dc70042... Added info for Terri Oda in the speakers section
         }
       }
     </script>
+<<<<<<< HEAD
   </body>
 </html>
+=======
+</body>
+
+</html>
+>>>>>>> dc70042... Added info for Terri Oda in the speakers section
