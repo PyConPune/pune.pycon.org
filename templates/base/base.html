@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  
+  <head>
     <link rel="apple-touch-icon" sizes="57x57" href="images/favicons/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="images/favicons/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/favicons/apple-icon-72x72.png">
@@ -22,7 +21,7 @@
     <meta name="msapplication-TileImage" content="images/favicons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-    <title>{% block title %}{% endblock %}</title>
+    <title>PyCon Pune 2017 {% block title %}{% endblock %}</title>
     {% block head %}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,129 +34,37 @@
     <meta property="og:site_name" content="PyCon Pune 2017"/>
     <meta property="og:description" content="PyCon, the gathering for the community using and developing the open-source Python programming language. This is the first year of the PyCon Pune where the community will meet for two days of talks and working on upstream projects in two days of dev sprint."/>
     <link rel="icon" href="images/favicon.ico">
-    <link href="css/main.css" rel="stylesheet">
+    <link href="{{ url }}/css/main.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
     {% endblock %}
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="responsive-page">
       {% block body %}{% endblock %}
     </div><!-- responsive-page -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
-    <script src="js/leaflet_sleep.js"></script>
-    <script src="js/parallax.js"></script>
-    <script type="text/javascript">
-	     new ParallaxManager('.parallax-layer');
-    </script>
+    {%block scripts %}{% endblock %}
     <script>
-        var dsvenue = L.map('ds-venue', {
-            sleep: true,
-            sleepTime: 750,
-            wakeTime: 750,
-            sleepNote: false,
-            sleepNoteStyle: { color: 'red' },
-            hoverToWake: false,
-            sleepOpacity: 1,
-        }).setView([18.531161, 73.8448685], 13);
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw', {
-          maxZoom: 18,
-          attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-            '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-            'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-          id: 'mapbox.streets'
-        }).addTo(dsvenue);
-
-        L.marker([18.53007, 73.85589]).addTo(dsvenue)
-          .bindPopup("<b>Conference Venue</b><br />College of Engineering, Pune").openPopup();
-
-        var cfvenue = L.map('cf-venue', {
-            sleep: true,
-            sleepTime: 750,
-            wakeTime: 750,
-            sleepNote: false,
-            sleepNoteStyle: { color: 'red' },
-            hoverToWake: false,
-            sleepOpacity: 1,
-        }).setView([18.51,73.92], 13);
-
-        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw', {
-          maxZoom: 18,
-          attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-            '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-            'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-          id: 'mapbox.streets'
-        }).addTo(cfvenue);
-
-        L.marker([18.51664,73.92782]).addTo(cfvenue)
-          .bindPopup("<b>DevSprint Venue</b><br />Red Hat India Pvt. Ltd., Pune").openPopup();
-    </script>
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-86644340-1', 'auto');
-        ga('send', 'pageview');
+      ga('create', 'UA-86644340-1', 'auto');
+      ga('send', 'pageview');
     </script>
     <script type="text/javascript">
-        function myFunction() {
-            var x = document.getElementById("topNav");
-            if (x.className === "topnav") {
-                x.className += " responsive";
-                document.getElementById('headerDetails').style.display = "none";
-            } else {
-                x.className = "topnav";
-                document.getElementById('headerDetails').style.display = "block";
-            }
+      function myFunction() {
+        var x = document.getElementById("topNav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+          document.getElementById('headerDetails').style.display = "none";
+        } else {
+          x.className = "topnav";
+          document.getElementById('headerDetails').style.display = "block";
         }
+      }
     </script>
-
-    <!--Registration JS -->
-    <script type="text/javascript">
-        $('.plus').click(function(){
-            var ticket_parent_id = $(this).parent().parent().parent().attr("id");
-            var $inputElem = $(this).parent().find("input");
-            var value = parseInt($inputElem.val()) + 1;
-            if (value <= 10){
-                $inputElem.val(value).attr('value', value);                
-                var price = parseInt($("#" + ticket_parent_id + " .price span").html());
-                var total_price = price * value;
-                $("#" + ticket_parent_id + " .total-price span").html(total_price);
-                computeTotal();
-            }
-        });
-
-        $('.minus').click(function(){
-            var ticket_parent_id = $(this).parent().parent().parent().attr("id");
-            var $inputElem = $(this).parent().find("input");
-            var value = parseInt($inputElem.val()) - 1;
-            if (value >= 0) {
-                $inputElem.val(value).attr('value', value);
-                var price = parseInt($("#" + ticket_parent_id + " .price span").html());
-                var total_price = price * value;
-                $("#" + ticket_parent_id + " .total-price span").html(total_price);
-                computeTotal();
-            }
-        });
-
-        function computeTotal() {
-            var ticketElems = $('.row .col .ticket-inp');
-            var totalElems = $('.row .col .total-price span');
-            var tickets = 0;
-            var totalPrice = 0;
-            for (var i = 0; i < ticketElems.length; i++) {
-                tickets += parseInt($(ticketElems[i]).val());
-                totalPrice += parseInt($(totalElems[i]).html());
-            }
-
-            $('#tickets .big').html(tickets);
-            $('#totals .big span').html(totalPrice);
-        }
-    </script>
-</body>
-
+  </body>
 </html>
