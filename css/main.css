@@ -150,6 +150,10 @@ p {
     line-height: 1.4em;
 }
 
+i {
+  color: #585757;
+}
+
 .b-f {
   font-family: "RobotoCondensed";
   font-size: 2em;
@@ -160,6 +164,10 @@ p {
   padding: 5px 7px 5px 7px;
   border: 2px white solid;
   border-radius: 5px;
+}
+
+.m-l-5 {
+  margin-left: 5px;
 }
 
 span.s-y-t:hover {
@@ -399,6 +407,10 @@ span.s-y-t a:hover {
   font-family: "RobotoCondensed";
 }
 
+.segment-p-65 {
+  padding: 65px 0;
+}
+
 .title {
   background-color: #aed581;
   padding: 30px;
@@ -493,6 +505,8 @@ input.ticket-inp {
   min-width: 85px;
 }
 
+.col-8 { width: 80%; }
+.col-7 { width: 70%; }
 .col-6 { width: 60%; }
 .col-5 { width: 50%; }
 .col-4 { width: 40%; }
@@ -744,7 +758,7 @@ input.ticket-inp {
   font-size: 1.25em;
 }
 
-.ticket-title {
+.ticket-title , .row-title {
   font-size: 2em;
   font-weigh: 700;
 }
@@ -758,6 +772,26 @@ input.ticket-inp {
   border: 1px solid;
   border-radius: 30px;
   font-family: "RobotoCondensed";
+}
+
+.register-btn-inv {
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 30px;
+  background: #3e2723;
+  color: white;
+  font-family: "RobotoCondensed";
+}
+
+.register-btn-inv:hover {
+  background: white !important;
+  color: #585757;
+  cursor: pointer;
+}
+
+.center-btn {
+  width: 250px;
+  margin: auto;
 }
 
 .register-btn:hover {
