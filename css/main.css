@@ -777,6 +777,13 @@ a.register-link {
 a.register-link:hover {
   color: white;
 }
+/* CSS for Code of conduct page */
+.coc-container p {
+	font-size: 1.5em;
+}
+.coc-container ul {
+	font-size: 1.5em;
+}
 
 /* Changes in padding and overflow in mobile view*/
 @media screen and (max-width:750px) {
