@@ -1,0 +1,29 @@
+{% extends 'base/base_ot.html' %}
+
+{% block title %}| About {% endblock %}
+{% block body %}
+{{ header.render_header() }}
+<div class="third-fold">
+  <div class="fold-1">
+    <div class="white-fold">
+      <div class="responsive-container">
+        <h2 class='f-c no-text-transform'>About</h2>
+        <div class="underline"></div>
+        <div class="segment override-a">
+          <div class="row">
+            <div class="col col-8 about-container">
+              <p>
+                PyCon,  the gathering for the community using and developing the open-source Python programming language.
+                This is the first year of the PyCon Pune where the community will meet for two days of talks and working on
+                upstream projects in two days of dev sprint.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{ footer.render_footer() }}
+  </div>
+</div>
+{% endblock %}

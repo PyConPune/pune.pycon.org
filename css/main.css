@@ -819,6 +819,11 @@ a.register-link:hover {
   font-size: 1.5em;
 }
 
+/* CSS for about page */
+.about-container p {
+  font-size: 1.5em;
+}
+
 /* Changes in padding and overflow in mobile view*/
 @media screen and (max-width:750px) {
   .row .col {
