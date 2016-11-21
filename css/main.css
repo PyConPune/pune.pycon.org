@@ -111,6 +111,11 @@ This class makes the nav look good on small screens */
   color: white;
 }
 
+.override-a-no-color-change a {
+  color: #585757;
+  text-decoration: underline;
+}
+
 @font-face {
     font-family: "Helvetica";
     src: url('../fonts/Helvetica/Helvetica.otf') format("opentype");
