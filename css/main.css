@@ -12,6 +12,10 @@ a {
   text-transform: none;
 }
 
+.disabled {
+  color: #d0d0d0;
+}
+
 .logo {
   height: 60px;
   position: absolute;
@@ -772,7 +776,7 @@ input.ticket-inp {
   font-size: 2em;
 }
 
-.register-btn {
+.register-btn, .disabled-btn {
   padding: 10px;
   border: 1px solid;
   border-radius: 30px;
