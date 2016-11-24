@@ -2,103 +2,197 @@
 <html lang="en">
 
 <head>
+    <link rel="apple-touch-icon" sizes="57x57" href="https://pune.pycon.org/images/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://pune.pycon.org/images/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://pune.pycon.org/images/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://pune.pycon.org/images/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://pune.pycon.org/images/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://pune.pycon.org/images/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://pune.pycon.org/images/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://pune.pycon.org/images/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://pune.pycon.org/images/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"
+          href="https://pune.pycon.org/images/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://pune.pycon.org/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://pune.pycon.org/images/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://pune.pycon.org/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="https://pune.pycon.org/images/favicons/manifest.json">
+
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="https://pune.pycon.org/images/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>PyCon Pune 2017 | Registration </title>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="images/favicon.ico">
-    <title>PyCon 2017</title>
-    <link href="css/main.css" rel="stylesheet">
+    <meta property="og:title" content="PyCon Pune 2017"/>
+    <meta property="og:image" content="https://pune.pycon.org/images/twitter_cover.png"/>
+    <meta property="og:site_name" content="PyCon Pune 2017"/>
+    <meta property="og:description"
+          content="PyCon, the gathering for the community using and developing the open-source Python programming language. This is the first year of the PyCon Pune where the community will meet for two days of talks and working on upstream projects in two days of dev sprint."/>
+    <link rel="icon" href="https://pune.pycon.org/images/favicon.ico">
+    <link href="https://pune.pycon.org/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
 </head>
 
-<body>
-    <div class="responsive-page">
-        <div class="responsive-container cover">
-            <div class="first-fold">
-                <div class="nav">
-                    <ul>
-                        <li>About</li>
-                        <li>Schedule</li>
-                        <li>Events</li>
-                        <li>Sponsors</li>
-                        <li>Venue</li>
-                        <li>PSF</li>
-                        <li>Registration</li>
-                        <li>Volunteer</li>
-                    </ul>
-                    <div class="clear"></div>
-                    <div class="align-center uppercase heading-block">
-                        <h1>Pycon 2017</h1>
-                        <h2 class="capture-it">Pune, India</h2>
-                        <h2 class="capture-it">May 28th - June 5th</h2>
-                    </div>
-                </div>
-                <!-- nav -->
-            </div>
-            <!-- first-fold -->
-        </div>
-        <!-- responsive-container -->
+<body onload="getImages()">
+<div class="responsive-page">
+    <div class="responsive-container cover non-parallax">
+        <div class="first-fold">
+            <div class="nav">
+                <style type="text/css">
+	        		.topnav {
+	        			margin: 0;
+	        		}
+	        		.logo {
+	        			top: 15px;
+	        		}
+                </style>
 
-        <div class="parallax-container">
-            <div class="parallax-layer layer-0" data-parallax-speed="0.05" data-max-scroll="565"></div>
-            <div class="parallax-layer layer-1" data-parallax-speed="0.1" data-max-scroll="565"></div>
-            <div class="parallax-layer layer-2" data-parallax-speed="0.1" data-max-scroll="565"></div>
-            <div class="parallax-layer layer-3" data-parallax-speed="0.5" data-max-scroll="565"></div>
-            <div class="parallax-layer layer-4" data-parallax-speed="0.7" data-max-scroll="565"></div>
-            <div class="parallax-layer layer-5" data-parallax-speed="0.9" data-max-scroll="565"></div>
-        </div>
+                <ul class="topnav" id="topNav">
+                    <li class="icon">
+                        <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+                    </li>
+                    <li><a href="https://pune.pycon.org/#about">About</a></li>
+                    <li><a href="https://pune.pycon.org/#sponsors">Sponsors</a></li>
+                    <li><a href="https://pune.pycon.org/#venue">Venue</a></li>
+                    <li><a href="https://pune.pycon.org/#sprints">Sprints</a></li>
+                    <li><a href="https://pune.pycon.org/#cfp">Talks</a></li>
+                    <li><a href="https://pune.pycon.org/registration/">Registration</a></li>
+                    <li><a href="https://www.python.org/psf/">PSF</li>
+                    <li><a href="https://github.com/PyConPune/website/blob/master/code-of-conduct.md">CoC</a></li>
+                    <li><a href="/"><img class="logo" src="../images/logo.png"></a></li>
+                </ul>
 
-        <div class="second-fold align-center">
-            <div class="responsive-container">
-                <h2>About</h2>
-                <p>
-                    PyCon is the largest annual gathering for the community using and developing the open-source Python programming language. PyCon is organized by the Python community for the community. We try to keep registration far cheaper than most comparable technology conferences, to make PyCon accessible to the widest group possible. PyCon is a diverse conference dedicated to providing an enjoyable experience to everyone. Our code of conduct is intended to help everyone maintain the PyCon spirit. We thank all attendees and staff for observing it.
-                </p>
-                <img src="images/fort_white.png">
-            </div>
-            <!-- responsive-container -->
-        </div>
-        <div class="third-fold">
-            <div class="fold-1">
-                <div class="skew-down"></div>
-                <div class="circle">Tutorials</div>
-                <div class="blue-fold">
-                    <p class="content">
-                        PyCon is proud to once again offer a stellar array of tutorials prior to PyCon's main conference days! These are multi-hour tutorial taught by experienced Pythonistas and instructors.
-                    </p>
-                </div>
-                <!-- blue-fold -->
-                <div class="green-fold">
-                    <div class="skew-up"></div>
-	                <div class="circle">Conference</div>
-                    <p class="content float-right">
-                        PyCon is the largest annual gathering for the community using and developing the open-source Python programming language.
-                    </p>
-                </div>
-                <!-- green-fold -->
-                <div class="yellow-fold">
-                    <div class="skew-down"></div>
-	                <div class="circle">Sprints</div>
-                    <p class="content">
-                        Development sprints is the key part of PyCon, and a chance for the contributors to open-source projects together face-to-face for up to four days of intensive learning, development and camaraderie.
-                    </p>
-                </div>
-                <!-- yellow-fold -->
                 <div class="clear"></div>
+                <div class="align-left uppercase heading-block" id="headerDetails">
+                    <h2>Pycon Pune 2017</h2>
+                    <h2>Pune, India</h2>
+                    <h2>February 16th - 19th</h2>
+                </div>
+            </div><!-- nav -->
+        </div><!-- first-fold -->
+    </div><!-- responsive-container -->
+    <div class="third-fold">
+        <div class="responsive-container">
+            <!--h2 class='f-c no-text-transform'>Register as a volunteer for
+                PyCon Pune 2017</h2-->
+            <h2 class='f-c no-text-transform'>Volunteers of PyCon Pune 2017</h2>
+            <div class="underline"></div>
+            <!--p>
+                PyCon, the gathering for the community using and developing the open-source
+                Python programming language. This is the first year of the PyCon Pune where
+                the community will meet for two days of talks and working on upstream
+                projects in two days of dev sprint.
+            </p>
+            <button class="button_ani align-center">Register Now</button-->
+        </div>
+
+        <div class="white-fold">
+            <div class="responsive-container">
+                <div class="row" id="image_list">
+                </div>
             </div>
         </div>
-    </div>
-    <!-- second-fold -->
-    </div>
-    </div>
-    <!-- responsive-page -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/parallax.js"></script>
-    <script type="text/javascript">
-	    new ParallaxManager('.parallax-layer');
-    </script>
-</body>
 
+        <div class="footer">
+            <img src="../images/footer.png"/>
+            <div class="extended-footer">
+                <div class="organized">
+                    <span class="b-f f-w">Co-organized by Department of Computer Engineering and IT, COEP</span>
+                </div>
+            </div>
+
+            <div class="clear"></div>
+        </div>
+
+    </div>
+
+</div><!-- responsive-page -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-86644340-1', 'auto');
+      ga('send', 'pageview');
+
+</script>
+<script type="text/javascript">
+      function myFunction() {
+        var x = document.getElementById("topNav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+          document.getElementById('headerDetails').style.display = "none";
+        } else {
+          x.className = "topnav";
+          document.getElementById('headerDetails').style.display = "block";
+        }
+      }
+
+      function getImages(){
+	    var volunteers = '{"v1":{"Name": "Amol Kahat", "Desg":"Intern", "Comp":"Red Hat","Img":"praveenpatil.jpg", "Blog":"akahat.wordpress.com"},\
+			   "v2":{"Name": "Amol Kahat", "Desg":"Intern", "Comp":"Red Hat", "Img":"praveenpatil.jpg", "Blog":"akahat.wordpress.com"},\
+			   "v3":{"Name": "Amol Kahat", "Desg":"Intern", "Comp":"Red Hat", "Img":"praveenpatil.jpg", "Blog":"akahat.wordpress.com"},\
+			   "v4":{"Name": "Amol Kahat", "Desg":"Intern", "Comp":"Red Hat","Img":"praveenpatil.jpg", "Blog":"akahat.wordpress.com"},\
+			   "v5":{"Name": "Amol Kahat", "Desg":"Intern", "Comp":"Red Hat", "Img":"praveenpatil.jpg", "Blog":"akahat.wordpress.com"},\
+			   "v6":{"Name": "Amol Kahat", "Desg":"Intern", "Comp":"Red Hat", "Img":"praveenpatil.jpg", "Blog":"akahat.wordpress.com"},\
+			   "v7":{"Name": "Amol Kahat", "Desg":"Intern", "Comp":"Red Hat","Img":"praveenpatil.jpg", "Blog":"akahat.wordpress.com"},\
+			   "v8":{"Name": "Amol Kahat", "Desg":"Intern", "Comp":"Red Hat", "Img":"praveenpatil.jpg", "Blog":"akahat.wordpress.com"},\
+			   "v9":{"Name": "Amol Kahat", "Desg":"Intern", "Comp":"Red Hat", "Img":"praveenpatil.jpg", "Blog":"akahat.wordpress.com"},\
+			   "v10":{"Name": "Amol Kahat", "Desg":"Intern", "Comp":"Red Hat","Img":"praveenpatil.jpg", "Blog":"akahat.wordpress.com"},\
+			   "v11":{"Name": "Amol Kahat", "Desg":"Intern", "Comp":"Red Hat", "Img":"praveenpatil.jpg", "Blog":"akahat.wordpress.com"},\
+			   "v12":{"Name": "Amol Kahat", "Desg":"Intern", "Comp":"Red Hat", "Img":"praveenpatil.jpg", "Blog":"akahat.wordpress.com"},\
+			   "v13":{"Name": "Amol Kahat", "Desg":"Intern", "Comp":"Red Hat","Img":"praveenpatil.jpg", "Blog":"akahat.wordpress.com"},\
+			   "v14":{"Name": "Amol Kahat", "Desg":"Intern", "Comp":"Red Hat", "Img":"praveenpatil.jpg", "Blog":"akahat.wordpress.com"},\
+			   "v15":{"Name": "Amol Kahat", "Desg":"Intern", "Comp":"Red Hat", "Img":"praveenpatil.jpg", "Blog":"akahat.wordpress.com"},\
+			   "v16":{"Name": "Amol Kahat", "Desg":"Intern", "Comp":"Red Hat", "Img":"praveenpatil.jpg", "Blog":"akahat.wordpress.com"},\
+			   "v17":{"Name": "Amol Kahat", "Desg":"Intern", "Comp":"Red Hat", "Img":"praveenpatil.jpg", "Blog":"akahat.wordpress.com"},\
+			   "v18":{"Name": "Amol Kahat", "Desg":"Intern", "Comp":"Red Hat", "Img":"praveenpatil.jpg", "Blog":"akahat.wordpress.com"},\
+			   "v19":{"Name": "Amol Kahat", "Desg":"Intern", "Comp":"Red Hat", "Img":"praveenpatil.jpg", "Blog":"akahat.wordpress.com"},\
+			   "v20":{"Name": "Amol Kahat", "Desg":"Intern", "Comp":"Red Hat", "Img":"praveenpatil.jpg", "Blog":"akahat.wordpress.com"},\
+			   "v21":{"Name": "Amol Kahat", "Desg":"Intern", "Comp":"Red Hat", "Img":"praveenpatil.jpg", "Blog":"akahat.wordpress.com"},\
+			   "v22":{"Name": "Amol Kahat", "Desg":"Intern", "Comp":"Red Hat", "Img":"praveenpatil.jpg", "Blog":"akahat.wordpress.com"}}';
+
+	    obj = JSON.parse(volunteers);
+	        var image_list = document.getElementById("image_list");
+	        var ul = document.createElement("ul");
+            ul.setAttribute('class','ch-grid');
+            Object.keys(obj).forEach(function(key){
+		        li = document.createElement("li");
+		        li.setAttribute('class','ch-item');
+                li.setAttribute('style','background: url(../images/'+obj[key].Img+') center center');
+                div1 = document.createElement("div");
+                div1.setAttribute('class', 'ch-info');
+                h3 = document.createElement("h3");
+		        t = document.createTextNode(obj[key].Name);
+		        h3.appendChild(t);
+		        p= document.createElement("p");
+		        pt = document.createTextNode(obj[key].Desg);
+		        a = document.createElement("a");
+		        at = document.createTextNode("View Blog");
+		        a.setAttribute('href',obj[key].Blog);
+		        a.appendChild(at);
+		        p.appendChild(pt);
+		        p.appendChild(a);
+		        div1.appendChild(h3);
+		        div1.appendChild(p);
+		        li.appendChild(div1);
+                ul.appendChild(li);
+                image_list.appendChild(ul);
+		    })
+        }
+
+</script>
+</body>
 </html>
