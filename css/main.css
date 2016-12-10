@@ -771,6 +771,9 @@ input.ticket-inp {
   font-size: 2em;
   font-weigh: 700;
 }
+.ticket-title a:hover {
+  color: #3e2723 !important;
+}
 
 .ticket-price {
   font-size: 2em;
