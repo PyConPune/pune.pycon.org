@@ -16,6 +16,10 @@ a {
   color: #d0d0d0;
 }
 
+.underline-text {
+  border-bottom: 1px solid black;
+}
+
 .logo {
   height: 60px;
   position: absolute;
