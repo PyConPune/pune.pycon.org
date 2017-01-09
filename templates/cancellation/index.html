@@ -1,0 +1,61 @@
+{% extends 'base/base_ot.html' %}
+
+{% block title %}| Cancellation & Transfers {% endblock %}
+{% block body %}
+{{ header.render_header() }}
+<div class="third-fold">
+  <div class="fold-1">
+    <div class="white-fold">
+      <div class="responsive-container">
+        <div class="segment segment-p-65 override-a-no-color-change">
+          <div class="row">
+            <div class="col col-12">
+              <div class="coc-container">
+                <h2 class="no-text-transform">Cancellation of Tickets</h2>
+                <div class="underline"></div>
+                <div>
+                  <p class="coc-text">
+                    Cancellation of Ticket of PyCon Pune 2017 is allowed till 14th of January 2017. On cancellation the full amount will be refunded.
+                    No cancellation of ticket will be done after 14th of January 2017.
+                  </p>
+                </div>
+                <div>
+                  <p class="coc-text">
+                    <strong>How can I cancel the ticket?</strong><br/>
+                    We are handling ticket booking and payments via Instamojo. Therefore, to cancel a ticket you need to create a refund case through Instamojo.<br/>
+                    Follow this link to <a href="https://support.instamojo.com/hc/en-us/articles/208387589-Create-a-refund-case-Buyer">create a refund case</a>
+                  </p>
+                </div>
+              </div>
+              <div class="coc-container">
+                <h2 class="no-text-transform">Transfer of Tickets</h2>
+                <div class="underline"></div>
+                <div>
+                  <p class="coc-text">
+                    Transfer of Ticket is allowed till 14th of February 2017.
+                  </p>
+                </div>
+                <div>
+                  <p class="coc-text">
+                    <strong>How can I transfer the ticket?</strong><br/>
+                    In case of transfer, send an email to <strong>pyconpune@gmail.com</strong> with the subject <strong>"Transfer of PyCon Pune 2017 Ticket"</strong>. The email should contain <strong>your name, your email</strong> and the details <strong>(name, email)</strong> of the person you are transferring to.
+                    <br/>
+                    <strong>Will you generate a new ticket after the transfer?</strong><br/>
+                    No, you can forward the email you received from Instamojo to the Transferee.
+                    <br/>
+                  </p>
+                </div>
+              </div>
+              <div class="coc-container">
+                <p>For any queries, drop a mail to pyconpune@gmail.com.</p>
+              </div>
+            </div>
+          </div>
+         </div>
+      </div>
+    </div>
+
+    {{ footer.render_footer() }}
+  </div>
+</div>
+{% endblock %}
