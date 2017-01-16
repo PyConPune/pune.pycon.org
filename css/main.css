@@ -861,6 +861,19 @@ img.spnsr {
   color: #f2f2f2;
 }
 
+.volunteers.segment {
+  padding-top: 0px;
+}
+
+.volunteers .row {
+  margin-left: 5vw;
+}
+
+.volunteers .row .col {
+  text-align: center;
+  margin-top: 10vh;
+}
+
 @media screen and (max-width:1024px) {
   .col-md-8 { width: 80% !important; }
   .col-md-7 { width: 70% !important; }
