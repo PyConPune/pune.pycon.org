@@ -53,6 +53,10 @@ a {
     display: none;
 }
 
+.ml-5 {
+  margin-left: 5em;
+}
+
 /* When the screen is less than 750 pixels wide, hide all list items,
 except for the last one (logo). Show the list item that contains the link to open and
 close the topnav (li.icon) */
@@ -80,6 +84,10 @@ This class makes the nav look good on small screens */
   .topnav.responsive li a {
     display: block;
     text-align: center;
+  }
+
+  .ml-5 {
+    margin-left: 0em;
   }
 }
 
