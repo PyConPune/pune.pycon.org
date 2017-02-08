@@ -1,0 +1,48 @@
+{% extends 'base/base_ot.html' %}
+
+{% block title %}| Supporters {% endblock %}
+{% block body %}
+{{ header.render_header() }}
+<div class="third-fold">
+  <div class="fold-1">
+    <div class="white-fold">
+      <div class="responsive-container">
+        <h2 class='f-c no-text-transform'>Supporters</h2>
+        <div class="underline"></div>
+        <div class="segment override-a">
+          <div class="row">
+            <div class="col col-2">
+              <div class="col-text center"><img alt="supporter" src="/images/nickcoghlan.jpg" /></div>
+            </div>
+            <div class="col col-8">
+              <div class="col-text row-title">Nick Coghlan <a href="https://twitter.com/ncoghlan_dev" target="_blank"><i class="fa fa-twitter m-l-5" aria-hidden="true"></i></a><a href="http://www.curiousefficiency.org/" target="_blank"><i class="fa fa-pencil m-l-5" aria-hidden="true"></i></a></div>
+              <div class="col-text">Nick Coghlan works on software supply chain management tools for Red Hat, and has been a CPython core developer since 2005. Prior to joining Red Hat in June 2011, Nick spent over 12 years working as a software developer, system integrator and system architect in Australia's aerospace & defence sector.</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-2">
+              <div class="col-text center"><img alt="supporter" src="/images/honza.jpg" /></div>
+            </div>
+            <div class="col col-8">
+              <div class="col-text row-title">Honza Král <a href="https://twitter.com/honzakral" target="_blank"><i class="fa fa-twitter m-l-5" aria-hidden="true"></i></a></div>
+              <div class="col-text">Honza is a Python programmer and Django core developer – since he is scared of the bright and shiny world of browsers, designers, and users he prefers to stay buried deep in the infrastructure code and just provides others with tools to do the actual site-building.
+                Since 2008 Honza has been building content web sites for fun and profit. During this time he discovered Elasticsearch which lead to him joining the company behind it in 2013 to work on the Python drivers.</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-2">
+              <div class="col-text center"><img alt="supporter" src="/images/praveenpatil.jpg" /></div>
+            </div>
+            <div class="col col-8">
+              <div class="col-text row-title">Praveen Patil <a href="https://twitter.com/_gnovi" target="_blank"><i class="fa fa-twitter m-l-5" aria-hidden="true"></i></a><a href="http://www.gnovi.in/" target="_blank"><i class="fa fa-pencil m-l-5" aria-hidden="true"></i></a></div>
+              <div class="col-text">Praveen has been Google Summer of Code alumnus (GSoC 2014, 2015 and 2016). He is also mentor for Google Code-In and proud Fedora volunteer. Actively involved in ExpEYES project (http://expeyes.in), teacher training programs and in the free time develops e-content for National Repository of Open Educational Resources (NROER). Experimenting and exploring the use of Python to actively engage the students and help them visualize the concepts of science and maths and have better understanding.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{ footer.render_footer() }}
+  </div>
+</div><!-- third-fold -->
+{% endblock %}
