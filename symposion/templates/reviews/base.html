@@ -1,0 +1,110 @@
+{% extends "site_base.html" %}
+
+{% load compress %}
+{% load i18n %}
+{% load sitetree %}
+
+{% block extra_style %}
+  {% compress css %}
+    <style type="text/css">
+        div.dataTables_length label {
+            float: left;
+            text-align: left;
+        }
+
+        div.dataTables_length select {
+            width: 75px;
+        }
+
+        div.dataTables_filter label {
+            float: right;
+        }
+
+        div.dataTables_info {
+            padding-top: 8px;
+        }
+
+        div.dataTables_paginate {
+            float: right;
+            margin: 0;
+        }
+
+        table.table {
+            clear: both;
+            margin-bottom: 6px !important;
+            background-color: white;
+        }
+
+        tr.selected {
+            background-color: grey;
+        }
+
+        .table-striped tbody > tr:nth-child(odd).selected > td {
+            background-color: transparent;
+        }
+
+        .table-striped tbody > tr:nth-child(odd).selected > th {
+            background-color: transparent;
+        }
+
+        table.table thead .sorting,
+        table.table thead .sorting_asc,
+        table.table thead .sorting_desc,
+        table.table thead .sorting_asc_disabled,
+        table.table thead .sorting_desc_disabled {
+            cursor: pointer;
+            *cursor: hand;
+        }
+
+        {% comment %}
+        table.table thead .sorting { background: url('{{ STATIC_URL }}datatables/images/sort_both.png') no-repeat center right; }
+        table.table thead .sorting_asc { background: url('{{ STATIC_URL }}datatables/images/sort_asc.png') no-repeat center right; }
+        table.table thead .sorting_desc { background: url('{{ STATIC_URL }}datatables/images/sort_desc.png') no-repeat center right; }
+
+        table.table thead .sorting_asc_disabled { background: url('{{ STATIC_URL }}datatables/images/sort_asc_disabled.png') no-repeat center right; }
+        table.table thead .sorting_desc_disabled { background: url('{{ STATIC_URL }}datatables/images/sort_desc_disabled.png') no-repeat center right; }
+        {% endcomment %}
+
+        table.dataTable th:active {
+            outline: none;
+        }
+    </style>
+  {% endcompress %}
+{% endblock %}
+
+{% block body_class %}reviews{% endblock %}
+
+{% block body_outer %}
+  {% include "_messages.html" %}
+
+  {% block breadcrumbs %}
+    {% sitetree_breadcrumbs from "main" %}
+  {% endblock %}
+
+  <p>
+    {% for section in review_sections %}
+      {{ section }}:
+      <a href="{% url 'review_section' section.section.slug %}">
+        {% trans "Reviews" %}
+      </a>
+      {% comment %}
+      •
+      <a href="{% url 'review_section_assignments' section.section.slug %}">
+        {% trans "Your Assignments" %}
+      </a>
+      {% endcomment %}
+      •
+      <a href="{% url 'review_status' section.section.slug %}">
+        {% trans "Voting Status" %}
+      </a>
+      {% if request.user.is_staff %}
+      •
+      <a href="{% url 'result_notification' section.section.slug 'accepted' %}">{% trans "Result Notification" %}</a>
+      {% endif %}
+      <br>
+    {% endfor %}
+  </p>
+
+  {% block body %}
+  {% endblock %}
+{% endblock %}

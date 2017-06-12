@@ -1,0 +1,42 @@
+{% extends "site_base.html" %}
+
+{% load i18n %}
+
+{% block body_class %}auth{% endblock %}
+
+{% block body_outer %}
+    <div class="row">
+        <div class="span12">
+            <div class="page-head">
+                <h1>{% block page_title %}{% endblock %}</h1>
+                {% block breadcrumbs %}
+                    <ul class="breadcrumb">
+                        <li><a href="{% url 'dashboard' %}">{% trans "Dashboard" %}</a></li>
+                    </ul>
+                {% endblock %}
+            </div>
+            <div class="box">
+                <div class="box-content">
+                    {% block body %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_script %}
+    <script type="text/javascript">
+        $(function() {
+            // Prepend @ symbol to any twitter username fields
+            var twitterInput = $("#id_twitter_username");
+            if (twitterInput) {
+                var wrapperdiv = $("<div class='input-prepend'/>");
+                var twitterInput = $("#id_twitter_username");
+
+                twitterInput.parent("div.controls").prepend(wrapperdiv);
+                wrapperdiv.append("<span class='add-on'>@</span>", twitterInput);
+            };
+        });
+    </script>
+{% endblock %}
