@@ -123,23 +123,40 @@ a:focus {
   height: auto;
   padding: 100px 0;
   text-align: center;
-  color: white;
-  background: url(../img/intro-bg.jpg) no-repeat bottom center scroll;
+  color: white;  
   background-color: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+  position: relative;
+}
+.intro .bg {
+  background: url(../img/intro-bg.jpg) no-repeat bottom center scroll;
+  opacity: 0.2;
+  height: 100vh;
 }
 .intro .intro-body {
   display: table-cell;
   vertical-align: middle;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 20%;
+  margin-left: auto;
+  margin-right: auto;
+}
+input.contact-input {
+  padding: 22px;
+  border-radius: 0px;
+  border: 1px solid #42DCA3;
 }
 .intro .intro-body .brand-heading {
   font-size: 40px;
 }
 .intro .intro-body .intro-text {
   font-size: 18px;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 @media (min-width: 768px) {
   .intro {
@@ -152,6 +169,9 @@ a:focus {
   .intro .intro-body .intro-text {
     font-size: 26px;
   }
+}
+.btn.btn-circle.page-scroll {
+  margin-top: 100px;
 }
 .btn-circle {
   width: 70px;
