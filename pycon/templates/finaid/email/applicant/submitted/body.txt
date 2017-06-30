@@ -1,3 +1,0 @@
-PyCon has received your financial aid application.
-
-Link: {{ fa_app_url }}
