@@ -132,7 +132,8 @@ a:focus {
   position: relative;
 }
 .intro .bg {
-  background: url(../img/intro-bg.jpg) no-repeat bottom center scroll;
+  background: url(../img/intro-bg-p.jpg) no-repeat;
+  background-size: cover;
   opacity: 0.2;
   height: 100vh;
 }
