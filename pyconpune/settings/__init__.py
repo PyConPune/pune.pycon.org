@@ -56,9 +56,9 @@ INSTALLED_APPS = [
     'pinax_theme_bootstrap',
     'bootstrapform',
 
+    'inventory',
     'root',
     'ticket',
-    'tshirt',
 ]
 
 MIDDLEWARE_CLASSES = [
