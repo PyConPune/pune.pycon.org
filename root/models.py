@@ -1,5 +1,9 @@
-from __future__ import unicode_literals
-
 from django.db import models
 
-# Create your models here.
+
+class Base(models.Model):
+    """ Abstract model to save the common data """
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        abstract = True

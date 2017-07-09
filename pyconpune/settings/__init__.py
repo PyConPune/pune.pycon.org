@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'bootstrapform',
 
     'root',
+    'ticket',
 ]
 
 MIDDLEWARE_CLASSES = [
