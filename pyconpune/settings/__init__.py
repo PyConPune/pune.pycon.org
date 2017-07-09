@@ -51,6 +51,7 @@ INSTALLED_APPS = [
 
     'root',
     'ticket',
+    'tshirt',
 ]
 
 MIDDLEWARE_CLASSES = [
