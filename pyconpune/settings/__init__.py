@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
@@ -27,6 +26,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# django-user-accounts settings
+
+# Using email for authentication
+ACCOUNT_EMAIL_UNIQUE = True
+ACCOUNT_EMAIL_CONFIRMATION_REQUIRED = True
+
+AUTHENTICATION_BACKENDS = ['account.auth_backends.EmailAuthenticationBackend']
+ACCOUNT_EMAIL_CONFIRMATION_REQUIRED = True
 
 # Application definition
 
@@ -73,7 +80,9 @@ ROOT_URLCONF = 'pyconpune.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR + '/templates/',
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

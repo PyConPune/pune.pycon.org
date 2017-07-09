@@ -1,7 +1,9 @@
-from django.forms import ModelForm
-from django.contrib.auth.models import User
+import account.forms
 
-class UserSignupForm(ModelForm):
-    class Meta:
-        model = User
-        fields =
+
+class SignupForm(account.forms.SignupForm):
+    """ Signup Form """
+
+    def __init__(self, *args, **kwargs):
+        super(SignupForm, self).__init__(*args, **kwargs)
+        del self.fields["username"]
