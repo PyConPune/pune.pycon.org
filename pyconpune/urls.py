@@ -20,5 +20,6 @@ import root.urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'', include(root.urls))
+    url(r'^account/', include('account.urls')),
+    url(r'', include(root.urls)),
 ]

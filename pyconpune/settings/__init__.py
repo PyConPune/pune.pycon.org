@@ -45,6 +45,9 @@ INSTALLED_APPS = [
     'symposion.speakers',
     'symposion.sponsorship',
     'symposion.teams',
+    'account',
+    'pinax_theme_bootstrap',
+    'bootstrapform',
 
     'root',
 ]
@@ -58,6 +61,9 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'account.middleware.LocaleMiddleware',
+    'account.middleware.TimezoneMiddleware',
 ]
 
 ROOT_URLCONF = 'pyconpune.urls'
@@ -73,10 +79,13 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'account.context_processors.account',
+                'pinax_theme_bootstrap.context_processors.theme',
             ],
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'pyconpune.wsgi.application'
 
