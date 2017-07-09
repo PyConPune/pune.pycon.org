@@ -38,7 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'symposion',
+    'symposion.conference',
+    'symposion.reviews',
+    'symposion.proposals',
+    'symposion.schedule',
+    'symposion.speakers',
+    'symposion.sponsorship',
+    'symposion.teams',
+
     'root',
 ]
 
