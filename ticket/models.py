@@ -34,7 +34,7 @@ class UserTicket(Base):
 
     class Meta:
         verbose_name = _("user ticket")
-        verbose_name_plural = _("tickets")
+        verbose_name_plural = _("user tickets")
         ordering = ['-timestamp']
 
     def __unicode__(self):
