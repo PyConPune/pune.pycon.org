@@ -18,10 +18,12 @@ from django.contrib import admin
 
 import root.urls
 import auth.urls
+import ticket.urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include(root.urls)),
     url(r'', include(auth.urls)),
+    url(r'', include(ticket.urls)),
     url(r'^account/', include('account.urls')),
 ]
