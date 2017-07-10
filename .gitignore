@@ -1,3 +1,5 @@
 .vscode
 *.pyc
 *.swp
+db.sqlite3
+static/

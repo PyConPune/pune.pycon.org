@@ -25,5 +25,7 @@ urlpatterns = [
     url(r'', include(root.urls)),
     url(r'', include(auth.urls)),
     url(r'', include(ticket.urls)),
+    url(r'^jet/', include('jet.urls', 'jet')),
+    url(r'^jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),
     url(r'^account/', include('account.urls')),
 ]
