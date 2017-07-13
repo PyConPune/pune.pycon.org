@@ -2,6 +2,8 @@ import uuid
 
 from django.db import models
 from django.contrib.auth.models import User
+from django.contrib.contenttypes.fields import GenericForeignKey
+from django.contrib.contenttypes.models import ContentType
 from django.utils.translation import ugettext as _
 
 from symposion.conference.models import Conference
@@ -25,6 +27,24 @@ class Ticket(Base):
         return u"%s: %s" % (self.conference.title, self.title)
 
 
+class TicketAddons(Base):
+    """ Model for the addons for the tickets, which needs to be bought along
+    with the ticket. """
+    title = models.CharField(_('name'), max_length=255)
+    ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE)
+    price = models.PositiveIntegerField(_('price'), default=0)
+
+
+class CouponCode(Base):
+    """ Model for storing the coupon code, which can be applied on both the
+    Ticket & TicketAddons.
+    """
+    code = models.CharField(_('coupon'), max_length=20)
+    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
+    object_id = models.PositiveIntegerField()
+    content_object = GenericForeignKey('content_type', 'object_id')
+
+
 class UserTicket(Base):
     """ Model for maitaining the ticket entry for all the Users. """
 
@@ -39,4 +59,5 @@ class UserTicket(Base):
 
     def __unicode__(self):
         return u'%s:%s' % (self.user.username, self.ticket.title)
+
 
