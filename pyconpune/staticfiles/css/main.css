@@ -1,0 +1,940 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.no-text-transform {
+  text-transform: none;
+}
+
+.disabled {
+  color: #d0d0d0;
+}
+
+.underline-text {
+  border-bottom: 1px solid black;
+}
+
+.logo {
+  height: 60px;
+  position: absolute;
+  left: 0;
+  top: 5px;
+}
+.responsive-page {
+    width: 100%;
+    margin: 0 auto
+}
+
+.responsive-container {
+    max-width: 1100px;
+    margin: auto
+}
+
+.topnav {
+    list-style: none! margin: 0;
+    font-family: "RobotoCondensed";
+    color: #455a64;
+}
+
+.topnav li {
+    display: inline-block;
+    margin: 20px;
+    font-size: 22px;
+    float: right;
+}
+
+.topnav li.icon {
+    display: none;
+}
+
+.ml-5 {
+  margin-left: 5em;
+}
+
+/* When the screen is less than 750 pixels wide, hide all list items,
+except for the last one (logo). Show the list item that contains the link to open and
+close the topnav (li.icon) */
+@media screen and (max-width:750px) {
+  .topnav li:not(:last-child) {display: none;}
+  .topnav li.icon {
+    float: right;
+    display: inline-block;
+  }
+}
+
+/* The "responsive" class is added to the nav with JavaScript when the user clicks on the icon.
+This class makes the nav look good on small screens */
+@media screen and (max-width:750px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive li {
+    float: none;
+    display: inline;
+  }
+  .topnav.responsive li a {
+    display: block;
+    text-align: center;
+  }
+
+  .ml-5 {
+    margin-left: 0em;
+  }
+}
+
+.m-t-100 {
+  margin-top: 100px;
+}
+
+.clear {
+    clear: both;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.gray {
+  color: #ababab;
+}
+
+.f-c {
+  color: #585757
+}
+
+.underline {
+  border-bottom: 1px solid #ababab;
+}
+
+.override-a a:link, .overrid-a a:visited {
+    color: #585757;
+}
+
+.override-a a:hover {
+  color: white;
+}
+
+.override-a-no-color-change a {
+  color: #585757;
+  text-decoration: underline;
+}
+
+@font-face {
+    font-family: "Helvetica";
+    src: url('../fonts/Helvetica/Helvetica.otf') format("opentype");
+}
+
+@font-face {
+    font-family: "RobotoCondensed";
+    src: url('../fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: "Rampung";
+    src: url('../fonts/Rampung/Rampung.ttf') format("truetype");
+}
+
+.capture-it {
+    font-family: "CaptureIt";
+}
+
+h1 {
+    font-size: 3em;
+    font-family: "Rampung";
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+h2 {
+    font-family: "RobotoCondensed";
+    font-size: 3em;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+p {
+    font-family: "RobotoCondensed";
+    font-size: 2em;
+    line-height: 1.4em;
+}
+
+i {
+  color: #585757;
+}
+
+.b-f {
+  font-family: "RobotoCondensed";
+  font-size: 2em;
+  line-height: 1.4em;
+}
+
+.s-y-t {
+  padding: 5px 7px 5px 7px;
+  border: 2px white solid;
+  border-radius: 5px;
+}
+
+.m-l-5 {
+  margin-left: 5px;
+}
+
+span.s-y-t:hover {
+  background: white;
+  cursor: pointer;
+  transition: all 500ms ease;
+}
+
+span.s-y-t a {
+  color: white;
+}
+
+span.s-y-t a:hover {
+  color: #aed581;
+}
+
+.cover {
+    position: relative;
+    z-index: 1;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.heading-block {
+    color: #546e7a;
+}
+
+.circle {
+    width: 250px;
+    height: 250px;
+    font-family: "RobotoCondensed";
+    background: white;
+    border-radius: 50%;
+    float: left;
+    position: absolute;
+    top: 50px;
+    text-align: center;
+    font-size: 3em;
+    left: 180px;
+    line-height: 5em;
+    color: #ccc;
+    z-index: 10;
+    font-weight: 600;
+}
+
+.first-fold {
+    min-height: 90vh;
+}
+
+.second-fold {
+    padding: 30px;
+    min-height: 600px;
+    background: #1B0F0C;
+    color: #fff;
+    position: relative;
+    z-index: 10;
+}
+
+.second-fold img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    right: 0;
+    width: 25%;
+}
+
+.skew-up {
+    width: 100%;
+    background: #fff;
+    height: 150px;
+    float: left;
+    position: absolute;
+    transform: skew(0deg, 2deg);
+    z-index: 1;
+}
+
+.skew-down {
+    width: 100%;
+    background: #fff;
+    height: 150px;
+    float: left;
+    position: absolute;
+    transform: skew(0deg, -2deg);
+    z-index: 1;
+}
+
+.third-fold .fold-1 {
+    min-height: 500px;
+    color: #fff;
+    position: relative;
+}
+
+.third-fold .fold-1 {
+    top: -100px;
+}
+
+.third-fold .fold-1 .white-fold {
+    position: relative;
+    z-index: 0;
+    background: #FFFFFF;
+    top: 160px;
+}
+
+.third-fold .fold-1 .green-fold {
+    position: relative;
+    z-index: 0;
+    background: #AED581;
+    top: 160px;
+}
+
+.third-fold .fold-1 .yellow-fold {
+    position: relative;
+    z-index: 0;
+    background: #ffff8d;
+    color: #9ca3a8;
+    top: 160px;
+}
+
+.white-fold .skew-down {
+    top: -30px;
+}
+
+.green-fold .skew-up {
+    top: -90px;
+}
+
+.green-fold .circle,
+.venue-fold .circle {
+  right: 100px;
+  top: -100px;
+  left: inherit;
+}
+
+.circle.right {
+  right: 100px;
+  left: inherit;
+}
+
+.yellow-fold .skew-down {
+  top: -115px;
+}
+.content {
+    width: 50%;
+    padding: 150px 100px;
+}
+
+.parallax-container {
+    position: fixed;
+    overflow: visible;
+    width: 100%;
+    height: 100vh;
+}
+
+.parallax-layer {
+    width: 100%;
+    height: 79vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: 100% 500px;
+}
+
+.layer-0 {
+    top: 0;
+    z-index: 5;
+    background: #fefefe url('../images/sun.png') no-repeat top 40px center;
+    background-size: 120px 138.5px;
+}
+
+.layer-1 {
+    top: 160px;
+    z-index: 10;
+    background-image: url('../images/shaniwarwada.png');
+    background-repeat: no-repeat;
+    background-size: auto;
+    z-index: 20;
+}
+
+.layer-2 {
+    /*top: -50px;*/
+    z-index: 10;
+    top: 160px;
+    background-image: url('../images/rock4.png');
+}
+
+.layer-3 {
+    /*top: -10px;*/
+    z-index: 15;
+    top: 160px;
+    background-image: url('../images/rock3.png');
+}
+
+.layer-4 {
+    /*top: 65px;*/
+    z-index: 20;
+    top: 160px;
+    background-image: url('../images/rock2.png');
+}
+
+.layer-5 {
+    /*top: 160px;*/
+    top: 160px;
+    z-index: 25;
+    background-image: url('../images/rock1.png');
+}
+
+.nav a {
+  text-decoration: none;
+  color: #455a64;
+  cursor: pointer;
+}
+
+.nav h1 {
+  font-family: "Rampung";
+  font-size: 3em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.nav h2 {
+  font-family: "Rampung";
+  font-size: 2.5em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.segment {
+  padding: 100px 0;
+  margin-bottom: 100px;
+  color: #585757;
+  font-family: "RobotoCondensed";
+}
+
+.segment-p-65 {
+  padding: 65px 0;
+}
+
+.title {
+  background-color: #aed581;
+  padding: 30px;
+  color: white;
+  font-family: "RobotoCondensed";
+}
+
+.title .big {
+  font-size: 2em;
+}
+
+.title-small {
+  font-size: 1em;
+}
+
+.title .col {
+    padding: 15px 0;
+    text-align: center;
+    border-left: 1px solid white;
+}
+
+.center {
+  text-align: center;
+}
+
+input.ticket-inp {
+    width: 10vh;
+    text-align: center;
+    font-size: 0.9em;
+    height: 7vh;
+}
+
+.signs {
+  font-size: 1.2em;
+  cursor: pointer;
+  padding: 0 10px;
+}
+
+.submit-btn:hover {
+  cursor: pointer;
+  transition: all 500ms ease;
+}
+
+.submit-btn {
+  padding: 5px 7px 5px 7px;
+  border-radius: 5px;
+  font-size: 1.2em;
+  width: 15%;
+  margin: auto;
+  text-align: center;
+}
+
+.submit-btn.green:hover{
+  background: #AED581;
+  color: white;
+}
+
+.submit-btn.green {
+  border: 2px #AED581 solid;
+  color: #AED581;
+}
+
+.submit-btn.blue:hover{
+  background: #8de8ff;
+  color: white;
+}
+
+.submit-btn.blue {
+  border: 2px #8de8ff solid;
+  color: #8de8ff;
+}
+
+.submit-btn.pink:hover{
+  background: pink;
+  color: white;
+}
+
+.submit-btn.pink {
+  border: 2px pink solid;
+  color: pink;
+}
+
+/*** Grid System ***/
+
+.row {
+  overflow: hidden;
+  padding: 1.2em;
+}
+
+.row .col{
+  float: left;
+  min-width: 85px;
+}
+
+.col-8 { width: 80%; }
+.col-7 { width: 70%; }
+.col-6 { width: 60%; }
+.col-5 { width: 50%; }
+.col-4 { width: 40%; }
+.col-3 { width: 30%; }
+.col-2 { width: 20%; }
+.col-1 { width: 10%; }
+
+.col-text {
+  font-size: 1.2em;
+}
+
+/* Third Fold */
+
+.third-fold .white-fold img {
+  height: 150px;
+  width: 150px;
+  border-radius: 80px;
+}
+
+.third-fold .speaker-info {
+  width: 70%;
+  font-size: 0.7em;
+  margin-left: 30px;
+  vertical-align: text-bottom;
+  color: #585757;
+}
+
+.third-fold .s-left {
+  padding-right: 145px;
+  position: relative;
+}
+
+.third-fold .s-right {
+  padding-left: 145px;
+  position: relative;
+}
+
+.third-fold .oval {
+  width: 40px;
+  height: 70px;
+  border-radius: 40px / 60px;
+  position: absolute;
+  top: 1.4em;
+  right: 8em;
+  z-index: -1;
+}
+
+.third-fold .pink {
+  background: pink;
+}
+
+.third-fold .blue {
+  background: #8de8ff;
+}
+
+.third-fold .yellow {
+  background: #ffff8d;
+}
+
+.third-fold h3 {
+  font-family: "RobotoCondensed";
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.third-fold .line {
+  width: 13em;
+  border-bottom: 12px solid #aed581;
+  position: absolute;
+  left: 3em;
+  z-index: -1;
+}
+
+.third-fold .left-line {
+  top: 13em;
+  -webkit-transform: rotate(60deg);
+}
+
+.third-fold .tf.skew-down {
+  height: 200px;
+}
+
+.third-fold .right-line {
+  bottom: 13em;
+  -webkit-transform: rotate(-60deg);
+}
+
+.third-fold .speakers-block {
+  padding: 100px 0px;
+}
+
+.speaker p {
+  font-size: 17px;
+}
+
+.green-fold .content,
+.yellow-fold .content {
+  width: 55%;
+  padding: 230px 225px;
+}
+
+#ds-venue, #cf-venue {
+  height: 500px;
+  width: 50%;
+  float:left;
+  z-index: 0;
+  margin-top: 115px;
+}
+
+.yellow-fold .circle {
+  top: -150px;
+}
+
+.sponsors-fold {
+  position: relative;
+  min-height: 500px;
+  top: 160px;
+  text-align: center;
+  background: white;
+  color: black;
+}
+
+.sponsors-fold .b-f {
+  font-size: 3em;
+}
+
+.p-t-100 {
+  padding-top: 100px;
+}
+
+.sponsors-fold .button {
+  background-color: white;
+  border: 1px solid #9a9a9a;
+  color: #7d7d7d;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  margin-top: 25px;
+}
+
+/*.sponsors-fold .button:hover {
+  transition: all 500ms ease;
+  background-color: #9a9a9a;
+  color:white !important;
+}*/
+
+.sponsors-fold a {
+  color: #7d7d7d;
+}
+
+.footer {
+  background: white;
+  position: relative;
+}
+
+.footer img {
+  width: 100%;
+}
+
+.third-fold {
+  height: 100px;
+}
+
+
+.fs-3-5 {
+  font-size: 3.5em !important;
+}
+
+.fs-2 {
+  font-size: 2em !important;
+}
+
+.fs-1-5 {
+  font-size: 1.5em !important;
+}
+
+.extended-footer {
+  position: relative;
+  color: black;
+  background-color: #3e2723;
+  margin: 0;
+  top: -7px;
+  min-height: 150px;
+}
+
+.f-w {
+  color: white;
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+.organized {
+  text-align: center;
+  padding-top: 40px;
+  box-sizing: border-box;
+}
+
+.venue-fold {
+  height: 455px;
+  position: relative;
+}
+
+.venue-fold .circle {
+  top: -35px;
+}
+
+.map-overlay {
+   background:transparent;
+   position:absolute;
+   width:100%;
+   height:500px;
+   top:120px;
+   z-index: 1;
+}
+
+.responsive-container.non-parallax{
+  max-width:none;
+  background-image: url(../images/header.png);
+  background-size: 100% auto;
+}
+
+.non-parallax .first-fold {
+  min-height: 21.5vw;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.non-parallax .heading-block.align-left {
+  width: 15em;
+  line-height: 0.51em;
+  margin-top: 3em;
+  text-align: center;
+}
+
+.non-parallax .nav .logo {
+  margin-left: 5vw;
+}
+
+.non-parallax h1{
+  font-size: 1.5em;
+}
+
+.non-parallax h2{
+  font-size: 1.25em;
+}
+
+.ticket-title , .row-title {
+  font-size: 2em;
+  font-weigh: 700;
+}
+.ticket-title a:hover {
+  color: #3e2723 !important;
+}
+
+.ticket-price {
+  font-size: 2em;
+}
+
+.register-btn, .disabled-btn {
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 30px;
+  font-family: "RobotoCondensed";
+}
+
+.register-btn-inv {
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 30px;
+  background: #3e2723;
+  color: white;
+  font-family: "RobotoCondensed";
+}
+
+.register-btn-inv:hover {
+  background: white !important;
+  color: #585757;
+  cursor: pointer;
+}
+
+.center-btn {
+  width: 250px;
+  margin: auto;
+}
+
+.register-btn:hover {
+  background: #3e2723;
+  color: white !important;
+  cursor: pointer;
+}
+
+.heading-block .register-btn:hover {
+  background: #455a64;
+}
+
+a.register-link {
+  color: #585757;
+}
+
+a.register-link:hover {
+  color: white;
+}
+/* CSS for Code of conduct page */
+.coc-container p {
+  font-size: 1.5em;
+}
+.coc-container ul {
+  font-size: 1.5em;
+}
+
+
+img.spnsr {
+  margin: 3vh 0;
+  max-width:250px;
+}
+
+#sponsors .row {
+  margin-left: 10vw;
+}
+
+.social {
+  font-size: 3em;
+}
+
+.social-tw {
+  color: #00aced;
+}
+
+.social-fb {
+  color: #448aff;
+}
+
+.social-gh {
+  color: #f2f2f2;
+}
+
+.volunteers.segment {
+  padding-top: 0px;
+}
+
+.volunteers .row {
+  margin-left: 5vw;
+}
+
+.volunteers .row .col {
+  text-align: center;
+  margin-top: 10vh;
+}
+
+@media screen and (max-width:1024px) {
+  .col-md-8 { width: 80% !important; }
+  .col-md-7 { width: 70% !important; }
+  .col-md-6 { width: 60% !important; }
+  .col-md-5 { width: 50% !important; }
+  .col-md-4 { width: 40% !important; }
+  .col-md-3 { width: 30% !important; }
+  .col-md-2 { width: 20% !important; }
+  .col-md-1 { width: 10% !important; }
+}
+
+/* Changes in padding and overflow in mobile view*/
+@media screen and (max-width:750px) {
+  .row .col {
+    margin-left: 10px;
+  }
+
+  .col-sm-8 { width: 80% !important; }
+  .col-sm-7 { width: 70% !important; }
+  .col-sm-6 { width: 60% !important; }
+  .col-sm-5 { width: 50% !important; }
+  .col-sm-4 { width: 40% !important; }
+  .col-sm-3 { width: 30% !important; }
+  .col-sm-2 { width: 20% !important; }
+  .col-sm-1 { width: 10% !important; }
+
+  .green-fold .content, .yellow-fold .content {
+    width: 55%;
+    padding-left: 25%;
+    padding-right:0;
+  }
+
+  .circle {
+    left:0px;
+  }
+
+  .first-fold {
+    background-image: url(../images/mob_slide1.png);
+    background-size: 100% 100%;
+  }
+
+  .responsive-container.non-parallax{
+    background-image: none;
+  }
+
+  body {
+    overflow-x:hidden !important;
+  }
+}
+
+/* This classes on being added are not shown in responsive(smaller) screens*/
+@media screen and (max-width:750px) {
+  .hide-resp {
+    display:none;
+  }
+}
