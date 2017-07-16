@@ -1,0 +1,64 @@
+{% extends 'site_base.html' %}
+
+{% load staticfiles %}
+
+{% block header %}
+	<div class="responsive-container cover non-parallax">
+	    <div class="first-fold">
+	        <div class="nav">
+	        	<style type="text/css">
+	        		.topnav {
+	        			margin: 0;
+	        		}
+	        		.logo {
+	        			top: 15px;
+	        		}
+	        	</style>
+                    <ul class="topnav" id="topNav">
+                        <li class="icon">
+                        <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+                        </li>
+                        <li><a href="{% static '/#about' %}">About</a></li>
+                        <li><a href="{% static '/#sponsors' %}">Sponsors</a></li>
+                        <li><a href="{% static '/#venue' %}">Venue</a></li>
+                        <li><a href="{% static '/#sprints' %}">Sprints</a></li>
+                        <li><a href="{% static '/#schedule' %}">Schedule</a></li>
+                        <li><a href="{% static '/cancellation/' %}">Cancellation</a></li>
+                        <li><a href="{% static '/hotels/' %}">Hotels</a></li>
+                        <li><a href="https://www.python.org/psf/">PSF</li>
+                        <li><a href='{% static "/CoC" %}'>CoC</a></li>
+                        <li><a href="/"><img class="logo" src="{% static '/images/logo.png' %]"></a></li>
+                    </ul>
+	            <div class="clear"></div>
+	            <div class="align-left uppercase heading-block" id="headerDetails">
+	                <h2>Pycon Pune 2017</h2>
+	                <h2>Pune, India</h2>
+	                <h2>February 16th - 19th</h2>
+	            </div>
+	        </div><!-- nav -->
+	    </div><!-- first-fold -->
+	</div><!-- responsive-container -->
+{% endblock %}
+
+{% block footer %}
+	<div class="footer">
+    <img src='{% static "/images/footer.png" %}'/>
+        <div class="extended-footer">
+          <div class="organized">
+            <div class="social">
+                <a href="https://twitter.com/pyconpune">
+                    <i class="fa fa-twitter-square social-tw" aria-hidden="true"></i>
+                </a>
+                <a href="https://github.com/PyConPune">
+                    <i class="fa fa-github-square social-gh" aria-hidden="true"></i>
+                </a>
+                <a href="https://facebook.com/pyconpune/">
+                    <i class="fa fa-facebook-square social-fb" aria-hidden="true"></i>
+                </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="clear"></div>
+    </div>
+{% endblock %}
