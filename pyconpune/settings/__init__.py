@@ -11,6 +11,12 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+import raven
+try:
+    import pyconpune.local_settings as local_settings
+    LOCAL_SETTINGS = True
+except ImportError:
+    LOCAL_SETTINGS = False
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,6 +29,7 @@ SECRET_KEY = 'i__1*+jtq^4lhkx4f)3%b7d(z*2awsm*+u_fsd^k0g6a=_i60d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+PRODUCTION = False
 
 ALLOWED_HOSTS = []
 
@@ -45,6 +52,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'raven.contrib.django.raven_compat',
     'symposion.conference',
     'symposion.reviews',
     'symposion.proposals',
@@ -152,4 +160,14 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "staticfiles")]
 
 # Jet Installation (django-jet)
 JET_DEFAULT_THEME = 'light-gray'
+
+# Sentry Configuration
+RAVEN_CONFIG = {}
+if LOCAL_SETTINGS:
+    RAVEN_CONFIG = {
+        'dsn': local_settings.DSN,
+        # If you are using git, you can also automatically configure the
+        # release based on the git info.
+        'release': raven.fetch_git_sha(os.path.dirname(os.pardir)),
+    }
 
