@@ -32,6 +32,6 @@ class UserProfile(Base):
     def save(self):
         raise NotImplementedError
 
-    def __unicode__(self):
+    def __str__(self):
         return '(%s) %s %s' % (self.user.username, self.first_name,
                                self.last_name)

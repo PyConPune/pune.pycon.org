@@ -1,8 +1,17 @@
-{% extends "site_base.html" %}
+{% extends "inner_site_base.html" %}
 
-{% block content %}
-<form method="POST">{% csrf_token %}
-  {{ form }}
-  <button type="submit">Signup</button>
-</form>
+{% block body %}
+<div class="third-fold">
+  <div class="fold-1">
+    <div class="white-fold">
+      <div class="responsive-container">
+        <h2 class='f-c no-text-transform'>Signup</h2>
+		    <form method="POST" action={% url "account_signup" %}>{% csrf_token %}
+          {{ form }}
+		      <button type="submit">Login</button>
+		    </form>
+      </div>
+    </div>
+  </div>
+</div><!-- third-fold -->
 {% endblock %}

@@ -23,7 +23,7 @@ class Ticket(Base):
         verbose_name = _("ticket")
         verbose_name_plural = _("tickets")
 
-    def __unicode(self):
+    def __str__(self):
         return u"%s: %s" % (self.conference.title, self.title)
 
 
@@ -57,7 +57,7 @@ class UserTicket(Base):
         verbose_name_plural = _("user tickets")
         ordering = ['-timestamp']
 
-    def __unicode__(self):
+    def __str__(self):
         return u'%s:%s' % (self.user.username, self.ticket.title)
 
 
