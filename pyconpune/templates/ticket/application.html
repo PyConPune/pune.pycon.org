@@ -1,14 +1,40 @@
 {% extends "inner_site_base.html" %}
 
 {% block body %}
-This is ticket buying page
-{% if form %}
-<form action="" method="POST">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Submit" />
-</form>
-{% else %}
-    No Form
-{% endif %}
+<div class="third-fold">
+  <div class="fold-1">
+    <div class="white-fold" style="color:black;">
+      <div class="responsive-container">
+        <h2 class='f-c no-text-transform'>Buy Ticket</h2>
+        <table>
+          <div class="row">
+            <div class="col col-6">
+              <div class="col-text ticket-title"><b>Ticket</b></div>
+            </div>
+            <div class="col col-2">
+              <div class="col-text ticket-title"><b>Price</b></div>
+            </div>
+          </div>
+          <hr/>
+          {% for ticket in tickets %}
+          <div class="row">
+            <div class="col col-6">
+              <div class="col-text ticket-title">{{ ticket.title }}</div>
+              <div class="col-text gray">{{ ticket.description }}</div>
+            </div>
+            <div class="col col-2">
+              <div class="col-text center">₹<span class="ticket-price">{{ ticket.price }}</span></div>
+            </div>
+          </div>
+          {% endfor %}
+        </table>
+        <form action="" method="POST" style="padding-bottom:100px;">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Buy" />
+        </form>
+      </div>
+    </div>
+  </div>
+</div><!-- third-fold -->
 {% endblock %}

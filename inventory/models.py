@@ -8,7 +8,7 @@ from symposion.conference.models import Conference
 
 from root.models import Base
 
-class TShirt(Base):
+class Tshirt(Base):
     """ Model to store the different types of tshirt. """
 
     gender = models.CharField(_("gender"), max_length=255)
@@ -25,7 +25,7 @@ class TShirt(Base):
         return u"%s: %s" % (self.conference.title, self.gender)
 
 
-class UserTShirt(Base):
+class UserTshirt(Base):
     """ Model for maitaining the tshirt order entry for all the Users. """
 
     uuid = models.UUIDField(default=uuid.uuid4, editable=False)

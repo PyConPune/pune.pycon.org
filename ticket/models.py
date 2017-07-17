@@ -59,5 +59,3 @@ class UserTicket(Base):
 
     def __str__(self):
         return u'%s:%s' % (self.user.username, self.ticket.title)
-
-
