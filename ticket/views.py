@@ -32,3 +32,8 @@ class TicketApplicationView(TemplateView):
 
 def thanks(request):
     return render(request, 'ticket/thanks.html')
+
+
+def registration(request):
+    """ This is the first version of the JS based razorpay checkout page """
+    return render (request, "ticket/ticketv0.html")

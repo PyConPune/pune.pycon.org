@@ -1,219 +1,105 @@
 {% extends 'site_base.html' %}
 
 {% block body %}
-<div class="responsive-container cover">
-    <div class="first-fold">
-        <div class="nav">
-            <div class="clear"></div>
-            <div class="align-center uppercase heading-block" id="headerDetails">
-                <h1 class="fs-3-5">Pycon Pune 2017</h1>
-                <h2 class="fs-2">AMANORA THE FERN Hotels and Club, Pune</h2>
-                <h2>February 16th - 19th</h2>
-            </div>
-        </div><!-- nav -->
-    </div><!-- first-fold -->
-</div><!-- responsive-container -->
-
-<div class="parallax-container hide-resp">
-    <div class="parallax-layer layer-0" data-parallax-speed="0.05" data-max-scroll="565"></div>
-    <div class="parallax-layer layer-1" data-parallax-speed="0.9" data-max-scroll="565"></div>
-    <div class="parallax-layer layer-2" data-parallax-speed="0.1" data-max-scroll="565"></div>
-    <div class="parallax-layer layer-3" data-parallax-speed="0.5" data-max-scroll="565"></div>
-    <div class="parallax-layer layer-4" data-parallax-speed="0.7" data-max-scroll="565"></div>
-    <div class="parallax-layer layer-5" data-parallax-speed="0.9" data-max-scroll="565"></div>
-</div>
-
-<div class="second-fold align-center" id="about">
-    <div class="responsive-container">
-        <h2>About</h2>
-        <p>
-          PyCon,  the gathering for the community using and developing the open-source
-          Python programming language. This is the first year of the PyCon Pune where
-          the community will meet for two days of talks and working on upstream
-          projects in two days of dev sprint.
-        </p>
-        <img src="images/fort_white.png">
-    </div><!-- responsive-container -->
-</div><!-- second fold -->
-<div class="third-fold">
-    <div class="fold-1">
-      <div class="tf skew-down"></div>
-      <div class="circle">Speakers</div>
-      <div class="white-fold">
-        <div class="responsive-container">
-          <div class="speakers-block">
-            <div class="speaker">
-              <div class="inline-block s-left"><img alt="keynote-speaker"
-                                                    src="{{ url }}/images/nickcoghlan.jpg" /><div class="oval pink"></div><div class="line left-line hide-resp"></div></div>
-              <div class="inline-block speaker-info">
-                  <h3>Nick Coghlan</h3>
-                  <p>Nick Coghlan works on software supply chain management tools for Red Hat, and has been a CPython core developer since 2005. Prior to joining Red Hat in June 2011, Nick spent over 12 years working as a software developer, system integrator and system architect in Australia's aerospace & defence sector.</p>
-              </div>
-            </div>
-            <div class="speaker m-t-100">
-                <div class="inline-block s-right"><img alt="keynote-speaker"
-                                                       src="{{ url }}/images/honza.jpg" /><div class="oval blue"></div></div>
-                <div class="inline-block speaker-info">
-                  <h3>Honza Král</h3>
-                  <p>Honza is a Python programmer and Django core developer – since he is scared of the bright and shiny world of browsers, designers, and users he prefers to stay buried deep in the infrastructure code and just provides others with tools to do the actual site-building.
-                    Since 2008 Honza has been building content web sites for fun and profit. During this time he discovered Elasticsearch which lead to him joining the company behind it in 2013 to work on the Python drivers.</p>
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="bg"></div>
+        <div class="intro-body">
+            <div class="container ">
+                <div class="row">
+                    <div class="col-md-8 text-left">
+                        <h1 class="brand-heading" style="text-transform:none;">PyCon Pune 2018</h1>
+                        <p class="intro-text">February 8 - 11, 2018</p>
+                    </div>
                 </div>
+                <a href="#about" class="btn btn-circle page-scroll">
+                    <i class="fa fa-angle-double-down animated"></i>
+                </a>
             </div>
-            <div class="speaker m-t-100">
-                <div class="inline-block s-left"><img alt="keynote-speaker"
-                                                      src="{{ url }}/images/praveenpatil.jpg" /><div class="oval yellow"></div><div class="line right-line hide-resp"></div><div class="line left-line hide-resp"></div>
-                </div>
-                <div class="inline-block speaker-info">
-                  <h3>Praveen Patil</h3>
-                  <p>Praveen has been Google Summer of Code alumnus (GSoC 2014, 2015 and 2016). He is also mentor for Google Code-In and proud Fedora volunteer. Actively involved in ExpEYES project (http://expeyes.in), teacher training programs and in the free time develops e-content for National Repository of Open Educational Resources (NROER). Experimenting and exploring the use of Python to actively engage the students and help them visualize the concepts of science and maths and have better understanding.</p>
-                </div>
-            </div>
-            <div class="speaker m-t-100">
-                <div class="inline-block s-right"><img alt="keynote-speaker"
-                                                       src="{{ url }}/images/john.jpg" /><div class="oval blue"></div></div>
-                <div class="inline-block speaker-info">
-                  <h3>John 'warthog9' Hawley</h3>
-                  <p>An infrastructure and systems software programmer/architect turned to the dark side, now building hardware and embedded software systems that run on them, and a Perl guy, declared a Python programmer.</p>
-                </div>
-            </div>
-            <div class="speaker m-t-100">
-                <div class="inline-block s-left"><img alt="keynote-speaker"
-                                                      src="{{ url }}/images/terrioda.jpg" /><div class="oval yellow"></div><div class="line right-line hide-resp"></div><div class="line left-line hide-resp"></div>
-                </div>
-                <div class="inline-block speaker-info">
-                  <h3>Terri Oda</h3>
-                  <p>Terri Oda gets paid to break things and tell people that they're wrong, all in the name of making open source software more secure. Her work on GNU Mailman helps open source developers communicate, her work with the Python Software Foundation helps introduce students to open source as part of Google Summer of Code, and her work in web security earned her a PhD.</p>
-                </div>
-            </div>
-            <div class="speaker m-t-100">
-                <div class="inline-block s-right"><img alt="keynote-speaker"
-                                                       src="{{ url }}/images/katie.jpg" /><div class="oval blue"></div></div>
-                <div class="inline-block speaker-info">
-                  <h3>Katie Cunningham</h3>
-                  <p>Katie Cunningham is a Python developer who is also a regular speaker, teacher, and writer of technical books. When she's not cursing at computers, Keynote, or poorly formatted chapters, she knits, sews, and secretly writes fantasy books. She is the CTO of Speak Agent, a company focused on helping kids learn English through games. There, she creates iPad apps, websites, and curses English grammar on a regular basis. Katie lives in the DC area with her husband, two kids, and two dogs. You can follow her on Twitter at @kcunning.</p>
-                </div>
-            </div>
-          </div>
         </div>
-      </div><!-- blue-fold -->
+    </header>
 
-      <div class="green-fold" id="schedule">
-          <div class="skew-up"></div>
-          <div class="circle">Schedule</div>
-          <div class="b-f content">
-            The Schedule for PyCon Pune 2017 is now available. <br/><span class="s-y-t"><a href="https://pyconpune.talkfunnel.com/2017/schedule">View the schedule!</a></span>
-          </div>
-      </div><!-- green-fold -->
-
-      <div class="yellow-fold" id="sprints">
-          <div class="skew-down"></div>
-          <div class="circle">Sprints</div>
-          <div class="b-f content">
-            Development sprints are a key part of PyCon, and a chance for the contributors to open-source projects to get together face-to-face for up to two days of intensive learning, development and camaraderie.
-          </div>
-      </div><!-- green-fold -->
-
-      <div class="venue-fold" id="venue">
-        <div class="skew-up"></div>
-        <div class="circle">Venue</div>
-        <div id="venue">
-          <div id="ds-venue"></div>
-          <div id="cf-venue"></div>
-          <div class="clear"></div>
+    <!-- About Section -->
+    <section id="about" class="container content-section text-center"
+    style="padding:5em">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>About</h2>
+                <p>PyCon, the gathering for the community using and developing
+                the open-source Python programming language. During PyCon Pune, the community will meet for two days of talks and work on upstream projects in two days of dev sprint.</p>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div id="sponsors" class="sponsors-fold">
-        <div class="segment">
-          <h2 class='f-c no-text-transform'>Sponsors</h2>
-          <div class="row">
-            <div class="col col-3 col-sm-8 col-md-4">
-              <a href="https://www.python.org/psf/" target="_blank">
-                <img class="spnsr" style="margin: 7vh" src="{{ url }}/images/psf-logo.png">
-              </a>
+    <!-- Venue Section
+    <div id="map"></div>-->
+
+    <!-- Volunteer Section -->
+    <section id="volunteer" class="content-section text-center"
+      style="color: black; background-color:white;
+      width:100%;padding-bottom:5em">
+        <div class="row container" style="margin:auto">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Getting Involved</h2>
+                <p>PyCon Pune is a community event and is volunteer-driven.
+                People from the community come forward to volunteer and help
+                make the conference better. Anybody attending PyCon Pune is
+                welcome to volunteer, but you must be
+                <strong>registered</strong> to volunteer.</p>
+
+                <p>If you are looking to volunteer, drop us an email.
+                    <div class="network-name">
+                      <a href="mailto:pyconpune@python.org?subject=Volunteer for PyCon Pune 2018" class="btn btn-default btn-lg">Get Involved</a>
+                    </div>
+                </p>
             </div>
-            <div class="col col-3 col-sm-8 col-md-4">
-              <a href="https://www.redhat.com/" target="_blank">
-                <img class="spnsr" style="margin: 4vh;" src="{{ url }}/images/redhat.png">
-              </a>
-            </div>
-            <div class="col col-3 col-sm-8 col-md-4">
-              <a href="https://www.microsoft.com/" target="_blank">
-                <img class="spnsr" src="{{ url }}/images/microsoft.png">
-              </a>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col col-3 col-sm-8 col-md-4">
-              <a href="https://www.elastic.co/" target="_blank">
-                <img class="spnsr" src="{{ url }}/images/elasticsearch.png">
-              </a>
-            </div>
-            <div class="col col-3 col-sm-8 col-md-4">
-              <a href="https://reserved-bit.com/" target="_blank">
-                <img class="spnsr" src="{{ url }}/images/reserved-bit.png">
-              </a>
-            </div>
-            <div class="col col-3 col-sm-8 col-md-4">
-              <a href="https://pipal.in/" target="_blank">
-                <img class="spnsr" src="{{ url }}/images/pipal-academy.png">
-              </a>
-            </div>
-          </div>
-          <div class="b-f center p-t-100">Looking to sponsor the event?</div>
-          <button class="b-f button"><a href="mailto:pyconpune@gmail.com?subject=Sponsor for PyCon Pune 2017" class="no-underline">Become a sponsor</a></button>
         </div>
-      </div>
-</div><!-- third-fold -->
-{% endblock %}
-{% block scripts %}
-<script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
-<script src="{{ STATIC_URL }}/js/leaflet_sleep.js"></script>
-<script src="{{ STATIC_URL }}/js/parallax.js"></script>
-<script type="text/javascript">
-   new ParallaxManager('.parallax-layer');
-</script>
-<script>
-    var dsvenue = L.map('ds-venue', {
-        sleep: true,
-        sleepTime: 750,
-        wakeTime: 750,
-        sleepNote: false,
-        sleepNoteStyle: { color: 'red' },
-        hoverToWake: false,
-        sleepOpacity: 1,
-    }).setView([18.531161, 73.8448685], 13);
+    </section>
 
-    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw', {
-      maxZoom: 18,
-      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-        '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-        'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-      id: 'mapbox.streets'
-    }).addTo(dsvenue);
+    <!-- Sponsor Section-->
+    <section id="sponsor" class="content-section text-center"
+    style="padding-bottom:5em">
+        <div class="container">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Sponsors</h2>
+                <p>PyCon Pune is entirely driven by volunteers. Sponsoring the
+                event helps to sustain, grow the conference along with the
+                community. Sponsors help to make the conference affordable for
+                community, and maintaining the inventory for the
+                conference. </p>
+                <p>Looking to become a sponsor?<br/><br/>
+                    <a href="mailto:pyconpune@python.org?subject=Sponsor for PyCon Pune 2018" class="btn btn-default btn-lg"><span class="network-name">Become a Sponsor</span></a>
+                </p>
+            </div>
+        </div>
+    </section>
 
-    L.marker([18.520408, 73.939896]).addTo(dsvenue)
-      .bindPopup("<b>Conference Venue</b><br />Amanora Club, Pune").openPopup();
+    <!-- Contact Section -->
+    <section id="contact" class="container content-section text-center"
+      style="color: black; background-color:white;
+      width:100%;padding-bottom:5em">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2 style="text-transform: none;">Contact PyCon Pune Team</h2>
+                <p>Feel free to email us at <a href="mailto:pyconpune@python.org">pyconpune@python.org</a>
+                </p>
+                <label for=""><p style="font-weight:500;">To know more,
+                  subscribe <a
+                    href="https://mail.python.org/mailman/listinfo/pycon-pune"
+                    target="_blank">to the mailing list</a></p></label>
 
-    var cfvenue = L.map('cf-venue', {
-        sleep: true,
-        sleepTime: 750,
-        wakeTime: 750,
-        sleepNote: false,
-        sleepNoteStyle: { color: 'red' },
-        hoverToWake: false,
-        sleepOpacity: 1,
-    }).setView([18.51,73.92], 13);
-
-    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw', {
-      maxZoom: 18,
-      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-        '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-        'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-      id: 'mapbox.streets'
-    }).addTo(cfvenue);
-
-    L.marker([18.51664,73.92782]).addTo(cfvenue)
-      .bindPopup("<b>DevSprint Venue</b><br />Red Hat India Pvt. Ltd., Pune").openPopup();
-</script>
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="https://twitter.com/pyconpune" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/pyconpune" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/pyconpune/" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
 {% endblock %}
