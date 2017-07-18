@@ -41,7 +41,7 @@
 
     <!-- Navigation -->
     {% block navigation %}
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation" {% block innersitestyle %}{% endblock %}>
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
@@ -73,6 +73,16 @@
                     </li>
                     <li>
                         <a class="page-scroll" href="coc/">CoC</a>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">My Profile <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Tickets</a></li>
+                            <li><a href="#">Edit Registration</a></li>
+                            <li><a href="#">Switch to Python3</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Kick me out!</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>

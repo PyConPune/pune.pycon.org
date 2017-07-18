@@ -101,6 +101,9 @@ a:focus {
 .navbar-custom .nav li.active a:hover {
   color: white;
 }
+.navbar-custom .nav .dropdown-menu li a:hover {
+  background-color: #333;
+}
 @media (min-width: 768px) {
   .navbar-custom {
     padding: 20px 0;
