@@ -1,6 +1,7 @@
 import account.views
 
-from django.shortcuts import render
+from django.contrib.auth import logout
+from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 
 from auth.forms import SignupForm
@@ -26,3 +27,9 @@ class SignupView(account.views.SignupView):
 class LoginView(account.views.LoginView):
 
     form_class = account.forms.LoginEmailForm
+
+
+def logout_view(request):
+    """ This view logs out the user. """
+    logout(request)
+    return redirect('homepage')

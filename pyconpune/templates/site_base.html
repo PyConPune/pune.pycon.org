@@ -74,6 +74,7 @@
                     <li>
                         <a class="page-scroll" href="coc/">CoC</a>
                     </li>
+                    {% if request.user.is_authenticated %}
                     <li>
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle">My Profile <b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -81,9 +82,10 @@
                             <li><a href="#">Edit Registration</a></li>
                             <li><a href="#">Switch to Python3</a></li>
                             <li class="divider"></li>
-                            <li><a href="#">Kick me out!</a></li>
+                            <li><a href="{% url 'account_logout' %}">Log out!</a></li>
                         </ul>
                     </li>
+                    {% endif %}
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
