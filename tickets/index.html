@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="The Official Website for PyCon Pune 2018">
+    <meta name="author" content="">
+    <meta property="og:image" content="../img/twitter.png" />
+    <link href="../img/twitter.png" rel="shortcut icon" />
+
+    <title>PyCon Pune 2018 - Coming Soon</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <!-- Theme CSS -->
+    <link href="../css/grayscale.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .razorpay-payment-button {
+             padding: 12px 20px;
+             text-transform: uppercase;
+             font-size: 13px;
+             font-weight: 600;
+             border: 2px solid #333;
+             text-decoration: none;
+             transition: .2s ease-in;
+             color: #333;
+             border-radius: 0;
+             background-color: white;
+        }
+        .razorpay-payment-button:hover {
+            background-color: #333;
+            color: white;
+        }
+        .ticket-divider {
+            margin: 1.5rem 3rem 0 3rem;
+            padding: 1.5rem 0;
+            border-top: 1px solid #ededed;
+        }
+        .ticket-inner {
+            border: .5em solid #333;
+            min-height: 40em;
+        }
+        .ticket-title {
+            line-height: 4em;
+            height: 5em;
+        }
+        .ticket-description {
+            min-height: 8em;
+        }
+        .clear {
+            clear: both;
+        }
+        .ticket-row {
+            margin-top: 3em;
+        }
+    </style>
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation" style="background: black;">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a href="https://pune.pycon.org/2017/">2017</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="../#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="../#volunteer">Volunteer</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="../#sponsor">Sponsor</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="../#contact">Contact</a>
+                    </li>
+                    <li class="active">
+                        <a class="page-scroll" href="#coc">CoC</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- CoC Section -->
+    <section id="coc" class="content-section text-center"
+      style="color: black; background-color:white;
+      width:100%;padding-bottom:5em">
+        <div class="row container" style="margin:auto; text-align: left;">
+          <div class="col-lg-12">
+            <h2 class="no-text-transform">Tickets</h2>
+            <div class="underline"></div>
+            <div class="ticket-row">
+                <div class="ticket col-xl-4 col-lg-4 col-md-12 mb-5 mb-xl-2 mb-lg-2">
+                <div class="ticket-outer">
+                    <div class="ticket-inner text-center" style="padding: 3em">
+                        <figure>
+                            <!-- Workstation icon by Icons8 -->
+                            <img class="icon icons8-Workstation" width="100" height="100" src="data:image/png;base64,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">
+                        </figure>
+                        <h4 class="no-text-transform ticket-divider ticket-title">Conference</h4>
+                        <h1 class="no-text-transform">₹1400</h1>
+                        <div class="ticket-description ticket-divider">
+                            <span>This ticket includes 2-day of the main conference, 8th and 9th February 2018</span>
+                        </div>
+                        <form action="/purchase" method="POST">
+                        <!-- Note that the amount is in paise = 50 INR -->
+                        <script
+                            src="https://checkout.razorpay.com/v1/checkout.js"
+                            data-key="rzp_test_UMN606jNdH7vhp"
+                            data-amount="140000"
+                            data-buttontext="Register"
+                            data-name="PyCon Pune"
+                            data-description="Developer Sprint Ticket for PyCon Pune 2018"
+                            data-image="https://your-awesome-site.com/your_logo.jpg"
+                            data-prefill.name=""
+                            data-prefill.email=""
+                            data-theme.color="#333"
+                        ></script>
+                        <input type="hidden" value="Hidden Element" name="hidden">
+                        </form>
+                    </div>
+                </div>
+                </div>
+
+                <div class="ticket col-xl-4 col-lg-4 col-md-12 mb-5 mb-xl-2 mb-lg-2">
+                <div class="ticket-outer">
+                    <div class="ticket-inner text-center" style="padding: 3em">
+                        <figure>
+                        <!-- Laptop icon by Icons8 -->
+                        <img class="icon icons8-Laptop" width="100" height="100" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAFn0lEQVR4Xu2b72+TVRTHv6fbe+EPMBZjlmWEbCJCDMo2F5wTZF3GwEl0nUyEaJwLiUaNrg0hxhiyLWKc8mOtBBYmy5gDBihjQ4lLEFwg4GKMK3+BvPEd9Jjb0zp6bW/v86TrKu3zZjvZvfd8z+eec56fIxT4QQUeP4oAihlQ4ASKJVDgCVBsgsUSKJZAgROwKoGHd7GvxINOBmrUBAZizSOPf04SIRjZT5OZ9jcjgEd38gAR/JkWyse/MyP4Zz8FTNqMAMp2sM/jwQirrWZ0kQcnZ/spko/BJjSV72RvNAq/x4NupZsItbP96TPBCGD566xSqDpK6Prta+rN58B1bRUdHCAPusGYunmAatJpNwKo7GCODbiLpTMhuqN+rergHmb4iODNqx7AiEQJoesHKRjT6Wcvl2JO6Z85SGnjNAJ44rVY8uPqYVlgZTv3EqEznzOBgeC1w1L3uv5Uuo0A1viZVejTqg0CWO3nvzyEJfcYj18J0Uw+gXjSz1Ue4FcCItMhWqa06fodA1jbxqzOdZe/EQC6nU8AUumz0WvMgOpXpAdMHhEAuh28xDNEqIx3W0jBINy9jhbltJlJr+MMqNsmIV04KgB0e/9EPOT5lcNvPbs4wafSp+t1DKC+VXrA2WMCQLcHzzH/e0kIhFvrFy/4VPp0vY4BbHhJesDp4wJAt8+flgxgRrh+Y+rgG1q4mkoQIobXyfUzMyLsgX98kKZse00mvY4BNG6RAEeHBIBuXx1lNSC8qjH9zje2cASER2yD0MZFRoeko9scmfQ6BtDcIhkwfEIA6PbcCQ4t22xO++bNUibD36a/GEklzM28THodA9jaLBlwfFjE67bNrriZky1fNr6Np8FtTQLg6IgA0G0bAOnWSDd3IXwl1nScAW2Nkr7hkwJAt20AtPmkjMKj8TXidrqGqI9L2Fa+XOg1ZsD2TSL+0JiI120bUdtfFIiHvnPWA9zMc6PXCOCNjVICX50S8bptA8DNnGz5svFtBPDmCwLgizMCQLdtAKRbI93chfCVWNNxD+h8XtK3b1wA6LYNgM4GKaO+s/E14na6HqCPS9hWvlzoNWbA7noRv++8iNdtG1G7nxOI+8456wFu5rnRawTw3nopgU+/F/G6bQPAzZxs+bLxbQTwYZ0A2HtBAOi2DYAP6vgOAQ/ZjP3PGMbtvRPktZ3rRq8RQHetpG9wQgDoto2wj2q5Wl1KkLofcPAQkQm3mdG256L9zZAbvUYAe2o4drfz8ZQA0G0bALkc40avEcAn66QE3r8kAHQ7l8HZ+HKj1wjgs6djCYB3fxIAum0jKpdj3Og1AuhZKxnQdVkA6HYug7Px5UavEcDnT0kGvP2zANBtG1G5HONGrxHAl2vkLLBrWgAkbCfd3MljsGytq+tN2Kk2wwjgwGo5C+y4IgAStrLufxSeb7auN2E7BjCwSnpA+y/OLmNzmfYmXzb6jRlwZKX0gFev/T8B2OhPAjBYxeo18gDg7BG2qXYZUG+VQy/PUJeTzDhWxT0A/ERYkq3eAIb6tqG9dWb+e4EkAEOVPAeGd0FqOor2LTcoZANhaAX7QYi9ks12r4kyIluvzz9qTwIwskJqvulG9lJ+RAUjWeXmaG+yhGazeKr4kgCMLZeav/c3ljZF5IOIbBxjFdzLhE7lzPZ+KMroa7xF72TDv1pjpJy9pSWYU/433Zzf4CQAZ8p5kjyojkYR3DBr/rgoW8Jytc54BQeY0U2E0YZb5Ev4TQLwQxn7ogR5CxBFoNSDcO1sfn8UlQnguNp5QH3pEIjFdRe16/9I0wTVYhfLOMBAt5N0tU3rxR4XBYJ1vydndsrrgB8f4xoGAgRUL7boLPlXb5gDz9y38ylLIFM6PYh/N14JPogB6zEVARTCLptiLGZAMQMKnECxBAo8AYr/NlfwJfAP0m0hfV0LuJEAAAAASUVORK5CYII=">
+                        </figure>
+                        <h4 class="no-text-transform ticket-divider">Conference & Developer Sprints</h4>
+                        <h1 class="no-text-transform">₹3000</h1>
+                        <div class="ticket-description ticket-divider">
+                            <span>This ticket includes 2-day of the main conference and 2-days of devsprint, 8th-11th February 2018</span>
+                        </div>
+                        <form action="/purchase" method="POST">
+                        <!-- Note that the amount is in paise = 50 INR -->
+                        <script
+                            src="https://checkout.razorpay.com/v1/checkout.js"
+                            data-key="rzp_test_UMN606jNdH7vhp"
+                            data-amount="300000"
+                            data-buttontext="Register"
+                            data-name="PyCon Pune"
+                            data-description="Developer Sprint Ticket for PyCon Pune 2018"
+                            data-image="https://your-awesome-site.com/your_logo.jpg"
+                            data-prefill.name=""
+                            data-prefill.email=""
+                            data-theme.color="#333"
+                        ></script>
+                        <input type="hidden" value="Hidden Element" name="hidden">
+                        </form>
+                    </div>
+                </div>
+                </div>
+
+                <div class="ticket col-xl-4 col-lg-4 col-md-12 mb-5 mb-xl-2 mb-lg-2">
+                <div class="ticket-outer">
+                    <div class="ticket-inner text-center" style="padding: 3em">
+                        <figure>
+                        <!-- Server icon by Icons8 -->
+                        <img width="100" height="100" ng-src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMjAuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iJiMxMDU3OyYjMTA4MzsmIzEwODY7JiMxMDgxO18xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDY0IDY0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA2NCA2NDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzFfXzQzNjUzIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjM1IiB5MT0iMzAiIHgyPSIzNSIgeTI9IjM0IiBzcHJlYWRNZXRob2Q9InJlZmxlY3QiPgoJPHN0b3Agb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojNkRDN0ZGIi8+Cgk8c3RvcCBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiNFNkFCRkYiLz4KPC9saW5lYXJHcmFkaWVudD4KPGNpcmNsZSBzdHlsZT0iZmlsbDp1cmwoI1NWR0lEXzFfXzQzNjUzKTsiIGN4PSIzNSIgY3k9IjMyIiByPSIyIi8+CjxsaW5lYXJHcmFkaWVudCBpZD0iU1ZHSURfMl9fNDM2NTMiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMjciIHkxPSIzMCIgeDI9IjI3IiB5Mj0iMzQiIHNwcmVhZE1ldGhvZD0icmVmbGVjdCI+Cgk8c3RvcCBvZmZzZXQ9IjAiIHN0eWxlPSJzdG9wLWNvbG9yOiM2REM3RkYiLz4KCTxzdG9wIG9mZnNldD0iMSIgc3R5bGU9InN0b3AtY29sb3I6I0U2QUJGRiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8Y2lyY2xlIHN0eWxlPSJmaWxsOnVybCgjU1ZHSURfMl9fNDM2NTMpOyIgY3g9IjI3IiBjeT0iMzIiIHI9IjIiLz4KPGxpbmVhckdyYWRpZW50IGlkPSJTVkdJRF8zX180MzY1MyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIzNSIgeTE9IjQyLjEyNSIgeDI9IjM1IiB5Mj0iNDUuODc3MSIgc3ByZWFkTWV0aG9kPSJyZWZsZWN0Ij4KCTxzdG9wIG9mZnNldD0iMCIgc3R5bGU9InN0b3AtY29sb3I6IzZEQzdGRiIvPgoJPHN0b3Agb2Zmc2V0PSIxIiBzdHlsZT0ic3RvcC1jb2xvcjojRTZBQkZGIi8+CjwvbGluZWFyR3JhZGllbnQ+CjxjaXJjbGUgc3R5bGU9ImZpbGw6dXJsKCNTVkdJRF8zX180MzY1Myk7IiBjeD0iMzUiIGN5PSI0NCIgcj0iMiIvPgo8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzRfXzQzNjUzIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjI3IiB5MT0iNDIuMTI1IiB4Mj0iMjciIHkyPSI0NS44NzcxIiBzcHJlYWRNZXRob2Q9InJlZmxlY3QiPgoJPHN0b3Agb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojNkRDN0ZGIi8+Cgk8c3RvcCBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiNFNkFCRkYiLz4KPC9saW5lYXJHcmFkaWVudD4KPGNpcmNsZSBzdHlsZT0iZmlsbDp1cmwoI1NWR0lEXzRfXzQzNjUzKTsiIGN4PSIyNyIgY3k9IjQ0IiByPSIyIi8+CjxsaW5lYXJHcmFkaWVudCBpZD0iU1ZHSURfNV9fNDM2NTMiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMzIiIHkxPSIxMC4xNjY3IiB4Mj0iMzIiIHkyPSI1My41NDYxIiBzcHJlYWRNZXRob2Q9InJlZmxlY3QiPgoJPHN0b3Agb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojMUE2REZGIi8+Cgk8c3RvcCBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiNDODIyRkYiLz4KPC9saW5lYXJHcmFkaWVudD4KPHBhdGggc3R5bGU9ImZpbGw6dXJsKCNTVkdJRF81X180MzY1Myk7IiBkPSJNNTUsNDNjMS42NTQsMCwzLTEuMzQ2LDMtM1YxNGMwLTEuNjU0LTEuMzQ2LTMtMy0zSDE5Yy0xLjY1NCwwLTMsMS4zNDYtMywzdjloLTQgIGMtMS42NTQsMC0zLDEuMzQ2LTMsM3YxYy0xLjY1NCwwLTMsMS4zNDYtMywzdjRjMCwxLjY1NCwxLjM0NiwzLDMsM3YyYy0xLjY1NCwwLTMsMS4zNDYtMywzdjRjMCwxLjY1NCwxLjM0NiwzLDMsM3YxICBjMCwwLjM1MiwwLjA3MiwwLjY4NiwwLjE4NCwxSDZ2Mmg2aDI0aDE3Ljg0Nkg1OHYtMmgtNS4xNTVsLTEuMTc1LTIuMzQ5QzUxLjE2Myw0Ny42MzMsNTAuMTM5LDQ3LDQ5LDQ3aC0zdi00SDU1eiBNMTgsMTQgIGMwLTAuNTUyLDAuNDQ4LTEsMS0xaDM2YzAuNTUyLDAsMSwwLjQ0OCwxLDF2MjZjMCwwLjU1Mi0wLjQ0OCwxLTEsMUg0MS44MTZjLTAuNDE0LTEuMTYxLTEuNTE0LTItMi44MTYtMmgxM2MxLjEwMywwLDItMC44OTcsMi0yICBWMTdjMC0xLjEwMy0wLjg5Ny0yLTItMkgyMmMtMS4xMDMsMC0yLDAuODk3LTIsMnY2aC0yVjE0eiBNMzksMjd2LTFjMC0xLjY1NC0xLjM0Ni0zLTMtM0gyMnYtNmgzMHYyMEgzOWMxLjY1NCwwLDMtMS4zNDYsMy0zdi00ICBDNDIsMjguMzQ2LDQwLjY1NCwyNywzOSwyN3ogTTExLDI2YzAtMC41NTIsMC40NDgtMSwxLTFoMjRjMC41NTIsMCwxLDAuNDQ4LDEsMXYxSDExVjI2eiBNOCwzNHYtNGMwLTAuNTUyLDAuNDQ4LTEsMS0xaDMwICBjMC41NTIsMCwxLDAuNDQ4LDEsMXY0YzAsMC41NTItMC40NDgsMS0xLDFIMjF2LTFjMC0xLjEwMy0wLjg5Ny0yLTItMmgtNmMtMS4xMDMsMC0yLDAuODk3LTIsMnYxSDlDOC40NDgsMzUsOCwzNC41NTIsOCwzNHogTTE5LDM1ICBoLTZ2LTFoNlYzNXogTTExLDM3aDI2djJIMTFWMzd6IE04LDQ2di00YzAtMC41NTIsMC40NDgtMSwxLTFoMzBjMC41NTIsMCwxLDAuNDQ4LDEsMXY0YzAsMC41NTItMC40NDgsMS0xLDFIMjF2LTEgIGMwLTEuMTAzLTAuODk3LTItMi0yaC02Yy0xLjEwMywwLTIsMC44OTctMiwydjFIOUM4LjQ0OCw0Nyw4LDQ2LjU1Miw4LDQ2eiBNMTksNDdoLTZ2LTFoNlY0N3ogTTEyLDUxYy0wLjU1MiwwLTEtMC40NDgtMS0xdi0xaDI2djEgIGMwLDAuNTUyLTAuNDQ4LDEtMSwxSDEyeiBNNDkuODgyLDQ5LjU0NUw1MC42MDksNTFIMzguODE2QzM4LjkyOCw1MC42ODYsMzksNTAuMzUyLDM5LDUwdi0xaDEwICBDNDkuMzc2LDQ5LDQ5LjcxNCw0OS4yMDksNDkuODgyLDQ5LjU0NXogTTQ0LDQ3aC0yLjE4NEM0MS45MjgsNDYuNjg2LDQyLDQ2LjM1Miw0Miw0NnYtM2gyVjQ3eiIvPgo8L3N2Zz4K" alt="Server icon" title="Server icon" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMjAuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iJiMxMDU3OyYjMTA4MzsmIzEwODY7JiMxMDgxO18xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDY0IDY0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA2NCA2NDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzFfXzQzNjUzIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjM1IiB5MT0iMzAiIHgyPSIzNSIgeTI9IjM0IiBzcHJlYWRNZXRob2Q9InJlZmxlY3QiPgoJPHN0b3Agb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojNkRDN0ZGIi8+Cgk8c3RvcCBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiNFNkFCRkYiLz4KPC9saW5lYXJHcmFkaWVudD4KPGNpcmNsZSBzdHlsZT0iZmlsbDp1cmwoI1NWR0lEXzFfXzQzNjUzKTsiIGN4PSIzNSIgY3k9IjMyIiByPSIyIi8+CjxsaW5lYXJHcmFkaWVudCBpZD0iU1ZHSURfMl9fNDM2NTMiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMjciIHkxPSIzMCIgeDI9IjI3IiB5Mj0iMzQiIHNwcmVhZE1ldGhvZD0icmVmbGVjdCI+Cgk8c3RvcCBvZmZzZXQ9IjAiIHN0eWxlPSJzdG9wLWNvbG9yOiM2REM3RkYiLz4KCTxzdG9wIG9mZnNldD0iMSIgc3R5bGU9InN0b3AtY29sb3I6I0U2QUJGRiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8Y2lyY2xlIHN0eWxlPSJmaWxsOnVybCgjU1ZHSURfMl9fNDM2NTMpOyIgY3g9IjI3IiBjeT0iMzIiIHI9IjIiLz4KPGxpbmVhckdyYWRpZW50IGlkPSJTVkdJRF8zX180MzY1MyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIzNSIgeTE9IjQyLjEyNSIgeDI9IjM1IiB5Mj0iNDUuODc3MSIgc3ByZWFkTWV0aG9kPSJyZWZsZWN0Ij4KCTxzdG9wIG9mZnNldD0iMCIgc3R5bGU9InN0b3AtY29sb3I6IzZEQzdGRiIvPgoJPHN0b3Agb2Zmc2V0PSIxIiBzdHlsZT0ic3RvcC1jb2xvcjojRTZBQkZGIi8+CjwvbGluZWFyR3JhZGllbnQ+CjxjaXJjbGUgc3R5bGU9ImZpbGw6dXJsKCNTVkdJRF8zX180MzY1Myk7IiBjeD0iMzUiIGN5PSI0NCIgcj0iMiIvPgo8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzRfXzQzNjUzIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjI3IiB5MT0iNDIuMTI1IiB4Mj0iMjciIHkyPSI0NS44NzcxIiBzcHJlYWRNZXRob2Q9InJlZmxlY3QiPgoJPHN0b3Agb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojNkRDN0ZGIi8+Cgk8c3RvcCBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiNFNkFCRkYiLz4KPC9saW5lYXJHcmFkaWVudD4KPGNpcmNsZSBzdHlsZT0iZmlsbDp1cmwoI1NWR0lEXzRfXzQzNjUzKTsiIGN4PSIyNyIgY3k9IjQ0IiByPSIyIi8+CjxsaW5lYXJHcmFkaWVudCBpZD0iU1ZHSURfNV9fNDM2NTMiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMzIiIHkxPSIxMC4xNjY3IiB4Mj0iMzIiIHkyPSI1My41NDYxIiBzcHJlYWRNZXRob2Q9InJlZmxlY3QiPgoJPHN0b3Agb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojMUE2REZGIi8+Cgk8c3RvcCBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiNDODIyRkYiLz4KPC9saW5lYXJHcmFkaWVudD4KPHBhdGggc3R5bGU9ImZpbGw6dXJsKCNTVkdJRF81X180MzY1Myk7IiBkPSJNNTUsNDNjMS42NTQsMCwzLTEuMzQ2LDMtM1YxNGMwLTEuNjU0LTEuMzQ2LTMtMy0zSDE5Yy0xLjY1NCwwLTMsMS4zNDYtMywzdjloLTQgIGMtMS42NTQsMC0zLDEuMzQ2LTMsM3YxYy0xLjY1NCwwLTMsMS4zNDYtMywzdjRjMCwxLjY1NCwxLjM0NiwzLDMsM3YyYy0xLjY1NCwwLTMsMS4zNDYtMywzdjRjMCwxLjY1NCwxLjM0NiwzLDMsM3YxICBjMCwwLjM1MiwwLjA3MiwwLjY4NiwwLjE4NCwxSDZ2Mmg2aDI0aDE3Ljg0Nkg1OHYtMmgtNS4xNTVsLTEuMTc1LTIuMzQ5QzUxLjE2Myw0Ny42MzMsNTAuMTM5LDQ3LDQ5LDQ3aC0zdi00SDU1eiBNMTgsMTQgIGMwLTAuNTUyLDAuNDQ4LTEsMS0xaDM2YzAuNTUyLDAsMSwwLjQ0OCwxLDF2MjZjMCwwLjU1Mi0wLjQ0OCwxLTEsMUg0MS44MTZjLTAuNDE0LTEuMTYxLTEuNTE0LTItMi44MTYtMmgxM2MxLjEwMywwLDItMC44OTcsMi0yICBWMTdjMC0xLjEwMy0wLjg5Ny0yLTItMkgyMmMtMS4xMDMsMC0yLDAuODk3LTIsMnY2aC0yVjE0eiBNMzksMjd2LTFjMC0xLjY1NC0xLjM0Ni0zLTMtM0gyMnYtNmgzMHYyMEgzOWMxLjY1NCwwLDMtMS4zNDYsMy0zdi00ICBDNDIsMjguMzQ2LDQwLjY1NCwyNywzOSwyN3ogTTExLDI2YzAtMC41NTIsMC40NDgtMSwxLTFoMjRjMC41NTIsMCwxLDAuNDQ4LDEsMXYxSDExVjI2eiBNOCwzNHYtNGMwLTAuNTUyLDAuNDQ4LTEsMS0xaDMwICBjMC41NTIsMCwxLDAuNDQ4LDEsMXY0YzAsMC41NTItMC40NDgsMS0xLDFIMjF2LTFjMC0xLjEwMy0wLjg5Ny0yLTItMmgtNmMtMS4xMDMsMC0yLDAuODk3LTIsMnYxSDlDOC40NDgsMzUsOCwzNC41NTIsOCwzNHogTTE5LDM1ICBoLTZ2LTFoNlYzNXogTTExLDM3aDI2djJIMTFWMzd6IE04LDQ2di00YzAtMC41NTIsMC40NDgtMSwxLTFoMzBjMC41NTIsMCwxLDAuNDQ4LDEsMXY0YzAsMC41NTItMC40NDgsMS0xLDFIMjF2LTEgIGMwLTEuMTAzLTAuODk3LTItMi0yaC02Yy0xLjEwMywwLTIsMC44OTctMiwydjFIOUM4LjQ0OCw0Nyw4LDQ2LjU1Miw4LDQ2eiBNMTksNDdoLTZ2LTFoNlY0N3ogTTEyLDUxYy0wLjU1MiwwLTEtMC40NDgtMS0xdi0xaDI2djEgIGMwLDAuNTUyLTAuNDQ4LDEtMSwxSDEyeiBNNDkuODgyLDQ5LjU0NUw1MC42MDksNTFIMzguODE2QzM4LjkyOCw1MC42ODYsMzksNTAuMzUyLDM5LDUwdi0xaDEwICBDNDkuMzc2LDQ5LDQ5LjcxNCw0OS4yMDksNDkuODgyLDQ5LjU0NXogTTQ0LDQ3aC0yLjE4NEM0MS45MjgsNDYuNjg2LDQyLDQ2LjM1Miw0Miw0NnYtM2gyVjQ3eiIvPgo8L3N2Zz4K">
+                        </figure>
+                        <h4 class="no-text-transform ticket-divider ticket-title">Supporter</h4>
+                        <h1 class="no-text-transform">₹6000</h1>
+                        <div class="ticket-description ticket-divider">
+                            <span>Friends of PyCon. You would be supporting the conference to be affordable for everyone (8th-11th February 2018, Includes Evening Dinner)</span>
+                        </div>
+                        <form action="/purchase" method="POST">
+                        <!-- Note that the amount is in paise = 50 INR -->
+                        <script
+                            src="https://checkout.razorpay.com/v1/checkout.js"
+                            data-key="rzp_test_UMN606jNdH7vhp"
+                            data-amount="300000"
+                            data-buttontext="Register"
+                            data-name="PyCon Pune"
+                            data-description="Developer Sprint Ticket for PyCon Pune 2018"
+                            data-image="https://your-awesome-site.com/your_logo.jpg"
+                            data-prefill.name=""
+                            data-prefill.email=""
+                            data-theme.color="#333"
+                        ></script>
+                        <input type="hidden" value="Hidden Element" name="hidden">
+                        </form>
+                    </div>
+                </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="ticket-row">
+                <div class="ticket col-xl-4 col-lg-4 col-md-12 mb-5 mb-xl-2 mb-lg-2">
+                    <div class="ticket-inner text-center" style="padding: 3em">
+                        <figure>
+                        <!-- Food icon by Icons8 -->
+                        <img class="icon icons8-Food" width="100" height="100" src="data:image/png;base64,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">
+                        </figure>
+                        <h4 class="no-text-transform ticket-divider ticket-title">Evening Dinner</h4>
+                        <h1 class="no-text-transform">₹6000</h1>
+                        <div class="ticket-description ticket-divider">
+                            <span>You get to attend the conference dinner, where you meet & talk with people.</span>
+                        </div>
+                        <form action="/purchase" method="POST">
+                        <!-- Note that the amount is in paise = 50 INR -->
+                        <script
+                            src="https://checkout.razorpay.com/v1/checkout.js"
+                            data-key="rzp_test_UMN606jNdH7vhp"
+                            data-amount="300000"
+                            data-buttontext="Register"
+                            data-name="PyCon Pune"
+                            data-description="Developer Sprint Ticket for PyCon Pune 2018"
+                            data-image="https://your-awesome-site.com/your_logo.jpg"
+                            data-prefill.name=""
+                            data-prefill.email=""
+                            data-theme.color="#333"
+                        ></script>
+                        <input type="hidden" value="Hidden Element" name="hidden">
+                        </form>
+                    </div>
+                </div>
+
+                <div class="ticket col-xl-4 col-lg-4 col-md-12 mb-5 mb-xl-2 mb-lg-2">
+                    <div class="ticket-inner text-center" style="padding: 3em">
+                        <figure>
+                            <!-- T-Shirt icon by Icons8 -->
+                            <img class="icon icons8-T-Shirt" width="100" height="100" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAFxklEQVR4Xu2a7W8UVRTGnzPle9c/wFCNNIoCW5BgENhqscQGaotWKkhctFZE4wuJMWpId0NIjCbYaIIVKi1BeVGEpgICpbLFF4IEuiVKSDEGEr9bvts95vYwpl535s7dmW5Luvtlc2bu3Puc3z33njN3lzDNPzTN/UcJQCkCpjmB0hKY5gFQ2gRLS6C0BKY5gdIS8AuAO1/hj8BoIAcVzAARcFt9A9dzjO4/d1Day0/PCLh7E7eD8fpYnmDgtv7OIf1HB6XyQfAEMKuV/yIHMR5F1bVdlK18iVlBGO5QcWD3qdzIrCAOfxbsWdv249WM1znrRY6Tg0EQrg930F1WAO5vZRXtuLJTROu2DYLZrZwlYN5oDo9c7aSM37P3tXIDAUcIGPptJ8Vtxsmn06TbczbntjCrm0OdAkC3bYTNbWEVfm3E6Bn6nBr9np3TwmccoJqB9OXO/GHr97ytbk8AC16QsL24WwDotg2AeJJjZWW4DkY5A6lLu/NvSvOf5zYipMC4OZpDRbabRmzGyafTpNsTwKKkrPnzXQJAt11hXtd14QuTnHQIXWMbKpDJEVIXumhAGQs3cMJhpECoVvcZaPylm3r8nA+qx6TPE8CS52QP+GmPANBtV5zX9XziF6/npOOgnYHyfMklB9xkQvKcwXkbPSZ9ngASzzIr1zN7BYBuuw56Xfeaveokx/A33mCggQjzxuoKYCgH9Dgz0J4JGPZB9Zj0eQJYvpZHQCgnRlXfPsouXzcWEDj95X9Tmdd127Vr2z6InsfWcpwJg8y40b+PKqzSYG0zpxxCm18NBEBtUjFF8cT+YDne1lGv9iuekSyVA0YcIOZbqzHSJw5YFkJq4JVPc4odJIkx01QJHj1YXAArmyVL+elSM0+E7qMezisfrau68TPS0MSqUFGVFnq+Ki6AhibJUmBU9XxN2UIjKxQANWjTU5ItDh0qLoCoxjUCaF4ta218tAFIHzgsa8q9v/9wcQHo4zav5hTh/3uWSZcRwPrG/Gttb4847N537SChuOUsJ9hBinKIqzBmIEtlSG1dLIVRkI8+rkmnV59GAPqDG+olHXb1CgDdNonfNiAzla+dqv/fSwSr/8PqcMe3BtC6iscW/a6jAkC3/QBs/54T5CDjt3tzGao3LzNHQhgd4zVaA3i5TirEHccEgG77Afi0n9WrcMLvjCUHDGyqoWpTJIXREQrAa4/LEvj4OwGg237Cu/p4xCGU+x2rgTCSXE53mACE0REKwOYVAmD7SQGg237CD55kVTmWG5y7uWYFxUwAwugIBeDtWtkDPugTALrtJ7z3OGdASPg6xxiorzMvgTA6QgF4t0b2gG2nBYBu+zl36jgnwMj47QFMqK6tM2+CYXSEAtD2qNQF6TMCQLdNofvDt7eOx/IfNqeXrgqWBsPqKDgNbk1IDb4lIwB02wRA3b/Uy4lRRpoYY4eeTMiWEdrm15tn3u0/Ch2qL+s0+P4yqf3fOSsAdDsIgCjaRKXDGsCHSyQLvPWjANDtKJwL0kdUOqwBtD8sWeDNnwWAbgcRH0WbqHRYA/jkIckCr54TALodhXNB+ohKhzWAjkWyBDaeFwC6HUR8FG2i0mENoPNByQItFwSAa+svOO79KJwNMo6uK+i41gD2LJAskLwoAFxbL27c+0GFmNqZxtF1mforuA7QO/6iSk6M1g0W90QoqnGtI0AHcDAuleGaoeICiGrc0AC+mfPv6WzeI+onL4cDM9H9hwbQ+4DsCV4vOE/8Gg7ARPcfGsCx2bIH1F0J52jQTcttF9W4oQGcuvfWIccoqmqvFf4DhQ2AU7M4jhkYBONG7dX8v/kF7S80gP5K71PeoCIKbafeymuGg70+e40RGoDqeOAeTjlAkoGZaiFM+F/pcvKb39LfwzmvtEcCoNAZnArPlQBMhVmYTA2lCJhM+lNh7FIETIVZmEwNpQiYTPpTYexSBEyFWZhMDdM+Av4Bel7AbirG6/gAAAAASUVORK5CYII=">
+                        </figure>
+                        <h4 class="no-text-transform ticket-divider ticket-title">T-Shirts</h4>
+                        <h1 class="no-text-transform">₹6000</h1>
+                        <div class="ticket-description ticket-divider">
+                            <span>You can buy a few extra tshirts for family and friends and show some Python love.</span>
+                        </div>
+                        <form action="/purchase" method="POST">
+                        <!-- Note that the amount is in paise = 50 INR -->
+                        <script
+                            src="https://checkout.razorpay.com/v1/checkout.js"
+                            data-key="rzp_test_UMN606jNdH7vhp"
+                            data-amount="300000"
+                            data-buttontext="Register"
+                            data-name="PyCon Pune"
+                            data-description="Developer Sprint Ticket for PyCon Pune 2018"
+                            data-image="https://your-awesome-site.com/your_logo.jpg"
+                            data-prefill.name=""
+                            data-prefill.email=""
+                            data-theme.color="#333"
+                        ></script>
+                        <input type="hidden" value="Hidden Element" name="hidden">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>Copyright &copy; PyCon Pune 2018. Made using <a
+              href="https://blackrockdigital.github.io/startbootstrap-grayscale/"
+              target="_blank">Grayscale.</a> Cover image by <a
+              href="https://unsplash.com/@mikael_k">Mikael Kristenson</a>.</p>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
+    <!-- Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-86644340-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- Theme JavaScript -->
+    <script src="../js/grayscale.min.js"></script>
+
+</body>
+
+</html>
