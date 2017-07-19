@@ -26,6 +26,9 @@
     border: .5em solid #333;
     min-height: 50em;
 }
+.ticket-inner:hover {
+    border: .5em solid #1ac11a;
+}
 .ticket-title {
     line-height: 4em;
     height: 5em;
