@@ -1,3 +1,6 @@
+"""
+    Code taken from https://pagure.io/pagure/blob/master/f/runworker.py
+"""
 import argparse
 import sys
 import subprocess
