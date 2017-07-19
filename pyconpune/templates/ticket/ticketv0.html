@@ -16,7 +16,7 @@
             <h2 class="no-text-transform">Tickets</h2>
             <div class="underline"></div>
             <div class="ticket-row">
-                <div class="ticket col-xl-4 col-lg-4 col-md-12 mb-5 mb-xl-2 mb-lg-2">
+                <div id="ticket-row-1-1" class="ticket col-xl-4 col-lg-4 col-md-12 mb-5 mb-xl-2 mb-lg-2">
                 <div class="ticket-outer">
                     <div class="ticket-inner text-center" style="padding: 3em">
                         <figure>
@@ -28,27 +28,12 @@
                         <div class="ticket-description ticket-divider">
                             <span>This ticket includes 2-day of the main conference, 8th and 9th February 2018</span>
                         </div>
-                        <form action="/purchase" method="POST">
-                        <!-- Note that the amount is in paise = 50 INR -->
-                        <script
-                            src="https://checkout.razorpay.com/v1/checkout.js"
-                            data-key="rzp_test_UMN606jNdH7vhp"
-                            data-amount="140000"
-                            data-buttontext="Register"
-                            data-name="PyCon Pune"
-                            data-description="Developer Sprint Ticket for PyCon Pune 2018"
-                            data-image="https://your-awesome-site.com/your_logo.jpg"
-                            data-prefill.name=""
-                            data-prefill.email=""
-                            data-theme.color="#333"
-                        ></script>
-                        <input type="hidden" value="Hidden Element" name="hidden">
-                        </form>
+                        <i class="fa fa-check" style="color: green; font-size: 6em" aria-hidden="true"></i>
                     </div>
                 </div>
                 </div>
 
-                <div class="ticket col-xl-4 col-lg-4 col-md-12 mb-5 mb-xl-2 mb-lg-2">
+                <div id="ticket-row-1-2"class="ticket col-xl-4 col-lg-4 col-md-12 mb-5 mb-xl-2 mb-lg-2">
                 <div class="ticket-outer">
                     <div class="ticket-inner text-center" style="padding: 3em">
                         <figure>
@@ -80,7 +65,7 @@
                 </div>
                 </div>
 
-                <div class="ticket col-xl-4 col-lg-4 col-md-12 mb-5 mb-xl-2 mb-lg-2">
+                <div id="ticket-row-1-3" class="ticket col-xl-4 col-lg-4 col-md-12 mb-5 mb-xl-2 mb-lg-2">
                 <div class="ticket-outer">
                     <div class="ticket-inner text-center" style="padding: 3em">
                         <figure>
@@ -113,7 +98,7 @@
                 </div>
                 <div class="clear"></div>
             </div>
-            <div class="ticket-row">
+            <div id="ticket-row-1" class="ticket-row">
                 <div class="ticket col-xl-4 col-lg-4 col-md-12 mb-5 mb-xl-2 mb-lg-2">
                     <div class="ticket-inner text-center" style="padding: 3em">
                         <figure>
@@ -175,7 +160,7 @@
                 </div>
                 <div class="clear"></div>
             </div>
-            <div class="ticket-row">
+            <div id="ticket-row-2" class="ticket-row">
             <form class="form-horizontal" action="{% url 'account_login' %}" method="POST">{% csrf_token %}
                 <div class="form-group">
                     <label class="col-sm-2 control-label" for="email">First Name</label>
@@ -245,4 +230,8 @@
             </form>
         </div>
     </section>
+{% endblock %}
+
+{% block extrajs %}
+<script type="text/javascript" src="{% static 'js/tickets/ticket.js' %}">   </script>
 {% endblock %}

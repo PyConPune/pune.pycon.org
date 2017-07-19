@@ -3,4 +3,4 @@
 *.swp
 db.sqlite3
 static/
-pyconpune/local_settings.py
+pyconpune/local_settings.py*
