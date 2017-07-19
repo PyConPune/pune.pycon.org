@@ -20,12 +20,40 @@
             }, 1000);
         });
 
-        $('.a-ticket').click(function() {
+        $('select').change(function(event) {
+            if (Boolean($('#ticket-row-1').find('ticket-disabled'))) {
+                $('html, body').animate({
+                    scrollTop: $("#ticket").offset().top
+                }, 1000);
+                return;
+            }
+
             $this = $(this);
+            $this.parent().find('.fa-check').removeClass('hidden');
+        });
+
+        $('.a-ticket').click(function(event) {
+            if (Boolean($('#ticket-row-1').find('ticket-disabled'))) {
+                $('html, body').animate({
+                    scrollTop: $("#ticket").offset().top
+                }, 1000);
+                return;
+            }
+
+            $this = $(this);
+            var card_type = $this.data('type');
+
+            if($(event.target).is('select')) {
+                event.preventDefault();
+                return;
+            }
+
             if ($(this).find('.fa-check').hasClass('hidden')) {
-                $this.find('.fa-check').removeClass('hidden');
+                if (card_type == 'dinner') {
+                    $this.find('.fa-check').removeClass('hidden');
+                };
             } else {
                 $this.find('.fa-check').addClass('hidden');
             }
-        })
+        });
     });

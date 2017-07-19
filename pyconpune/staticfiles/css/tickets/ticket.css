@@ -24,7 +24,7 @@
 }
 .ticket-inner {
     border: .5em solid #333;
-    min-height: 45em;
+    min-height: 50em;
 }
 .ticket-title {
     line-height: 4em;
