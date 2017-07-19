@@ -21,7 +21,7 @@
         });
 
         $('select').change(function(event) {
-            if (Boolean($('#ticket-row-1').find('ticket-disabled'))) {
+            if ($('#ticket-row-1').find('.ticket-disabled').length == 0) {
                 $('html, body').animate({
                     scrollTop: $("#ticket").offset().top
                 }, 1000);
@@ -33,7 +33,7 @@
         });
 
         $('.a-ticket').click(function(event) {
-            if (Boolean($('#ticket-row-1').find('ticket-disabled'))) {
+            if ($('#ticket-row-1').find('.ticket-disabled').length == 0) {
                 $('html, body').animate({
                     scrollTop: $("#ticket").offset().top
                 }, 1000);
