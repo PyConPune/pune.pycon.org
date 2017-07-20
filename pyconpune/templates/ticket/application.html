@@ -1,40 +1,193 @@
 {% extends "inner_site_base.html" %}
 
+{% load staticfiles %}
+
+{% block extraheader %}
+    <link href='{% static "css/tickets/ticket.css" %}' rel="stylesheet">
+{% endblock %}
+
 {% block body %}
-<div class="third-fold">
-  <div class="fold-1">
-    <div class="white-fold" style="color:black;">
-      <div class="responsive-container">
-        <h2 class='f-c no-text-transform'>Buy Ticket</h2>
-        <table>
-          <div class="row">
-            <div class="col col-6">
-              <div class="col-text ticket-title"><b>Ticket</b></div>
+    <!-- Ticket v0 Section -->
+    <section id="ticket" class="content-section text-center"
+      style="color: black; background-color:white;
+      width:100%;padding-bottom:5em">
+        <div class="row container" style="margin:auto; text-align: left;">
+          <div class="col-lg-12">
+            <h2 class="no-text-transform">Tickets</h2>
+            <div class="underline"></div>
+            <div id="ticket-row-1" class="ticket-row">
+                {% for ticket in tickets %}
+                <div id="ticket-row-1-{{ forloop.counter }}" class="p-ticket ticket col-xl-4 col-lg-4 col-md-12 mb-5 mb-xl-2 mb-lg-2">
+                    <div class="ticket-outer">
+                        <div class="ticket-inner text-center" style="padding: 3em">
+                            <figure>
+                                <!-- Workstation icon by Icons8 -->
+                                <img class="icon icons8-Workstation" width="100" height="100" src="data:image/png;base64,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">
+                            </figure>
+                            <h4 class="no-text-transform ticket-divider ticket-title">{{ ticket.title }}</h4>
+                            <h1 class="no-text-transform">₹{{ ticket.price }}</h1>
+                            <div class="ticket-description ticket-divider">
+                                <span>{{ ticket.description }}</span>
+                            </div>
+                            <i class="fa fa-check hidden" style="color: green; font-size: 6em" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="clear"></div>
             </div>
-            <div class="col col-2">
-              <div class="col-text ticket-title"><b>Price</b></div>
+            <div id="ticket-row-2" class="ticket-row">
+                <div id="ticket-row-2-1" class="a-ticket ticket col-xl-4 col-lg-4 col-md-12 mb-5 mb-xl-2 mb-lg-2" data-type="dinner">
+                    <div class="ticket-inner text-center" style="padding: 3em">
+                        <figure>
+                        <!-- Food icon by Icons8 -->
+                        <img class="icon icons8-Food" width="100" height="100" src="data:image/png;base64,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">
+                        </figure>
+                        <h4 class="no-text-transform ticket-divider ticket-title">Evening Dinner</h4>
+                        <h1 class="no-text-transform">₹2000</h1>
+                        <div class="ticket-description ticket-divider" style="min-height: 14em">
+                            <span>You get to attend the conference dinner, where you meet & talk with people.</span>
+                        </div>
+                        <i class="fa fa-check hidden" style="color: green; font-size: 6em" aria-hidden="true"></i>
+                    </div>
+                </div>
+
+                <div id="ticket-row-2-2" class="a-ticket ticket col-xl-4 col-lg-4 col-md-12 mb-5 mb-xl-2 mb-lg-2" data-type="tshirt">
+                    <div class="ticket-inner text-center" style="padding: 3em">
+                        <figure>
+                            <!-- T-Shirt icon by Icons8 -->
+                            <img class="icon icons8-T-Shirt" width="100" height="100" src="data:image/png;base64,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">
+                        </figure>
+                        <h4 class="no-text-transform ticket-divider ticket-title">T-Shirts</h4>
+                        <h1 class="no-text-transform">₹300</h1>
+                        <div class="ticket-description ticket-divider">
+                            <span>You can buy a few extra tshirts for family and friends and show some Python love.</span>
+                        </div>
+                        <select class="form-control" id="sel1" class="ticket-tshirt">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
+                        <i class="fa fa-check hidden" style="color: green; font-size: 6em" aria-hidden="true"></i>
+                    </div>
+                </div>
+
+                <div id="ticket-row-2-2" class="a-ticket ticket col-xl-4 col-lg-4 col-md-12 mb-5 mb-xl-2 mb-lg-2" data-type="tshirt">
+                    <div class="ticket-inner text-center" style="padding: 3em">
+                        <figure>
+                            <!-- T-Shirt icon by Icons8 -->
+                            <img class="icon icons8-T-Shirt" width="100" height="100" src="data:image/png;base64,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">
+                        </figure>
+                        <h4 class="no-text-transform ticket-divider ticket-title">T-Shirts</h4>
+                        <h1 class="no-text-transform">₹300</h1>
+                        <div class="ticket-description ticket-divider">
+                            <span>You can buy a few extra tshirts for family and friends and show some Python love.</span>
+                        </div>
+                        <select class="form-control" id="sel2" class="ticket-tshirt">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
+                        <i class="fa fa-check hidden" style="color: green; font-size: 6em" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div id="ticket-row-2" class="ticket-row">
+            <form class="form-horizontal" action="" method="POST">{% csrf_token %}
+                {{ form_user.non_field_errors }}
+                <div class="form-group">
+                    {{ form.first_name.errors }}
+                    <label class="col-sm-2 control-label" for="id_first_name">{{ form_user.first_name.label_tag }}</label>
+                    <div class="col-sm-6">
+                    {{ form_user.first_name }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form.last_name.errors }}
+                    <label class="col-sm-2 control-label" for="id_last_name">{{ form_user.last_name.label_tag }}</label>
+                    <div class="col-sm-6">
+                    {{ form_user.last_name }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form.email.errors }}
+                    <label class="col-sm-2 control-label" for="id_email">{{ form_user.email.label_tag }}</label>
+                    <div class="col-sm-6">
+                    {{ form_user.email }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form.contact.errors }}
+                    <label class="col-sm-2 control-label" for="id_contact">{{ form_user.contact.label_tag }}</label>
+                    <div class="col-sm-6">
+                    {{ form_user.contact }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form.location.errors }}
+                    <label class="col-sm-2 control-label" for="id_location">{{ form_user.location.label_tag }}</label>
+                    <div class="col-sm-6">
+                    {{ form_user.location }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form.age_group.errors }}
+                    <label class="col-sm-2 control-label" for="id_age_group">{{ form_user.age_group.label_tag }}</label>
+                    <div class="col-sm-6">
+                    {{ form_user.age_group }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form.gender.errors }}
+                    <label class="col-sm-2 control-label" for="id_gender">{{ form_user.gender.label_tag }}</label>
+                    <div class="col-sm-6">
+                    {{ form_user.gender }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form.occupation.errors }}
+                    <label class="col-sm-2 control-label" for="id_occupation">{{ form_user.occupation.label_tag }}</label>
+                    <div class="col-sm-6">
+                    {{ form_user.occupation }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form.company.errors }}
+                    <label class="col-sm-2 control-label" for="id_company">{{ form_user.company.label_tag }}</label>
+                    <div class="col-sm-6">
+                    {{ form_user.company }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form.company_title.errors }}
+                    <label class="col-sm-2 control-label" for="id_company_title">{{ form_user.company_title.label_tag }}</label>
+                    <div class="col-sm-6">
+                    {{ form_user.company_title }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form.website.errors }}
+                    <label class="col-sm-2 control-label" for="id_website">{{ form_user.website.label_tag }}</label>
+                    <div class="col-sm-6">
+                    {{ form_user.website }}
+                    </div>
+                </div>
+                {{ form_ticket.ticket }}
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-6">
+                    <button type="submit" class="btn btn-primary">Log me in!</button>
+                    </div>
+                </div>
+            </form>
             </div>
           </div>
-          <hr/>
-          {% for ticket in tickets %}
-          <div class="row">
-            <div class="col col-6">
-              <div class="col-text ticket-title">{{ ticket.title }}</div>
-              <div class="col-text gray">{{ ticket.description }}</div>
-            </div>
-            <div class="col col-2">
-              <div class="col-text center">₹<span class="ticket-price">{{ ticket.price }}</span></div>
-            </div>
-          </div>
-          {% endfor %}
-        </table>
-        <form action="" method="POST" style="padding-bottom:100px;">
-            {% csrf_token %}
-            {{ form }}
-            <input type="submit" value="Buy" />
-        </form>
-      </div>
-    </div>
-  </div>
-</div><!-- third-fold -->
+        </div>
+    </section>
+{% endblock %}
+
+{% block extrajs %}
+<script type="text/javascript" src="{% static 'js/tickets/ticket.js' %}">   </script>
 {% endblock %}

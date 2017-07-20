@@ -17,6 +17,7 @@ class Ticket(Base):
     title = models.CharField(_("name"), max_length=255)
     limit = models.PositiveIntegerField(_("limit"), default=0)
     price = models.PositiveIntegerField(_("price"), default=0, db_index=True)
+    description = models.CharField(_("description"), max_length=255, null=True)
     conference = models.ForeignKey(Conference, verbose_name=_("conference"))
 
     class Meta:

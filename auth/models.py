@@ -11,8 +11,20 @@ class UserProfile(Base):
     first_name = models.CharField(_("first name"), max_length=255)
     last_name = models.CharField(_("last name"), max_length=255, null=True,
                                  blank=True)
+    contact = models.CharField(_("contact"), max_length=15, null=True,
+                               blank=True)
     location = models.CharField(_("location"), max_length=255, null=True,
                                 blank=True)
+    age_group = models.CharField(_("age group"), max_length=255, null=True,
+                                blank=True)
+    gender = models.CharField(_("gender"), max_length=255, null=True,
+                                blank=True)
+    occupation = models.CharField(_("occupation"), max_length=255, null=True,
+                                blank=True)
+    company = models.CharField(_("company"), max_length=255, null=True,
+                                  blank=True)
+    company_title = models.CharField(_("company title"), max_length=255, null=True,
+                               blank=True)
 
     subscribed = models.BooleanField(_("subscribed"),
                                      max_length=255,

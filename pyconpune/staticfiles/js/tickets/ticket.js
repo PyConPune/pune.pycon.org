@@ -15,12 +15,18 @@
                     $(this).find('.fa-check').removeClass('hidden');
                 }
             });
+            var ticket_id = id.replace("ticket-row-1-", "");
+            $('#id_ticket').val(ticket_id);
             $('html, body').animate({
                 scrollTop: $("#ticket-row-2").offset().top - 70
             }, 1000);
         });
 
-        $('select').change(function(event) {
+        $('input[name=email]').addClass('form-control');
+
+        $('#id_ticket').hide();
+
+        $('.a-ticket select').change(function(event) {
             if ($('#ticket-row-1').find('.ticket-disabled').length == 0) {
                 $('html, body').animate({
                     scrollTop: $("#ticket").offset().top
