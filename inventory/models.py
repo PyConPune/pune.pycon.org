@@ -1,12 +1,13 @@
 import uuid
 
 from django.db import models
-from django.contrib.auth.models import User
 from django.utils.translation import ugettext as _
 
 from symposion.conference.models import Conference
 
+from cauth.models import EventUser
 from root.models import Base
+
 
 class Tshirt(Base):
     """ Model to store the different types of tshirt. """
@@ -29,7 +30,7 @@ class UserTshirt(Base):
     """ Model for maitaining the tshirt order entry for all the Users. """
 
     uuid = models.UUIDField(default=uuid.uuid4, editable=False)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(EventUser, on_delete=models.CASCADE)
     tshirt = models.ForeignKey(Tshirt, on_delete=models.CASCADE)
 
     class Meta:

@@ -16,14 +16,14 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+import cauth.urls
 import root.urls
-import auth.urls
 import ticket.urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include(root.urls)),
-    url(r'', include(auth.urls)),
+    url(r'', include(cauth.urls)),
     url(r'', include(ticket.urls)),
     url(r'^jet/', include('jet.urls', 'jet')),
     url(r'^jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),

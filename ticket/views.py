@@ -1,48 +1,53 @@
-from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from django.shortcuts import render
 from django.views.generic import TemplateView
 
-from ticket.models import Ticket, UserTicket
-from ticket.forms import TicketApplicationForm
-from auth.forms import UserRegistrationForm
-
-from auth.views import SignupView
-
+from cauth.views import SignupView
 from payments.razorpay.payments import RazorpayPayments
+from ticket.forms import UserRegistrationForm
+from ticket.forms import TicketApplicationForm
+from ticket.models import Ticket, UserTicket
 
 
 class TicketApplicationView(TemplateView):
 
-    form_ticket = TicketApplicationForm
-    form_user = UserRegistrationForm
+    ticket_form_cls = TicketApplicationForm
+    user_form_cls = UserRegistrationForm
     template_name = 'ticket/application.html'
 
     def get(self, request, *args, **kwargs):
-        form1 = self.form_ticket()
-        form2 = self.form_user()
-        tickets = Ticket.objects.all()
-        return render(request, self.template_name,
-                      {'form_ticket': form1,
-                       'form_user': form2,
-                       'tickets': tickets})
+
+        year = kwargs.get('year')
+
+        ticket_form = self.ticket_form_cls()
+        user_form = self.user_form_cls()
+        tickets = Ticket.objects.all(year=year)
+
+        return render(
+            request, self.template_name, {
+                'ticket_form': ticket_form,
+                'user_form': user_form,
+                'tickets': tickets
+            }
+        )
 
     def post(self, request, *args, **kwargs):
-        form1 = self.form_ticket(request.POST)
-        form2 = self.form_user(request.POST)
+        ticket_form = self.ticket_form_cls(request.POST)
+        user_form = self.user_form_cls(request.POST)
         tickets = Ticket.objects.all()
 
-        if form2.is_valid() and form1.is_valid():
-            ticket = form1.cleaned_data['ticket']
-            userticketcount = UserTicket.objects.filter(ticket=ticket).count()
-            if userticketcount < ticket.limit:
+        if ticket_form.is_valid() and user_form.is_valid():
+            ticket = ticket_form.cleaned_data['ticket']
+            user_ticket_count = UserTicket.objects.filter(ticket=ticket).count()
+            if user_ticket_count < ticket.limit:
                 payment = RazorpayPayments()
                 customer = {
-                    "email": form2.cleaned_data['email'],
-                    "contact": form2.cleaned_data['contact']
+                    "email": user_form.cleaned_data['email'],
+                    "contact": user_form.cleaned_data['contact']
                 }
                 items = [{
-                    "name": form1.cleaned_data['ticket'].title,
-                    "amount": form1.cleaned_data['ticket'].price * 100,
+                    "name": ticket_form.cleaned_data['ticket'].title,
+                    "amount": ticket_form.cleaned_data['ticket'].price * 100,
                     "currency": "INR"
                 }]
                 invoice = payment.createInvoice(customer=customer, items=items)
@@ -59,10 +64,10 @@ class TicketApplicationView(TemplateView):
                        'tickets': tickets})
 
 
-def thanks(request):
+def acknowledge(request, year):
     return render(request, 'ticket/thanks.html')
 
 
-def registration(request):
+def registration(request, year):
     """ This is the first version of the JS based razorpay checkout page """
     return render (request, "ticket/ticketv0.html")

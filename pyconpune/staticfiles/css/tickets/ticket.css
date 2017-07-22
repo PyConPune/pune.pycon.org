@@ -30,7 +30,6 @@
     border: .5em solid #1ac11a;
 }
 .ticket-title {
-    line-height: 4em;
     height: 5em;
 }
 .ticket-description {

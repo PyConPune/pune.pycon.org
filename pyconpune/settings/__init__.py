@@ -66,6 +66,7 @@ INSTALLED_APPS = [
     'jet.dashboard',
     'jet',
 
+    'cauth',
     'inventory',
     'root',
     'ticket',
@@ -121,6 +122,7 @@ DATABASES = {
     }
 }
 
+AUTH_USER_MODEL = 'cauth.EventUser'
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators

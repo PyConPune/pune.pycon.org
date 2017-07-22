@@ -1,13 +1,13 @@
 import uuid
 
 from django.db import models
-from django.contrib.auth.models import User
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 from django.utils.translation import ugettext as _
 
 from symposion.conference.models import Conference
 
+from cauth.models import EventUser
 from root.models import Base
 
 
@@ -50,7 +50,7 @@ class UserTicket(Base):
     """ Model for maitaining the ticket entry for all the Users. """
 
     uuid = models.UUIDField(default=uuid.uuid4, editable=False)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(EventUser, on_delete=models.CASCADE)
     ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE)
 
     class Meta:

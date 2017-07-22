@@ -1,11 +1,13 @@
 import account.views
 
 from django.contrib.auth import logout
+from django.http import Http404
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 
-from auth.forms import SignupForm
-from auth.utils import generate_username
+from cauth.forms import SignupForm
+from cauth.utils import generate_username
+from root.utils import validate_year
 
 
 class SignupView(account.views.SignupView):
@@ -29,7 +31,11 @@ class LoginView(account.views.LoginView):
     form_class = account.forms.LoginEmailForm
 
 
-def logout_view(request):
+def logout_view(request, year):
     """ This view logs out the user. """
+    
+    if not validate_year(year):
+        raise Http404
+
     logout(request)
     return redirect('homepage')

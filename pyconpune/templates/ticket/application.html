@@ -162,23 +162,16 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    {{ form.company_title.errors }}
-                    <label class="col-sm-2 control-label" for="id_company_title">{{ form_user.company_title.label_tag }}</label>
+                    {{ form.job_title.errors }}
+                    <label class="col-sm-2 control-label" for="id_company_title">{{ form_user.job_title.label_tag }}</label>
                     <div class="col-sm-6">
-                    {{ form_user.company_title }}
-                    </div>
-                </div>
-                <div class="form-group">
-                    {{ form.website.errors }}
-                    <label class="col-sm-2 control-label" for="id_website">{{ form_user.website.label_tag }}</label>
-                    <div class="col-sm-6">
-                    {{ form_user.website }}
+                    {{ form_user.job_title }}
                     </div>
                 </div>
                 {{ form_ticket.ticket }}
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-6">
-                    <button type="submit" class="btn btn-primary">Log me in!</button>
+                    <button type="submit" class="btn btn-primary">Register!</button>
                     </div>
                 </div>
             </form>

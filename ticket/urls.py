@@ -3,7 +3,9 @@ from django.conf.urls import url
 import ticket.views
 
 urlpatterns = [
-    url(r"^ticket/buy/$", ticket.views.TicketApplicationView.as_view(), name="ticket_application"),
-    url(r"^ticket/thanks/$", ticket.views.thanks, name="thanks"),
-    url(r"^ticket/register/$", ticket.views.registration, name="registration"),
+    url(r"^(?P<year>\d{4})/register/$", ticket.views.TicketApplicationView.as_view(),
+        name="ticket_register"),
+
+    url(r"^(?P<year>\d{4})/acknowledge/^$", ticket.views.acknowledge,
+        name="ticet_acknowledge"),
 ]
