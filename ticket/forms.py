@@ -17,23 +17,8 @@ class TicketApplicationForm(forms.ModelForm):
             "ticket",
         ]
 
-    def clean(self, *args, **kwargs):
-        pass
-
-    def save(self, *args, **kwargs):
-        cleaned_data = self.cleaned_data
-        ticket = cleaned_data['ticket']
-
-        user_ticket_count = UserTicket.objects.filter(ticket=ticket).count()
-        if user_ticket_count < ticket.limit:
-            super(TicketApplicationForm, self).save(*args, **kwargs)
-        else:
-            self.ticket.is_limit_reached = True
-            self.ticket.save()
-
 
 class UserRegistrationForm(account.forms.SignupForm):
-    
     first_name = forms.CharField(
         label=_('First Name'),
         widget=forms.TextInput(attrs={

@@ -100,9 +100,5 @@ class UserProfile(Base):
     def get_name(self):
         raise NotImplementedError
 
-
-    def save(self):
-        raise NotImplementedError
-
     def __str__(self):
         return '(%s) %s %s' % (self.year, self.user.username, self.first_name)

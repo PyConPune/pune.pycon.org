@@ -1,3 +1,6 @@
+from random import choice
+from string import ascii_lowercase, digits
+
 from django.contrib.auth import get_user_model
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
@@ -29,6 +32,17 @@ class TicketApplicationView(TemplateView):
 
         return tickets
 
+    def _generate_username(self, length=16, chars=ascii_lowercase+digits,
+                           split=4, delimiter='-'):
+
+        username = ''.join([choice(chars) for i in range(length)])
+        if split:
+            username = delimiter.join([
+                username[start:start+split]
+                for start in range(0, len(username), split)])
+
+        return username
+
     def _generate_payable_amount(self, forms):
         raise NotImplementedError
 
@@ -51,10 +65,19 @@ class TicketApplicationView(TemplateView):
             "amount": amount,
             "currency": "INR"
         }]
-            
+
         invoice = payment.createInvoice(customer=customer, items=items)
 
         return invoice
+
+    def _validate_request_pre_save(self, ticket):
+        user_ticket_count = UserTicket.objects.filter(ticket=ticket).count()
+        if user_ticket_count < ticket.limit:
+            return True
+        else:
+            ticket.is_limit_reached = True
+            ticket.save()
+            return False
 
     def get(self, request, *args, **kwargs):
         ticket_form = self.ticket_form_cls()
@@ -74,10 +97,19 @@ class TicketApplicationView(TemplateView):
         user_form = self.user_form_cls(request.POST)
         tickets = self._get_tickets()
 
-        if ticket_form.is_valid() and user_form.is_valid():
-            user_ticket = ticket_form.save()
-            user = self.create_user(user_form, model=get_user_model())
+        is_ticket_form_valid = ticket_form.is_valid()
+        is_user_form_valid = user_form.is_valid()
+
+        ticket = ticket_form.cleaned_data['ticket']
+        is_ticket_left = self._validate_request_pre_save(ticket)
+
+        if is_ticket_form_valid and is_user_form_valid and is_ticket_left:
+            user = self.create_user(user_form)
             profile = self.create_profile(user_form, user=user)
+
+            user_ticket = ticket_form.save(commit=False)
+            user_ticket.user = user
+            user_ticket.save()
 
             amount = self._generate_payable_amount(
                     forms=[user_ticket])
@@ -88,7 +120,7 @@ class TicketApplicationView(TemplateView):
             payment, invoice = self._initiate_payment(
                     user=user, profile=profile, title='PyCon Pune 2018',
                     description=description)
-            
+
             return HttpResponseRedirect(invoice['short_url'])
 
         return render(
@@ -99,12 +131,17 @@ class TicketApplicationView(TemplateView):
             }
         )
 
-    def create_user(self, form, model=None, **kwargs):
-        if model is None:
-            User = get_user_model()
-        
+    def create_user(self, form, **kwargs):
+        User = get_user_model()
+
         user = User(**kwargs)
-        username = self._generate_username(form)
+        username = self._generate_username()
+        while True:
+            try:
+                User.objects.get(username=username)
+                username = self._generate_username()
+            except User.DoesNotExist:
+                break
         user.username = username
         user.email = form.cleaned_data['email']
         user.set_unusable_password()
@@ -122,7 +159,7 @@ class TicketApplicationView(TemplateView):
         profile.gender = form.cleaned_data.get('gender')
         profile.company = form.cleaned_data.get('company')
         profile.job_title = form.cleaned_data.get('job_title')
-        
+ 
         age_group = form.cleaned_data.get('age_group')
         if age_group == '0':
             age_group = None
