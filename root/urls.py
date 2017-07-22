@@ -2,11 +2,13 @@ from django.conf import settings
 from django.conf.urls import url
 from django.conf.urls.static import static
 
-from root.views import homepage, coc
+import root.views
 
 urlpatterns = [
-    url(r'^(?P<year>\d{4})/$', homepage, name="homepage"),
-    url(r'^(?P<year>\d{4})/coc/$', coc, name="coc")
+    url(r'^$', root.views.homepage,
+        name="homepage"),
+    url(r'^coc/$', root.views.coc,
+        name="coc")
 ]
 
 if settings.DEBUG:

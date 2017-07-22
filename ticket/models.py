@@ -18,7 +18,11 @@ class Ticket(Base):
     limit = models.PositiveIntegerField(_("limit"), default=0)
     price = models.PositiveIntegerField(_("price"), default=0, db_index=True)
     description = models.CharField(_("description"), max_length=255, null=True)
+    image_base64_title = models.CharField(_("image title"), max_length=255, null=True, blank=True)
+    image_base64_text = models.TextField(_("image url"), null=True, blank=True)
     conference = models.ForeignKey(Conference, verbose_name=_("conference"))
+    is_limit_reached = models.BooleanField(_("limit reached?"), default=False, db_index=True)
+    disabled = models.BooleanField(_("disabled?"), default=False, db_index=True)
 
     class Meta:
         verbose_name = _("ticket")
@@ -52,6 +56,11 @@ class UserTicket(Base):
     uuid = models.UUIDField(default=uuid.uuid4, editable=False)
     user = models.ForeignKey(EventUser, on_delete=models.CASCADE)
     ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE)
+
+    is_payment_done = models.BooleanField(
+        _("payment done?"),
+        default=False
+    )
 
     class Meta:
         verbose_name = _("user ticket")

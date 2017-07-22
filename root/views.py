@@ -1,7 +1,8 @@
+from django.conf import settings
+from django.core.urlresolvers import reverse
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 
-# Create your views here.
 def homepage(request):
     return render(request, template_name='index.html', context={'page': 'home'})
 

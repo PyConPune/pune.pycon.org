@@ -60,6 +60,7 @@ class UserProfile(Base):
 
     age_group = models.CharField(
         _("age group"),
+        choices=AGE_GROUP_CHOICES,
         max_length=255,
         null=True,
         blank=True
@@ -67,7 +68,6 @@ class UserProfile(Base):
 
     gender = models.CharField(
         _("gender"),
-        choices=AGE_GROUP_CHOICES,
         max_length=255,
         null=True,
         blank=True
@@ -87,25 +87,11 @@ class UserProfile(Base):
         null=True,
         blank=True
     )
-    
-    company_title = models.CharField(
-        _("company title"),
-        max_length=255,
-        null=True,
-        blank=True
-    )
 
-    website = models.URLField(
-        null=True,
-        blank=True
-    )
-    
-    subscribed = models.BooleanField(
-        _("subscribed"),
-        max_length=255,
-        default=False
-    )
-    
+    job_title = models.CharField(_("job title"), max_length=255, null=True,
+                                 blank=True)
+    website = models.URLField(null=True, blank=True)
+    subscribed = models.BooleanField(_("subscribed"), default=False)
 
     class Meta:
         verbose_name = _('Profile')
@@ -113,7 +99,7 @@ class UserProfile(Base):
 
     def get_name(self):
         raise NotImplementedError
-        
+
 
     def save(self):
         raise NotImplementedError

@@ -38,6 +38,7 @@ ALLOWED_HOSTS = []
 # Using email for authentication
 ACCOUNT_EMAIL_UNIQUE = True
 ACCOUNT_EMAIL_CONFIRMATION_REQUIRED = True
+ACCOUNT_EMAIL_UNIQUE = False
 
 AUTHENTICATION_BACKENDS = ['account.auth_backends.EmailAuthenticationBackend']
 ACCOUNT_EMAIL_CONFIRMATION_REQUIRED = True
@@ -172,3 +173,6 @@ if LOCAL_SETTINGS:
         # release based on the git info.
         'release': raven.fetch_git_sha(os.path.dirname(os.pardir)),
     }
+
+# PyCon Pune based settings
+CONFERENCE_YEAR = 2018
