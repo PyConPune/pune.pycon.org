@@ -49,6 +49,9 @@ a:focus {
   text-decoration: none;
   color: #1d9b6c;
 }
+body#page-top > section:nth-of-type(even) {
+  color: black; background-color:white;
+}
 .light {
   font-weight: 400;
 }
