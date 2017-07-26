@@ -27,14 +27,15 @@ virtualenv --python=`which python3` ~/.virtualenvs/pycon
 source ~/.virtualenvs/pycon/bin/activate
 ```
 
-4. To start working you need to check out the development branch,
+4. To start working you need to check out the development branch
 ```
 git clone https://github.com/PyConPune/pune.pycon.org.git
 cd pune.pycon.org
+git pull
 git checkout feature/django
 ```
 
-5. To install Django and all the packages related to this project,
+5. To install Django and all the packages related to this project
 ```
 pip install -r requirements.txt
 ```
