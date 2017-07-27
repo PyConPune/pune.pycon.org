@@ -49,9 +49,6 @@ a:focus {
   text-decoration: none;
   color: #1d9b6c;
 }
-body#page-top > section:nth-of-type(even) {
-  color: black; background-color:white;
-}
 .light {
   font-weight: 400;
 }
@@ -333,4 +330,42 @@ img::-moz-selection {
 }
 body {
   webkit-tap-highlight-color: rgba(255, 255, 255, 0.2);
+}
+
+
+body#page-top > section:nth-of-type(even) {
+  color: black; background-color:white;
+}
+.speaker {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.speaker h4 {
+    margin-top: 25px;
+    margin-bottom: 0;
+    text-transform: none;
+}
+.speaker img {
+    margin: 0 auto;
+    border: 7px solid #fff;
+}
+.img-circle {
+  border-radius: 50%;
+}
+.social-buttons {
+  margin-bottom: 0;
+}
+ul.social-buttons li a {
+    display: block;
+    background-color: #fff;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    font-size: 20px;
+    line-height: 40px;
+    color: #222;
+    outline: 0;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
 }
