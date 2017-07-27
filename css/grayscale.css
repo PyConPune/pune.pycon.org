@@ -349,6 +349,9 @@ body#page-top > section:nth-of-type(even) {
     margin: 0 auto;
     border: 7px solid #fff;
 }
+.speaker .speaker-bio {
+  min-height: 22em;
+}
 .img-circle {
   border-radius: 50%;
 }
