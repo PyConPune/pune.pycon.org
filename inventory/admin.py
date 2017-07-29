@@ -1,3 +1,13 @@
 from django.contrib import admin
 
-# Register your models here.
+from inventory.models import Tshirt, UserTshirt
+
+
+@admin.register(Tshirt)
+class TshirtAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(UserTshirt)
+class UserTshirtAdmin(admin.ModelAdmin):
+    pass

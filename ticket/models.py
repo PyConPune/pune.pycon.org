@@ -18,10 +18,12 @@ class Ticket(Base):
     limit = models.PositiveIntegerField(_("limit"), default=0)
     price = models.PositiveIntegerField(_("price"), default=0, db_index=True)
     description = models.CharField(_("description"), max_length=255, null=True)
-    image_base64_title = models.CharField(_("image title"), max_length=255, null=True, blank=True)
+    image_base64_title = models.CharField(_("image title"), max_length=255,
+                                          null=True, blank=True)
     image_base64_text = models.TextField(_("image url"), null=True, blank=True)
     conference = models.ForeignKey(Conference, verbose_name=_("conference"))
-    is_limit_reached = models.BooleanField(_("limit reached?"), default=False, db_index=True)
+    is_limit_reached = models.BooleanField(_("limit reached?"), default=False,
+                                           db_index=True)
     disabled = models.BooleanField(_("disabled?"), default=False, db_index=True)
 
     class Meta:
@@ -31,6 +33,21 @@ class Ticket(Base):
     def __str__(self):
         return u"%s: %s" % (self.conference.title, self.title)
 
+
+class AuxiliaryTicket(Base):
+    """ Model for the auxiliary tickets, which the user can
+    buy in addition to the main ticket"""
+    title = models.CharField(_('name'), max_length=255)
+    limit = models.PositiveIntegerField(_("limit"), default=0)
+    price = models.PositiveIntegerField(_('price'), default=0)
+    description = models.CharField(_("description"), max_length=255, null=True)
+    image_base64_title = models.CharField(_("image title"), max_length=255,
+                                          null=True, blank=True)
+    image_base64_text = models.TextField(_("image url"), null=True, blank=True)
+    conference = models.ForeignKey(Conference, verbose_name=_("conference"))
+    is_limit_reached = models.BooleanField(_("limit reached?"), default=False,
+                                           db_index=True)
+    disabled = models.BooleanField(_("disabled?"), default=False, db_index=True)
 
 class TicketAddons(Base):
     """ Model for the addons for the tickets, which needs to be bought along
@@ -56,6 +73,12 @@ class UserTicket(Base):
     uuid = models.UUIDField(default=uuid.uuid4, editable=False)
     user = models.ForeignKey(EventUser, on_delete=models.CASCADE)
     ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE)
+
+    auxiliary_ticket_id = models.CommaSeparatedIntegerField(
+        _('auxiliary ticket'),
+        default=0,
+        max_length=200
+    )
 
     is_payment_done = models.BooleanField(
         _("payment done?"),

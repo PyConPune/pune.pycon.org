@@ -11,7 +11,8 @@ from cauth.views import SignupView
 from payments.razorpay.payments import RazorpayPayments
 from ticket.forms import UserRegistrationForm
 from ticket.forms import TicketApplicationForm
-from ticket.models import Ticket, UserTicket
+from ticket.models import Ticket, UserTicket, AuxiliaryTicket
+from inventory.models import Tshirt, UserTshirt
 
 
 class TicketApplicationView(TemplateView):
@@ -32,6 +33,40 @@ class TicketApplicationView(TemplateView):
 
         return tickets
 
+    @staticmethod
+    def _get_auxiliary_tickets():
+        tickets = AuxiliaryTicket.objects.values(
+            'title',
+            'price',
+            'description',
+            'image_base64_text',
+            'image_base64_title',
+        )
+
+        return tickets
+
+    @staticmethod
+    def _get_tshirts():
+        tshirts = Tshirt.objects.values(
+            'id',
+            'gender',
+            'size',
+            'price',
+            'description',
+            'image_base64_text',
+            'image_base64_title',
+        )
+
+        return tshirts
+
+    def _get_tshirts_from_ids(self, tshirt_ids):
+        tshirts = []
+        for id in tshirt_ids:
+            tshirt = Tshirt.objects.get(id=int(id))
+            tshirts.append(tshirt)
+
+        return tshirts
+
     def _generate_username(self, length=16, chars=ascii_lowercase+digits,
                            split=4, delimiter='-'):
 
@@ -43,8 +78,25 @@ class TicketApplicationView(TemplateView):
 
         return username
 
-    def _generate_payable_amount(self, forms):
-        raise NotImplementedError
+    def _generate_payable_amount(self, user_ticket, user_tshirts):
+        ticket = user_ticket.ticket
+        auxiliary_ticket_ids = user_ticket.auxiliary_ticket_id.split(",")
+        auxiliary_tickets = []
+        if int(auxiliary_ticket_ids[0]) != 0:
+            auxiliary_tickets = [
+                AuxiliaryTicket.objects.get(id=int(x)) for x in auxiliary_ticket_ids
+            ]
+
+        payable_amount = ticket.price
+
+        for auxiliary_ticket in auxiliary_tickets:
+            payable_amount = payable_amount + auxiliary_ticket.price
+
+        for user_tshirt in user_tshirts:
+            payable_amount = payable_amount + user_tshirt.tshirt.price
+
+        return payable_amount
+
 
     def _generate_invoice_amount(self, amount):
         return (amount + amount * 0.18) * 100
@@ -52,11 +104,13 @@ class TicketApplicationView(TemplateView):
     def _generate_invoice_description(self, forms):
         raise NotImplementedError
 
-    def _initiate_payment(user, profile, title, description, amount):
+    def _initiate_payment(self, user, profile, title, description, amount):
         payment = RazorpayPayments()
+        fullname = '{} {}'.format(profile.first_name, profile.last_name)
         customer = {
             "email": user.email,
-            "contact": profile.contact
+            "contact": profile.contact,
+            "name": fullname
         }
 
         items = [{
@@ -70,8 +124,16 @@ class TicketApplicationView(TemplateView):
 
         return invoice
 
-    def _validate_request_pre_save(self, ticket):
+    def _validate_request_pre_save(self, ticket, auxiliary_ticket_ids):
         user_ticket_count = UserTicket.objects.filter(ticket=ticket).count()
+        for id in auxiliary_ticket_ids.split(","):
+            if int(id) != 0:
+                auxiliary_ticket = AuxiliaryTicket.objects.get(id=int(id))
+                auxiliary_ticket_count = UserTicket.objects.filter(
+                    auxiliary_ticket_id__contains=id
+                ).count()
+                if auxiliary_ticket_count >= auxiliary_ticket.limit:
+                    return False
         if user_ticket_count < ticket.limit:
             return True
         else:
@@ -83,43 +145,62 @@ class TicketApplicationView(TemplateView):
         ticket_form = self.ticket_form_cls()
         user_form = self.user_form_cls()
         tickets = self._get_tickets()
+        auxiliary_tickets = self._get_auxiliary_tickets()
+        tshirts = self._get_tshirts()
 
         return render(
             request, self.template_name, {
                 'ticket_form': ticket_form,
                 'user_form': user_form,
-                'tickets': tickets
+                'tickets': tickets,
+                'auxiliary_tickets': auxiliary_tickets,
+                'tshirts': tshirts,
             }
         )
 
     def post(self, request, *args, **kwargs):
         ticket_form = self.ticket_form_cls(request.POST)
         user_form = self.user_form_cls(request.POST)
+        tshirt_ids = request.POST.getlist('tshirts[]')
+
         tickets = self._get_tickets()
+        auxiliary_tickets = self._get_auxiliary_tickets()
+        tshirts = self._get_tshirts()
 
         is_ticket_form_valid = ticket_form.is_valid()
         is_user_form_valid = user_form.is_valid()
 
+
         ticket = ticket_form.cleaned_data['ticket']
-        is_ticket_left = self._validate_request_pre_save(ticket)
+        auxiliary_ticket_id = ticket_form.cleaned_data['auxiliary_ticket_id']
+        selected_tshirts = self._get_tshirts_from_ids(tshirt_ids)
+
+        is_ticket_left = self._validate_request_pre_save(
+                        ticket,
+                        auxiliary_ticket_id)
 
         if is_ticket_form_valid and is_user_form_valid and is_ticket_left:
             user = self.create_user(user_form)
             profile = self.create_profile(user_form, user=user)
 
+            user_tshirts = self.save_user_tshirts(selected_tshirts, user)
+
             user_ticket = ticket_form.save(commit=False)
             user_ticket.user = user
+            user_ticket.auxiliary_ticket_id = auxiliary_ticket_id
             user_ticket.save()
 
             amount = self._generate_payable_amount(
-                    forms=[user_ticket])
+                    user_ticket=user_ticket,
+                    user_tshirts=user_tshirts,
+                )
             amount = self._generate_invoice_amount(
                     amount)
-            description = self._generate_invoice_description(
-                    forms=[user_ticket])
-            payment, invoice = self._initiate_payment(
-                    user=user, profile=profile, title='PyCon Pune 2018',
-                    description=description)
+            # description = self._generate_invoice_description(
+            #        forms=[user_ticket])
+            invoice = self._initiate_payment(
+                user=user, profile=profile, title='PyCon Pune 2018',
+                description="", amount=amount)
 
             return HttpResponseRedirect(invoice['short_url'])
 
@@ -127,7 +208,9 @@ class TicketApplicationView(TemplateView):
             request, self.template_name, {
                 'ticket_form': ticket_form,
                 'user_form': user_form,
-                'tickets': tickets
+                'tickets': tickets,
+                'auxiliary_tickets': auxiliary_tickets,
+                'tshirts': tshirts,
             }
         )
 
@@ -174,6 +257,15 @@ class TicketApplicationView(TemplateView):
 
         return profile
 
+    def save_user_tshirts(self, tshirts, user):
+
+        user_tshirts = []
+        for tshirt in tshirts:
+            user_tshirt = UserTshirt(tshirt=tshirt, user=user)
+            user_tshirt.save()
+            user_tshirts.append(user_tshirt)
+
+        return user_tshirts
 
 def acknowledge(request):
     return render(request, 'ticket/thanks.html')

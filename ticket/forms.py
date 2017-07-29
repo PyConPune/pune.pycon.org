@@ -15,6 +15,7 @@ class TicketApplicationForm(forms.ModelForm):
         model = UserTicket
         fields = [
             "ticket",
+            "auxiliary_ticket_id"
         ]
 
 
