@@ -31,7 +31,7 @@ source ~/.virtualenvs/pycon/bin/activate
 ```
 git clone https://github.com/PyConPune/pune.pycon.org.git
 cd pune.pycon.org
-git pull
+git fetch
 git checkout feature/django
 ```
 
