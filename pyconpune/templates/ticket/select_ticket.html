@@ -1,0 +1,18 @@
+    {% for ticket in tickets %}
+    <div id="ticket-row-1-{{ forloop.counter }}" class="p-ticket ticket col-xl-4 col-lg-4 col-md-12 mb-5 mb-xl-2 mb-lg-2">
+        <div class="ticket-outer">
+            <div class="ticket-inner text-center" style="padding: 3em">
+                <figure>
+                    <!-- {{ ticket.image_base64_title }} icon by Icons8 -->
+                    <img class="icon icons8-{{ ticket.image_base64_title }}" width="100" height="100" src="{{ ticket.image_base64_text }}">
+                </figure>
+                <h4 class="no-text-transform ticket-divider ticket-title">{{ ticket.title }}</h4>
+                <h1 class="no-text-transform">₹{{ ticket.price }}</h1>
+                <div class="ticket-description ticket-divider">
+                    <span>{{ ticket.description }}</span>
+                </div>
+                <i class="fa fa-check hidden" style="color: green; font-size: 6em" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+    {% endfor %}

@@ -1,0 +1,104 @@
+                <div id="ticket-row-3" class="ticket-row">
+                  <form id="ticket-register-form" class="form-horizontal" action="{% url 'ticket_register' %}" method="POST">{% csrf_token %}
+                      {{ user_form.non_field_errors }}
+                      <div class="form-group">
+                          <label class="col-sm-2 control-label" for="id_first_name">{{ user_form.first_name.label_tag }}</label>
+                          <div class="col-sm-6">
+                              {{ user_form.first_name }}
+                          </div>
+                          <div class="col-sm-4">
+                              {{ user_form.first_name.errors }}
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-sm-2 control-label" for="id_last_name">{{ user_form.last_name.label_tag }}</label>
+                          <div class="col-sm-6">
+                              {{ user_form.last_name }}
+                          </div>
+                          <div class="col-sm-4">
+                              {{ user_form.last_name.errors }}
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-sm-2 control-label" for="id_email">{{ user_form.email.label_tag }}</label>
+                          <div class="col-sm-6">
+                              {{ user_form.email }}
+                          </div>
+                          <div class="col-sm-4">
+                              {{ user_form.email.errors }}
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-sm-2 control-label" for="id_contact">{{ user_form.contact.label_tag }}</label>
+                          <div class="col-sm-6">
+                              {{ user_form.contact }}
+                          </div>
+                          <div class="col-sm-4">
+                              {{ user_form.contact.errors }}
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-sm-2 control-label" for="id_location">{{ user_form.location.label_tag }}</label>
+                          <div class="col-sm-6">
+                              {{ user_form.location }}
+                          </div>
+                          <div class="col-sm-4">
+                              {{ user_form.location.errors }}
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-sm-2 control-label" for="id_age_group">{{ user_form.age_group.label_tag }}</label>
+                          <div class="col-sm-6">
+                              {{ user_form.age_group }}
+                          </div>
+                          <div class="col-sm-4">
+                              {{ user_form.age_group.errors }}
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-sm-2 control-label" for="id_gender">{{ user_form.gender.label_tag }}</label>
+                          <div class="col-sm-6">
+                              {{ user_form.gender }}
+                          </div>
+                          <div class="col-sm-4">
+                              {{ user_form.gender.errors }}
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-sm-2 control-label" for="id_occupation">{{ user_form.occupation.label_tag }}</label>
+                          <div class="col-sm-6">
+                              {{ user_form.occupation }}
+                          </div>
+                          <div class="col-sm-4">
+                              {{ user_form.occupation.errors }}
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-sm-2 control-label" for="id_company">{{ user_form.company.label_tag }}</label>
+                          <div class="col-sm-6">
+                              {{ user_form.company }}
+                          </div>
+                          <div class="col-sm-4">
+                              {{ user_form.company.errors }}
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-sm-2 control-label" for="id_company_title">{{ user_form.job_title.label_tag }}</label>
+                          <div class="col-sm-6">
+                              {{ user_form.job_title }}
+                          </div>
+                          <div class="col-sm-4">
+                              {{ user_form.job_title.errors }}
+                          </div>
+                      </div>
+                      <input name="tshirts[]" type="hidden" id="tshirt-arr-1"/>
+                      <input name="tshirts[]" type="hidden" id="tshirt-arr-2"/>
+                      {{ ticket_form.ticket }}
+                      {{ ticket_form.auxiliary_ticket_id }}
+                      <div class="form-group">
+                          <div class="col-sm-offset-2 col-sm-6">
+                          <button type="submit" class="btn btn-primary">Register!</button>
+                          </div>
+                      </div>
+                  </form>
+              </div>

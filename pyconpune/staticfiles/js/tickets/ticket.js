@@ -15,6 +15,9 @@
                     $(this).find('.fa-check').removeClass('hidden');
                 }
             });
+            if (!$('#ticket-row-2').hasClass('show')) {
+                $('#ticket-row-2').addClass('show');
+            }
             var ticket_id = id.replace("ticket-row-1-", "");
             $('#id_ticket').val(ticket_id);
             $('html, body').animate({
@@ -73,7 +76,15 @@
                 $this.find('.fa-check').addClass('hidden');
                 $('#id_auxiliary_ticket_id').val(0);
             }
+
+            if (!$('#ticket-row-3').hasClass('show')) {
+                $('#ticket-row-3').addClass('show');
+            }
         });
+
+        if (!$('#ticket-row-1').hasClass('show')) {
+            $('#ticket-row-1').addClass('show');
+        }
 
         $('#ticket-register-form').submit(function(event){
             console.log($(this).serialize());
