@@ -74,6 +74,7 @@ class UserTicket(Base):
     user = models.ForeignKey(EventUser, on_delete=models.CASCADE)
     ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE)
 
+    invoice = models.CharField(_('invoice'), max_length=255, default=0)
     auxiliary_ticket_id = models.CommaSeparatedIntegerField(
         _('auxiliary ticket'),
         default=0,

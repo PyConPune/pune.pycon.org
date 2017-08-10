@@ -57,8 +57,12 @@
           </div>
 
           <div id="ticket-row-3" class="ticket-row collapse" role="tabpanel" aria-labelledby="ticket-row-heading-3">
-            <div class="card-block">
+            <div class="card-block col-lg-9">
               {% include "ticket/user_details.html" %}
+              <div class="clear"></div>
+            </div>
+            <div class="card-block col-lg-3">
+              {% include "ticket/order_detail.html" %}
               <div class="clear"></div>
             </div>
           </div>

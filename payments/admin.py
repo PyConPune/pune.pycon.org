@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from payments.models import Invoice
+
+
+@admin.register(Invoice)
+class Invoice(admin.ModelAdmin):
+    pass

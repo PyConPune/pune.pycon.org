@@ -23,6 +23,17 @@
             $('html, body').animate({
                 scrollTop: $("#ticket-row-2").offset().top - 70
             }, 1000);
+            var ticket_title = $this.find('.ticket-title').html();
+            var ticket_price = $this.find('.ticket-price').html();
+            var sum = 0;
+            $('.payment-breakup-row#conference-ticket .item').html(ticket_title);
+            $('.payment-breakup-row#conference-ticket .price').html(ticket_price);
+            $('.price').not('#total .price').each(function(){
+                var price = parseFloat($(this).text().replace('₹','').replace('','0'));
+                sum = sum + price;
+            });
+            sum = '₹' + sum;
+            $('.payment-breakup-row#total .price').html(sum);
         });
 
         $('input[name=email]').addClass('form-control');
@@ -46,6 +57,17 @@
                 var tshirt_arr_id = "#tshirt-arr-" + (id - 1);
                 var tshirt_id = $this.val();
                 $(tshirt_arr_id).val(tshirt_id);
+                var ticket_title = 'Tshirt ' + $this.find(':selected').html();
+                var ticket_price = $this.parent().find('.ticket-price').html();
+                var sum = 0;
+                $('.payment-breakup-row#tshirt-ticket-' + (id - 1) + ' .item').html(ticket_title);
+                $('.payment-breakup-row#tshirt-ticket-' + (id - 1) + ' .price').html(ticket_price);
+                $('.price').not('#total .price').each(function(){
+                    var price = parseFloat($(this).text().replace('₹','').replace('','0'));
+                    sum = sum + price;
+                });
+                sum = '₹' + sum;
+                $('.payment-breakup-row#total .price').html(sum);
             }
         });
 
@@ -71,10 +93,30 @@
                     $this.find('.fa-check').removeClass('hidden');
                     var auxiliary_ticket_id = id;
                     $('#id_auxiliary_ticket_id').val(auxiliary_ticket_id);
+                    var ticket_title = $this.find('.ticket-title').html();
+                    var ticket_price = $this.find('.ticket-price').html();
+                    var sum = 0
+                    $('.payment-breakup-row#auxiliary-ticket .item').html(ticket_title);
+                    $('.payment-breakup-row#auxiliary-ticket .price').html(ticket_price);
+                    $('.price').not('#total .price').each(function(){
+                        var price = parseFloat($(this).text().replace('₹','').replace('','0'));
+                        sum = sum + price;
+                    });
+                    sum = '₹' + sum;
+                    $('.payment-breakup-row#total .price').html(sum);
                 };
             } else {
                 $this.find('.fa-check').addClass('hidden');
                 $('#id_auxiliary_ticket_id').val(0);
+                $('.payment-breakup-row#auxiliary-ticket .item').html('');
+                $('.payment-breakup-row#auxiliary-ticket .price').html('');
+                var sum = 0;
+                $('.price').not('#total .price').each(function(){
+                    var price = parseFloat($(this).text().replace('₹','').replace('','0'));
+                    sum = sum + price;
+                });
+                sum = '₹' + sum;
+                $('.payment-breakup-row#total .price').html(sum);
             }
 
             if (!$('#ticket-row-3').hasClass('show')) {

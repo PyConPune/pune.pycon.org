@@ -71,6 +71,7 @@ INSTALLED_APPS = [
     'inventory',
     'root',
     'ticket',
+    'payments',
 ]
 
 MIDDLEWARE_CLASSES = [

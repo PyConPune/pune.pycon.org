@@ -39,6 +39,7 @@ class UserTshirt(Base):
     uuid = models.UUIDField(default=uuid.uuid4, editable=False)
     user = models.ForeignKey(EventUser, on_delete=models.CASCADE)
     tshirt = models.ForeignKey(Tshirt, on_delete=models.CASCADE)
+    invoice = models.CharField(_('invoice'), max_length=255, default=0)
 
     class Meta:
         verbose_name = _("user tshirt")

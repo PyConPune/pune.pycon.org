@@ -12,6 +12,7 @@ from payments.razorpay.payments import RazorpayPayments
 from ticket.forms import UserRegistrationForm
 from ticket.forms import TicketApplicationForm
 from ticket.models import Ticket, UserTicket, AuxiliaryTicket
+from payments.models import Invoice
 from inventory.models import Tshirt, UserTshirt
 
 
@@ -62,8 +63,9 @@ class TicketApplicationView(TemplateView):
     def _get_tshirts_from_ids(self, tshirt_ids):
         tshirts = []
         for id in tshirt_ids:
-            tshirt = Tshirt.objects.get(id=int(id))
-            tshirts.append(tshirt)
+            if id != '':
+                tshirt = Tshirt.objects.get(id=int(id))
+                tshirts.append(tshirt)
 
         return tshirts
 
@@ -170,7 +172,6 @@ class TicketApplicationView(TemplateView):
         is_ticket_form_valid = ticket_form.is_valid()
         is_user_form_valid = user_form.is_valid()
 
-
         ticket = ticket_form.cleaned_data['ticket']
         auxiliary_ticket_id = ticket_form.cleaned_data['auxiliary_ticket_id']
         selected_tshirts = self._get_tshirts_from_ids(tshirt_ids)
@@ -201,6 +202,8 @@ class TicketApplicationView(TemplateView):
             invoice = self._initiate_payment(
                 user=user, profile=profile, title='PyCon Pune 2018',
                 description="", amount=amount)
+
+            self.save_invoice_data(invoice, user, user_ticket, user_tshirts)
 
             return HttpResponseRedirect(invoice['short_url'])
 
@@ -266,6 +269,31 @@ class TicketApplicationView(TemplateView):
             user_tshirts.append(user_tshirt)
 
         return user_tshirts
+
+    def save_invoice_data(self, payment_invoice, user, user_ticket,
+                          user_tshirts, conference=1):
+        """ Saves data for the invoice created using razorpay """
+
+        invoice = Invoice(user=user.id, conference=conference)
+        invoice.invoice_id = payment_invoice['id']
+        invoice.receipt_number = payment_invoice['receipt']
+        invoice.order_id = payment_invoice['order_id']
+        invoice.payment_id = payment_invoice['payment_id']
+        invoice.status = payment_invoice['status']
+        invoice.expire_by = payment_invoice['expire_by']
+        invoice.issued_at = payment_invoice['issued_at']
+        invoice.paid_at = payment_invoice['paid_at']
+        invoice.amount = payment_invoice['amount']
+        invoice.currency = payment_invoice['currency']
+        invoice.short_url = payment_invoice['short_url']
+        invoice.save()
+
+        user_ticket.invoice = payment_invoice['id']
+        user_ticket.save()
+
+        for user_tshirt in user_tshirts:
+            user_tshirt.invoice = payment_invoice['id']
+            user_tshirt.save()
 
 def acknowledge(request):
     return render(request, 'ticket/thanks.html')
