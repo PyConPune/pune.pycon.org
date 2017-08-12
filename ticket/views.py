@@ -8,11 +8,11 @@ from django.views.generic import TemplateView
 
 from cauth.models import UserProfile
 from cauth.views import SignupView
-from payments.razorpay.payments import RazorpayPayments
+from payments.razorpay.razorpay_payments import RazorpayPayments
 from ticket.forms import UserRegistrationForm
 from ticket.forms import TicketApplicationForm
 from ticket.models import Ticket, UserTicket, AuxiliaryTicket
-from payments.models import Invoice
+from payments.models import Invoice, RazorpayKeys
 from inventory.models import Tshirt, UserTshirt
 
 
@@ -99,15 +99,18 @@ class TicketApplicationView(TemplateView):
 
         return payable_amount
 
-
     def _generate_invoice_amount(self, amount):
         return (amount + amount * 0.18) * 100
 
     def _generate_invoice_description(self, forms):
         raise NotImplementedError
 
+    def _get_keys(self):
+        return RazorpayKeys.objects.first()
+
     def _initiate_payment(self, user, profile, title, description, amount):
-        payment = RazorpayPayments()
+        keys = self._get_keys()
+        payment = RazorpayPayments(keys.api_key, keys.api_secret)
         fullname = '{} {}'.format(profile.first_name, profile.last_name)
         customer = {
             "email": user.email,
@@ -122,7 +125,7 @@ class TicketApplicationView(TemplateView):
             "currency": "INR"
         }]
 
-        invoice = payment.createInvoice(customer=customer, items=items)
+        invoice = payment.create_invoice(customer=customer, items=items)
 
         return invoice
 
