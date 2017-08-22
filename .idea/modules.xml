@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$USER_HOME$/fossasia/open-event-orga-server/.idea/open-event-orga-server.iml" filepath="$USER_HOME$/fossasia/open-event-orga-server/.idea/open-event-orga-server.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/pune.pycon.org.iml" filepath="$PROJECT_DIR$/.idea/pune.pycon.org.iml" />
-    </modules>
-  </component>
-</project>

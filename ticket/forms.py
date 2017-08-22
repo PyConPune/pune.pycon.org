@@ -117,8 +117,10 @@ class UserRegistrationForm(account.forms.SignupForm):
         })
         self.fields['email'].required = True
 
-        AGE_GROUP_CHOICES.insert(0, ('0', _('Please select an age group.')))
+        if AGE_GROUP_CHOICES[0][0] != '0':
+            AGE_GROUP_CHOICES.insert(0, ('0', _('Please select an age group.')))
         self.fields['age_group'].choices = AGE_GROUP_CHOICES
 
-        OCCUPATION_CHOICES.insert(0, ('Z', _('Please select an occupation.')))
+        if OCCUPATION_CHOICES[0][0] != 'Z':
+            OCCUPATION_CHOICES.insert(0, ('Z', _('Please select an occupation.')))
         self.fields['occupation'].choices = OCCUPATION_CHOICES
