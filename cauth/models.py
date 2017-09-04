@@ -101,4 +101,4 @@ class UserProfile(Base):
         raise NotImplementedError
 
     def __str__(self):
-        return '(%s) %s %s' % (self.year, self.user.username, self.first_name)
+        return '(%s) %s %s' % (self.gender, self.user.username, self.first_name)
