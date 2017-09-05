@@ -1,105 +1,93 @@
 {% extends 'site_base.html' %}
+{% load staticfiles %}
 
 {% block body %}
-    <!-- Intro Header -->
-    <header class="intro">
-        <div class="bg"></div>
-        <div class="intro-body">
-            <div class="container ">
-                <div class="row">
-                    <div class="col-md-8 text-left">
-                        <h1 class="brand-heading" style="text-transform:none;">PyCon Pune 2018</h1>
-                        <p class="intro-text">February 8 - 11, 2018</p>
+    <section class="no-margin no-padding">
+        <div class="hero-container full-width"
+             style="background-image: url(https://c1.staticflickr.com/7/6078/6049220331_068a05d59d_b.jpg)">
+            <div class="col-960 col-center full-height">
+                <div class="content-box text-white standard-padding blue-translucent-bg">
+                    <h1 class="inline-block">PyCon <span class="text-primary">Pune</span></h1>
+                    <h3 class="text-white standard-margin-top">
+                        February 08 - 11, 2018 @ Amanora The Ferns Hotel and Club, Pune
+                    </h3>
+                    <a href="#" class="inline-block standard-margin-top">
+                        <button class="btn btn-primary buy-tickets-btn">Buy Tickets</button>
+                    </a>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </section>
+
+    <!-- About section -->
+    <section class="no-margin section-padding float-left full-width">
+        <div class="full-width">
+            <div class="col-960 col-center full-height">
+                <div>
+                    <h2>About PyCon</h2>
+                    <p class="standard-margin-top">
+                        PyCon, the gathering for the community using and developing
+                the open-source Python programming language. During PyCon Pune, the community will meet for two days of talks and work on upstream projects in two days of dev sprint.
+                    </p>
+                </div>
+                <div class="schedule-block">
+                    <div class="gray-bg">
+                        <p class="schedule-date">8-9</p>
+                        <p class="schedule-month blue-bg text-white">February</p>
+                    </div>
+                    <div>
+                        <p class="schedule-heading">Talk</p>
+                        <p class="schedule-brief">Dozens of talks chosen by the community</p>
                     </div>
                 </div>
-                <a href="#about" class="btn btn-circle page-scroll">
-                    <i class="fa fa-angle-double-down animated"></i>
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <!-- About Section -->
-    <section id="about" class="container content-section text-center"
-    style="padding:5em">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>About</h2>
-                <p>PyCon, the gathering for the community using and developing
-                the open-source Python programming language. During PyCon Pune, the community will meet for two days of talks and work on upstream projects in two days of dev sprint.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Venue Section
-    <div id="map"></div>-->
-
-    <!-- Volunteer Section -->
-    <section id="volunteer" class="content-section text-center"
-      style="color: black; background-color:white;
-      width:100%;padding-bottom:5em">
-        <div class="row container" style="margin:auto">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>Getting Involved</h2>
-                <p>PyCon Pune is a community event and is volunteer-driven.
-                People from the community come forward to volunteer and help
-                make the conference better. Anybody attending PyCon Pune is
-                welcome to volunteer, but you must be
-                <strong>registered</strong> to volunteer.</p>
-
-                <p>If you are looking to volunteer, drop us an email.
-                    <div class="network-name">
-                      <a href="mailto:pyconpune@python.org?subject=Volunteer for PyCon Pune 2018" class="btn btn-default btn-lg">Get Involved</a>
+                <div class="schedule-block">
+                    <div class="gray-bg">
+                        <p class="schedule-date">10-11</p>
+                        <p class="schedule-month blue-bg text-white">February</p>
                     </div>
-                </p>
+                    <div>
+                        <p class="schedule-heading">Dev Sprint</p>
+                        <p class="schedule-brief">Team up to work on Pycon Pune</p>
+                    </div>
+                </div>
             </div>
+            <div class="clearfix"></div>
         </div>
+        <div class="about-section-image" style="background-image: url(https://s-media-cache-ak0.pinimg.com/736x/94/26/d9/9426d98a6604fe95f68258963427dc24--flower-line-drawings-line-drawing-floral.jpg' %})"></div>
     </section>
 
-    <!-- Sponsor Section-->
-    <section id="sponsor" class="content-section text-center"
-    style="padding-bottom:5em">
-        <div class="container">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>Sponsors</h2>
-                <p>PyCon Pune is entirely driven by volunteers. Sponsoring the
-                event helps to sustain, grow the conference along with the
-                community. Sponsors help to make the conference affordable for
-                community, and maintaining the inventory for the
-                conference. </p>
-                <p>Looking to become a sponsor?<br/><br/>
-                    <a href="mailto:pyconpune@python.org?subject=Sponsor for PyCon Pune 2018" class="btn btn-default btn-lg"><span class="network-name">Become a Sponsor</span></a>
-                </p>
+    <section class="no-margin section-padding float-left full-width gray-bg">
+        <div class="full-width">
+            <div class="col-960 col-center full-height">
+                <div>
+                    <h2>Keynote Speakers</h2>
+                    <p class="standard-margin-top">
+                        Pycon is not focused on any particular language or area of technology. We encourage diverse topics oriented towards the future of Computer Science.
+                    </p>
+                </div>
+                <div class="image-block-container">
+                    <div class="image-block">
+                        <img class="speaker-image" src="{% static 'img/brettcannon.jpeg' %}"/>
+                        <div class="speaker-name float-left blue-bg text-white full-width">Brett Cannon</div>
+                        <div class="clearfix"></div>
+                        <p class="speaker-title float-left blue-bg text-white full-width">CPython Core Dev</p>
+                    </div>
+                    <div class="image-block">
+                        <img class="speaker-image" src="{% static 'img/carolwilling.jpeg' %}"/>
+                        <div class="speaker-name float-left blue-bg text-white full-width">Carol Willing</div>
+                        <div class="clearfix"></div>
+                        <p class="speaker-title float-left blue-bg text-white full-width">CPython Core Dev, Project Jupyter</p>
+                    </div>
+                    <div class="image-block">
+                        <img class="speaker-image" src="{% static 'img/ntoll.jpeg' %}"/>
+                        <div class="speaker-name float-left blue-bg text-white full-width">Nicholas Tollervey</div>
+                        <div class="clearfix"></div>
+                        <p class="speaker-title float-left blue-bg text-white full-width">Micro:bit, mu editor</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="container content-section text-center"
-      style="color: black; background-color:white;
-      width:100%;padding-bottom:5em">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2 style="text-transform: none;">Contact PyCon Pune Team</h2>
-                <p>Feel free to email us at <a href="mailto:pyconpune@python.org">pyconpune@python.org</a>
-                </p>
-                <label for=""><p style="font-weight:500;">To know more,
-                  subscribe <a
-                    href="https://mail.python.org/mailman/listinfo/pycon-pune"
-                    target="_blank">to the mailing list</a></p></label>
-
-                <ul class="list-inline banner-social-buttons">
-                    <li>
-                        <a href="https://twitter.com/pyconpune" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/pyconpune" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                    </li>
-                    <li>
-                        <a href="https://www.facebook.com/pyconpune/" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
-                    </li>
-                </ul>
-            </div>
+            <div class="clearfix"></div>
         </div>
     </section>
 {% endblock %}

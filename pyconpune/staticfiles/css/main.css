@@ -1,0 +1,211 @@
+.hero-container {
+    background-color: #f7f7f7;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 563px;
+    position: relative;
+    padding-top: 50px; /* margin-top = header's height */
+    background-position: 0 50px;
+}
+    .hero-container .content-box {
+        position: relative;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+.about-section-image {
+    background-color: #f7f7f7;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    width: 100%;
+    float: left;
+    position: relative;
+    margin-bottom: -30px; /* margin-bottom to counter .section-padding*/
+}
+
+.schedule-block {
+    float: left;
+    margin: 30px 15px 30px 0;
+}
+    .schedule-block>div {
+        float: left;
+        padding: 0;
+        margin-right: 15px;
+    }
+        .schedule-block>div p {
+            font-weight: 200;
+            margin: 0;
+        }
+    .schedule-block .schedule-date {
+        font-size: 26px;
+        font-weight: 600;
+        text-align: center;
+        padding: 15px 20px;
+    }
+    .schedule-block .schedule-month {
+        padding: 10px 20px;
+    }
+    .schedule-block .schedule-heading {
+        font-size: 24px;
+        font-weight: 600;
+        padding: 15px 0 5px;
+    }
+    .schedule-block .schedule-brief {
+        max-width: 75%;
+    }
+
+.image-block {
+    float: left;
+    width: 22%;
+    margin: 30px 15px 30px 0;
+}
+.image-block .speaker-image {
+    float: left;
+    clear: both;
+    width: 100%;
+}
+.image-block .speaker-name {
+    padding: 15px 20px 5px;
+}
+.image-block .speaker-title {
+    padding: 0 20px 15px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+
+.sponsor-logo-container .sponsor-logo img{
+    width: 150px;
+}
+
+.sponsor-logo-container .sponsor-logo {
+    display: inline-block;
+    padding: 40px;
+}
+
+.footer {
+    margin-left: 100px;
+    margin-top: 50px;
+}
+
+.footer-block {
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px;    
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+.footer-block div {
+    margin-bottom: 10px;
+}
+
+.map {
+    float: right;
+}
+
+.collage img {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    opacity: 1;
+    filter: grayscale(0.9)  contrast(110%);
+    transition: 1s filter ease;
+    -webkit-transition : -webkit-filter 500ms linear
+
+}
+
+.collage img:hover {
+    transition: all 1s ease;
+    filter: grayscale(0) saturate(100%);
+    opacity: 1;
+}
+
+.collage-container {
+    position: relative;
+}
+
+.collage-quote {
+    position: absolute;
+    top: 150px;
+    z-index: 1;
+    left: 100px;
+    background: rgba(0,1,0,0.5);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 26px 0px rgba(0,0,0,1);
+}
+
+.quote1 {
+    font-size: 50px;
+    color: white;
+    font-weight: 700;
+}
+
+.quote2 {
+    font-size: 20px;
+    color: #ffd646;
+    font-weight: 600;
+    letter-spacing: -0.4px;
+}
+
+.collage-block-1 {
+    height: 500px;
+    width: 300px;
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+    margin-right: 3px;
+}
+
+.collage-block-horizontal {
+    width: calc(100% - 303px); 
+    display: inline-block;
+}
+
+.collage-block-vertical{
+    display: inline-block;
+    width: 200px;
+}
+
+.collage-block-2 {
+    width: 100%;
+    height: 250px;
+    vertical-align: top;
+    margin-bottom: 4px;
+    overflow: hidden;
+}
+
+.collage-block-3 {
+    width: 100%;
+    height: 250px;
+    vertical-align: bottom;
+    overflow: hidden;
+}
+
+/* Responsive Design (Starts) */
+/* For mobiles */
+@media only screen and (max-width : 767px) {
+    .schedule-block {
+        margin: 30px 0 0;
+    }
+            .schedule-block>div p {
+                font-weight: 200;
+                margin: 0;
+            }
+        .schedule-block .schedule-brief {
+            max-width: 100%;
+        }
+
+    .image-block {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+}
+/* Responsive Design (Ends) */

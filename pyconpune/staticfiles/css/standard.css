@@ -1,0 +1,415 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,500,600,700');
+
+:focus {
+    outline: none;
+}
+::-moz-focus-inner { /*for removing unwanted dotted border in mozilla*/
+    border: 0;
+}
+
+.col-960 {
+    width: 960px;
+}
+.col-center {
+    float: none;
+    margin: 0 auto;
+}
+
+* {
+    text-decoration: none;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #646464;
+    -webkit-transition: -webkit-transform 250ms ease-in-out;
+    -moz-transition: -moz-transform 250ms ease-in-out;
+    -o-transition: -o-transform 250ms ease-in-out;
+    transition: transform 250ms ease-in-out;
+}
+ul, ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-size: 60px;
+    font-weight: 300;
+}
+h2 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+h3 {
+    font-size: 20px;
+    font-weight: 400;
+}
+h6 {
+    font-size: 10px;
+    font-weight: bold;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+a {
+    cursor: pointer;
+    color: #646464;
+    text-decoration: none;
+    -webkit-transition: all 250ms ease-out;
+    -moz-transition: all 250ms ease-out;
+    -o-transition: all 250ms ease-out;
+    transition: all 250ms ease-out;
+}
+a:hover,
+a:focus,
+a:visited,
+a:active,
+a:visited {
+    color: #646464;
+    text-decoration: none;
+}
+
+button {
+    font-size: 16px;
+}
+.text-bold {
+    font-weight: 500;
+}
+.text-light {
+    font-weight: 200;
+}
+.text-primary {
+    color: #ffd646;
+}
+.text-white {
+    color: #fff;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.hide {
+    display: none!important;
+}
+.no-scroll {
+    overflow: hidden;
+}
+.slide-right {
+    -webkit-transform: translateX(220px);
+    -moz-transform: translateX(220px);
+    -ms-transform: translateX(220px);
+    -o-transform: translateX(220px);
+    transform: translateX(220px);
+    /* Adding position fixed to avoid visible scroll in some mobile browsers */
+    position: fixed;
+}
+.full-width {
+    width: 100%;
+}
+.full-height {
+    height: 100%;
+}
+.inline-block {
+    display: inline-block;
+}
+.mobile-only {
+    display: none!important;
+}
+.not-mobile-only {
+    display: block!important;
+}
+.float-left {
+    float: left;
+}
+.float-right {
+    float: right;
+}
+
+/* For list with numbering */
+.list-decimal {
+    list-style: decimal inside;
+}
+/* For list with bullet */
+.list-bullet {
+    list-style: disc inside;
+}
+
+/* Colors*/
+.white-bg {
+    background-color: #fff;
+}
+.gray-bg {
+    background-color: #f7f7f7;
+}
+.blue-bg {
+    background-color: rgb(49, 102, 163);
+}
+.blue-translucent-bg {
+    background-color: rgba(49, 102, 163, 0.95);
+}
+
+/* Buttons */
+.btn {
+    font-size: 16px;
+    border: 0;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    color: #646464;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 12px 35px;
+    display: block;
+    cursor: pointer;
+}
+.btn-primary {
+    background: #ffd646;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary:active:focus,
+.btn-primary:visited,
+.btn-primary>a:hover,
+.btn-primary>a:focus,
+.btn-primary>a:active,
+.btn-primary>a:active:focus,
+.btn-primary>a:visited {
+    background: #fcd139;
+}
+/* Margins */
+.no-margin {
+    margin: 0!important;
+}
+.standard-margin {
+    margin: 15px;
+}
+.standard-margin-top {
+    margin-top: 15px;
+}
+.standard-margin-bottom {
+    margin-bottom: 15px;
+}
+.standard-margin-left {
+    margin-left: 15px;
+}
+.standard-margin-right {
+    margin-left: 15px;
+}
+/* Paddings */
+.no-padding {
+    padding: 0!important;
+}
+.section-padding {
+    padding: 60px 0 30px;
+}
+.standard-padding-top {
+    padding-top: 20px;
+}
+.standard-padding-bottom {
+    padding-bottom: 20px;
+}
+.standard-padding {
+    padding: 20px;
+}
+
+.box-container {
+    background: #fff;
+    padding: 20px;
+}
+
+.left-zero {
+    left: 0;
+}
+.right-zero {
+    right: 0;
+}
+
+.dark {
+    color: #646464;
+}
+
+.caps {
+    text-transform: uppercase;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+/* Form */
+form {
+    font-size: 16px;
+}
+form label {
+    font-weight: inherit;
+}
+input {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    padding: 7px 12px;
+    border: 1px solid #f1f1f1;
+    outline: none;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 50px;
+    padding: 10px 0;
+    background: #fff;
+    z-index: 10;
+    -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1);
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: : border-box;
+}
+    .header .logo {
+        width: 70px;
+    }
+    .header .nav-menu {
+        float: right;
+        text-transform: uppercase;
+    }
+        .header .nav-menu>li {
+            float: left;
+        }
+            .header .nav-menu>li>a {
+                padding: 5px 10px;
+                font-size: 14px;
+                line-height: 30px;
+            }
+            .header .nav-menu>li:last-child>a {
+                padding-right: 0;
+            }
+                .header .nav-menu .buy-tickets-btn {
+                    padding: 8px 20px;
+                    font-size: 14px;
+                    line-height: 20px;
+                    margin-top: -8px;
+                }
+
+    .mobile-menu-btn {
+        position: relative;
+        float: left;
+        margin-right: 15px;
+        width: 35px;
+        height: 40px;
+    }
+    .mobile-menu-btn:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 5px;
+        width: 100%;
+        height: 1px;
+        cursor: pointer;
+        background: #323232;
+        -webkit-box-shadow: 0 10px 0 0 #323232, 0 20px 0 0 #323232;
+        -moz-box-shadow: 0 10px 0 0 #323232, 0 20px 0 0 #323232;
+        box-shadow: 0 10px 0 0 #323232, 0 20px 0 0 #323232;
+    }
+    .mobile-menu-btn.close-icon:before {
+        content: "x";
+        font-size: 35px;
+        font-weight: 100;
+        line-height: 11px;
+        text-align: center;
+        height: 0;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
+
+/* Responsive Design (Starts) */
+/* For Tablets */
+@media only screen and (min-width : 768px) and (max-width : 992px) {
+    .col-960 {
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+@media only screen and (min-width : 768px) and (max-width : 865px) {
+    .col-960 {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .header .nav-menu>li>a {
+        padding: 8px;
+        font-size: 13px;
+    }
+        .header .nav-menu .buy-tickets-btn {
+            padding: 5px 12px;
+            font-size: 13px;
+        }
+}
+
+/* For mobiles */
+@media only screen and (max-width : 767px) {
+    .mobile-only {
+        display: inline-block!important;
+    }
+    .not-mobile-only {
+        display: none!important;
+    }
+    .col-960 {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .header .nav-menu {
+        float: left;
+        text-transform: uppercase;
+        margin: 0;
+        padding: 20px;
+        position: fixed;
+        top: 0;
+        left: -220px;
+        width: 220px;
+        text-align: left;
+        height: 100%; /* backup */
+        height: 100vh;
+        overflow-y: auto;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        border-right: 1px solid #f1f1f1;
+    }
+        .header .nav-menu>li {
+            width: 100%;
+        }
+            .header .nav-menu>li>a {
+                float: left;
+                width: 100%;
+                padding: 8px 10px;
+            }
+                .header .nav-menu .buy-tickets-btn {
+                    width: 100%;
+                    margin-top: 9px;
+                }
+}
+/* Responsive Design (Ends) */
