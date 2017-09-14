@@ -76,8 +76,18 @@
     padding: 0 20px 15px;
     font-size: 14px;
     font-weight: 300;
+    height: 70px;
 }
 
+.image-block-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.sponsor-logo-container {
+    display: flex;
+    justify-content: space-around;
+}
 
 .sponsor-logo-container .sponsor-logo img{
     width: 150px;
@@ -164,7 +174,7 @@
 }
 
 .collage-block-horizontal {
-    width: calc(100% - 303px); 
+    width: calc(100% - 303px);
     display: inline-block;
 }
 
@@ -206,6 +216,10 @@
         width: 100%;
         margin-right: 0;
         margin-bottom: 0;
+    }
+
+    .image-block-container {
+        display: block;
     }
 }
 /* Responsive Design (Ends) */
