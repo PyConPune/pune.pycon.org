@@ -49,8 +49,9 @@
             <ul class="nav-menu">
                 <li><a href="{% url 'homepage' %}#about">About</a></li>
                 <!-- <li><a href="#">Schedule</a></li> -->
-                <li><a href="#">Venue</a></li>
-                <li><a href="#">Registration</a></li>
+                <!--<li><a href="#">Venue</a></li>-->
+                <!--<li><a href="#">Registration</a></li>-->
+                <li><a href="{% url 'homepage' %}#speakers">Speakers</a></li>
                 <li><a href="{% url 'homepage' %}#sponsor">Sponsors</a></li>
                 <li><a href="{% url 'homepage' %}#volunteer">Volunteering</a></li>
                 <li>
@@ -66,7 +67,8 @@
 
     {% block body %}{% endblock %}
 
-        <section class="no-margin section-padding float-left full-width">
+    <!-- Sponsor Section -->
+    <section class="no-margin section-padding float-left full-width" id="sponsor">
         <div class="full-width">
             <div class="col-960 col-center full-height">
                 <div>
@@ -198,6 +200,7 @@
     </script>
 
     <!-- Theme JavaScript -->
+    <script src='{% static "js/common.js" %}'></script>
     {% block extrajs %}{% endblock %}
 
 </body>
