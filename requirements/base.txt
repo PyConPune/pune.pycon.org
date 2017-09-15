@@ -1,5 +1,5 @@
 Django==1.8.7
--e git+https://github.com/pyconpune/symposion.git#egg=symposion
+-e git+https://github.com/pyconpune/symposion.git@04b9fdfac30d5d3752c72ac17f599c7b814c4ee8#egg=symposion
 django-appconf==1.0.1
 django-model-utils==2.4.0
 django-reversion==1.10.1
