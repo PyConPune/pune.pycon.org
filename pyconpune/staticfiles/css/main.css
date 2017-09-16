@@ -221,6 +221,10 @@
     .image-block-container {
         display: block;
     }
+
+    .sponsor-logo-container {
+        display: block;
+    }
 }
 
 /* For big screens */
