@@ -10,7 +10,7 @@
     <meta name="description" content="The Official Website for PyCon Pune 2018">
     <meta name="author" content="">
     <meta property="og:image" content="../img/twitter.png" />
-    <link href="{% static '/img/twitter.png' %}" rel="shortcut icon" />
+    <link href="{% static 'img/twitter.png' %}" rel="shortcut icon" />
 
     <title>PyCon Pune 2018 {% block title %}{% endblock %}</title>
 
@@ -48,12 +48,13 @@
             <img class="logo float-left" src='{% static "img/logo.png" %}' />
             <ul class="nav-menu">
                 <li><a href="{% url 'homepage' %}#about">About</a></li>
+                <li><a href="{% url 'coc' %}">CoC</a></li>
                 <!-- <li><a href="#">Schedule</a></li> -->
                 <!--<li><a href="#">Venue</a></li>-->
                 <!--<li><a href="#">Registration</a></li>-->
                 <li><a href="{% url 'homepage' %}#speakers">Speakers</a></li>
+                <li><a href="https://pyconpune.talkfunnel.com/2018/" target="_blank" rel="noopener noreferrer">CFP</a></li>
                 <li><a href="{% url 'homepage' %}#sponsor">Sponsors</a></li>
-                <li><a href="{% url 'coc' %}">CoC</a></li>
                 <li>
                     <a href="#" class="hide inline-block">
                         <button class="btn btn-primary buy-tickets-btn">Buy Tickets</button>
