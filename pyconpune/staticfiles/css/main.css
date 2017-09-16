@@ -222,4 +222,22 @@
         display: block;
     }
 }
+
+/* For big screens */
+@media only screen and (min-width : 1700px) and (max-width : 2149px) {
+    .hero-container {
+        background-position: 0 -85px;
+    }
+}
+@media only screen and (min-width : 2150px) and (max-width : 2499px) {
+    .hero-container {
+        background-position: 0 -150px;
+    }
+}
+
+@media only screen and (min-width : 2500px){
+    .hero-container {
+        background-position: 0 -250px;
+    }
+}
 /* Responsive Design (Ends) */
