@@ -160,7 +160,7 @@ button {
     background-color: rgb(49, 102, 163);
 }
 .blue-translucent-bg {
-    background-color: rgba(49, 102, 163, 0.95);
+    background-color: rgba(49, 102, 163, 0.5);
 }
 
 /* Buttons */
