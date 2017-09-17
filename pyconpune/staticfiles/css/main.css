@@ -205,6 +205,8 @@
   }
   ul.social-buttons li a {
       display: inline-block;
+      background-color: rgb(49, 102, 163);
+      color: #eeeeee;
       margin: 0;
       height: 40px;
       width: 40px;
