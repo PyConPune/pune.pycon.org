@@ -31,8 +31,6 @@ source ~/.virtualenvs/pycon/bin/activate
 ```
 git clone https://github.com/PyConPune/pune.pycon.org.git
 cd pune.pycon.org
-git fetch
-git checkout feature/django
 ```
 
 5. To install Django and all the packages related to this project
