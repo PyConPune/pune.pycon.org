@@ -106,7 +106,7 @@
 .footer-block {
     display: inline-block;
     vertical-align: top;
-    padding: 20px;    
+    padding: 20px;
     font-size: 12px;
     opacity: 0.6;
 }
@@ -218,6 +218,24 @@
       -moz-transition: all .3s;
       transition: all .3s;
   }
+
+.no-borders{
+    border-radius: 0px;
+}
+
+.google-maps {
+        position: relative;
+        padding-bottom: 75%; // This is the aspect ratio
+        height: 0;
+        overflow: hidden;
+}
+    .google-maps iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+    }
 
 /* Responsive Design (Starts) */
 /* For mobiles */
