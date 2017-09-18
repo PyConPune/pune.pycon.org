@@ -47,7 +47,7 @@
             <div class="mobile-only mobile-menu-btn"></div>
             <img class="logo float-left" src='{% static "img/logo.png" %}' />
             <ul class="nav-menu">
-                <li><a href="{% url 'homepage' %}#about">About</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
                 <li><a href="{% url 'coc' %}">CoC</a></li>
                 <!-- <li><a href="#">Schedule</a></li> -->
                 <!--<li><a href="#">Venue</a></li>-->
@@ -92,7 +92,9 @@
                             </div>
                             <div class="footer-block">
                                 <div class="bold caps">Venue</div>
-                                <div>About Pune & Venue</div>
+                                <a href="{% url 'about' %}">
+                                   <div>About Pune & Venue</div>
+                                </a>
                                 <div>Travelling to Pune</div>
                                 <div>Accessibility</div>
                             </div>
@@ -109,7 +111,7 @@
                         </div>
                     </div>
                     <div class="map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.237602016919!2d73.93952795009344!3d18.518161987348577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c22161862853%3A0x5ed70272d869e104!2sAmanora+The+Fern+Hotels+and+Club!5e0!3m2!1sen!2sin!4v1500404348864" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>      
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.237602016919!2d73.93952795009344!3d18.518161987348577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c22161862853%3A0x5ed70272d869e104!2sAmanora+The+Fern+Hotels+and+Club!5e0!3m2!1sen!2sin!4v1500404348864" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
                 </div>
 

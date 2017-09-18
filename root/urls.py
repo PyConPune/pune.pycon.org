@@ -9,7 +9,9 @@ urlpatterns = [
         url(r'^$', root.views.homepage,
             name="homepage"),
         url(r'^coc/$', root.views.coc,
-            name="coc")
+            name="coc"),
+        url(r'^about/$', root.views.about,
+            name="about")
     ]))
 ]
 
