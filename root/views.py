@@ -11,6 +11,8 @@ def homepage(request):
 def coc(request):
     return render(request, template_name='coc.html', context={'page': 'coc'})
 
+def volunteer(request):
+    return render(request, template_name='volunteer.html', context={'page': 'volunteer'})
 
 def about(request):
     return render(request, 'about.html', context={'page': 'about'})

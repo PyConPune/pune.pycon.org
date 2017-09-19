@@ -7,15 +7,15 @@
     padding-top: 50px; /* margin-top = header's height */
     background-position: 0 50px;
 }
-    .hero-container .content-box {
-        position: relative;
-        top: 45%;
-        -webkit-transform: translateY(-50%);
-        -moz-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-        -o-transform: translateY(-50%);
-        transform: translateY(-50%);
-    }
+.hero-container .content-box {
+    position: relative;
+    top: 45%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
 
 .about-section-image {
     background-color: #f7f7f7;
@@ -32,32 +32,32 @@
     float: left;
     margin: 30px 15px 30px 0;
 }
-    .schedule-block>div {
-        float: left;
-        padding: 0;
-        margin-right: 15px;
-    }
-        .schedule-block>div p {
-            font-weight: 200;
-            margin: 0;
-        }
-    .schedule-block .schedule-date {
-        font-size: 26px;
-        font-weight: 600;
-        text-align: center;
-        padding: 15px 20px;
-    }
-    .schedule-block .schedule-month {
-        padding: 10px 20px;
-    }
-    .schedule-block .schedule-heading {
-        font-size: 24px;
-        font-weight: 600;
-        padding: 15px 0 5px;
-    }
-    .schedule-block .schedule-brief {
-        max-width: 75%;
-    }
+.schedule-block>div {
+    float: left;
+    padding: 0;
+    margin-right: 15px;
+}
+.schedule-block>div p {
+    font-weight: 200;
+    margin: 0;
+}
+.schedule-block .schedule-date {
+    font-size: 26px;
+    font-weight: 600;
+    text-align: center;
+    padding: 15px 20px;
+}
+.schedule-block .schedule-month {
+    padding: 10px 20px;
+}
+.schedule-block .schedule-heading {
+    font-size: 24px;
+    font-weight: 600;
+    padding: 15px 0 5px;
+}
+.schedule-block .schedule-brief {
+    max-width: 75%;
+}
 
 .image-block {
     float: left;
@@ -78,31 +78,25 @@
     font-weight: 300;
     height: 70px;
 }
-
 .image-block-container {
     display: flex;
     justify-content: space-around;
 }
-
 .sponsor-logo-container {
     display: flex;
     justify-content: space-around;
 }
-
 .sponsor-logo-container .sponsor-logo img{
     width: 200px;
 }
-
 .sponsor-logo-container .sponsor-logo {
     display: inline-block;
     padding: 40px;
 }
-
 .footer {
     margin-left: 100px;
     margin-top: 50px;
 }
-
 .footer-block {
     display: inline-block;
     vertical-align: top;
@@ -110,15 +104,12 @@
     font-size: 12px;
     opacity: 0.6;
 }
-
 .footer-block div {
     margin-bottom: 10px;
 }
-
 .map {
     float: right;
 }
-
 .collage img {
     display: inline-block;
     vertical-align: top;
@@ -127,19 +118,15 @@
     filter: grayscale(0.9)  contrast(110%);
     transition: 1s filter ease;
     -webkit-transition : -webkit-filter 500ms linear
-
 }
-
 .collage img:hover {
     transition: all 1s ease;
     filter: grayscale(0) saturate(100%);
     opacity: 1;
 }
-
 .collage-container {
     position: relative;
 }
-
 .collage-quote {
     position: absolute;
     top: 150px;
@@ -150,20 +137,17 @@
     border-radius: 5px;
     box-shadow: 0 0 26px 0px rgba(0,0,0,1);
 }
-
 .quote1 {
     font-size: 50px;
     color: white;
     font-weight: 700;
 }
-
 .quote2 {
     font-size: 20px;
     color: #ffd646;
     font-weight: 600;
     letter-spacing: -0.4px;
 }
-
 .collage-block-1 {
     height: 500px;
     width: 300px;
@@ -172,17 +156,14 @@
     overflow: hidden;
     margin-right: 3px;
 }
-
 .collage-block-horizontal {
     width: calc(100% - 303px);
     display: inline-block;
 }
-
 .collage-block-vertical{
     display: inline-block;
     width: 200px;
 }
-
 .collage-block-2 {
     width: 100%;
     height: 250px;
@@ -190,52 +171,56 @@
     margin-bottom: 4px;
     overflow: hidden;
 }
-
 .collage-block-3 {
     width: 100%;
     height: 250px;
     vertical-align: bottom;
     overflow: hidden;
 }
-
 .social-buttons {
     margin-bottom: 0;
     width: 100%;
     text-align: center;
-  }
-  ul.social-buttons li a {
-      display: inline-block;
-      background-color: rgb(49, 102, 163);
-      color: #eeeeee;
-      margin: 0;
-      height: 40px;
-      width: 40px;
-      border-radius: 100%;
-      font-size: 20px;
-      line-height: 40px;
-      outline: 0;
-      -webkit-transition: all .3s;
-      -moz-transition: all .3s;
-      transition: all .3s;
-  }
-
+}
+ul.social-buttons li a {
+    display: inline-block;
+    background-color: rgb(49, 102, 163);
+    color: #eeeeee;
+    margin: 0;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    font-size: 20px;
+    line-height: 40px;
+    outline: 0;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+}
+.centered-button {
+    width: 20%;
+    margin: auto;
+}
+.centered-button:hover {
+    background-color: rgb(49, 102, 163);
+    color: white;
+}
 .no-borders{
     border-radius: 0px;
 }
-
 .google-maps {
-        position: relative;
-        padding-bottom: 75%; // This is the aspect ratio
-        height: 0;
-        overflow: hidden;
+    position: relative;
+    padding-bottom: 75%; // This is the aspect ratio
+    height: 0;
+    overflow: hidden;
 }
-    .google-maps iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100% !important;
-        height: 100% !important;
-    }
+.google-maps iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
 
 /* Responsive Design (Starts) */
 /* For mobiles */
@@ -243,24 +228,21 @@
     .schedule-block {
         margin: 30px 0 0;
     }
-            .schedule-block>div p {
-                font-weight: 200;
-                margin: 0;
-            }
-        .schedule-block .schedule-brief {
-            max-width: 100%;
-        }
-
+    .schedule-block>div p {
+        font-weight: 200;
+        margin: 0;
+    }
+    .schedule-block .schedule-brief {
+        max-width: 100%;
+    }
     .image-block {
         width: 100%;
         margin-right: 0;
         margin-bottom: 0;
     }
-
     .image-block-container {
         display: block;
     }
-
     .sponsor-logo-container {
         display: block;
     }
