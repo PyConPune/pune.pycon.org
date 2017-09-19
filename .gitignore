@@ -7,3 +7,4 @@
 db.sqlite3
 static/
 pyconpune/local_settings.py*
+venv/

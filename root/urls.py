@@ -10,6 +10,8 @@ urlpatterns = [
             name="homepage"),
         url(r'^coc/$', root.views.coc,
             name="coc"),
+        url(r'^volunteer/$', root.views.volunteer,
+            name="volunteer"),
         url(r'^about/$', root.views.about,
             name="about")
     ]))
