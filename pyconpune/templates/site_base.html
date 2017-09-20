@@ -45,7 +45,9 @@
         <header class="header full-width">
         <div class="col-960 col-center full-height">
             <div class="mobile-only mobile-menu-btn"></div>
-            <img class="logo float-left" src='{% static "img/logo.png" %}' />
+            <a href="{% url 'homepage' %}">
+                <img class="logo float-left" src='{% static "img/logo.png" %}' />
+            </a>
             <ul class="nav-menu">
                 <li><a href="{% url 'about' %}">About</a></li>
                 <li><a href="{% url 'coc' %}">CoC</a></li>
@@ -101,8 +103,8 @@
                             <div class="footer-block">
                                 <div class="bold caps">Be A</div>
                                 <div>Be a Sponsor</div>
-                                <a href="{% url 'volunteer' %}"
-                                    <div>Be a Volunteer</div>
+                                <a href="{% url 'volunteer' %}">
+                                    <div> Be a Volunteer</div>
                                 </a>
                             </div>
                         </div>
