@@ -242,6 +242,11 @@ ul.social-buttons li a {
     font-weight: 300;
     height: 70px;
 }
+
+.img-margin-top{
+    margin-top: 20px;
+}
+
 /* Responsive Design (Starts) */
 /* For mobiles */
 @media only screen and (max-width : 767px) {
