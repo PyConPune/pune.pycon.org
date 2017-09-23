@@ -13,7 +13,9 @@ urlpatterns = [
         url(r'^volunteer/$', root.views.volunteer,
             name="volunteer"),
         url(r'^about/$', root.views.about,
-            name="about")
+            name="about"),
+        url(r'^sponsors/$', root.views.sponsors,
+            name="sponsors")
     ]))
 ]
 

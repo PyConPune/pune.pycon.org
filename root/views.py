@@ -6,9 +6,11 @@ from django.http import HttpResponse, HttpResponseRedirect
 
 def homepage(request):
     return render(request, template_name='index.html', context={'page': 'home'})
-    
+
+
 def coc(request):
     return render(request, template_name='coc.html', context={'page': 'coc'})
+
 
 def volunteer(request):
     # Dummy List of Volunteers, will be fetched from DB later
@@ -42,5 +44,10 @@ def volunteer(request):
     return render(request, template_name='volunteer.html',
                 context={'page': 'volunteer', 'volunteer_list': list_of_volunteers })
 
+
 def about(request):
     return render(request, 'about.html', context={'page': 'about'})
+
+
+def sponsors(request):
+    return render(request, 'sponsors.html', context={'page': 'about'})
