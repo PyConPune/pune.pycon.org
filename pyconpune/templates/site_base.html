@@ -56,7 +56,7 @@
                 <!--<li><a href="#">Registration</a></li>-->
                 <li><a href="{% url 'homepage' %}#speakers">Speakers</a></li>
                 <li><a href="https://pyconpune.talkfunnel.com/2018/" target="_blank" rel="noopener noreferrer">CFP</a></li>
-                <li><a href="{% url 'homepage' %}#sponsor">Sponsors</a></li>
+                <li><a href="{% url 'sponsors' %}">Sponsors</a></li>
                 <li>
                     <a href="#" class="hide inline-block">
                         <button class="btn btn-primary buy-tickets-btn">Buy Tickets</button>
@@ -102,7 +102,9 @@
                             </div>
                             <div class="footer-block">
                                 <div class="bold caps">Be A</div>
-                                <div>Be a Sponsor</div>
+                                <a href="{% url 'sponsors' %}">
+                                    <div> Be a Sponsor</div>
+                                </a>
                                 <a href="{% url 'volunteer' %}">
                                     <div> Be a Volunteer</div>
                                 </a>
