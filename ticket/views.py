@@ -175,6 +175,17 @@ class TicketApplicationView(TemplateView):
         is_ticket_form_valid = ticket_form.is_valid()
         is_user_form_valid = user_form.is_valid()
 
+        if 'ticket' not in ticket_form.cleaned_data:
+            return render(
+                request, self.template_name, {
+                    'ticket_form': ticket_form,
+                    'user_form': user_form,
+                    'tickets': tickets,
+                    'auxiliary_tickets': auxiliary_tickets,
+                    'tshirts': tshirts,
+                }
+            )
+
         ticket = ticket_form.cleaned_data['ticket']
         auxiliary_ticket_id = ticket_form.cleaned_data['auxiliary_ticket_id']
         selected_tshirts = self._get_tshirts_from_ids(tshirt_ids)
