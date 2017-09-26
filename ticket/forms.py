@@ -25,7 +25,7 @@ class UserRegistrationForm(account.forms.SignupForm):
         widget=forms.TextInput(attrs={
             'class': 'form-control',
             'placeholder': _('First Name')
-        }
+        },
     ))
     last_name = forms.CharField(
         label=_('Last Name'),
@@ -33,14 +33,13 @@ class UserRegistrationForm(account.forms.SignupForm):
             'class': 'form-control',
             'placeholder': _('Last Name')
         }),
-        required=False,
     )
     contact = forms.CharField(
         label=_('Contact'),
         widget=forms.TextInput(attrs={
             'class': 'form-control',
             'placeholder': _('Contact')
-        }
+        },
     ))
     location = forms.CharField(
         label=_('Location'),
@@ -56,7 +55,6 @@ class UserRegistrationForm(account.forms.SignupForm):
         widget=forms.Select(attrs={
             'class': 'form-control',
         }),
-        required=False,
     )
     gender = forms.CharField(
         label=_('Gender'),

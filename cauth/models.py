@@ -39,16 +39,12 @@ class UserProfile(Base):
 
     last_name = models.CharField(
         _("last name"),
-        max_length=255,
-        null=True,
-        blank=True
+        max_length=255
     )
 
     contact = models.CharField(
         _("contact"),
-        max_length=15,
-        null=True,
-        blank=True
+        max_length=15
     )
 
     location = models.CharField(
@@ -61,9 +57,7 @@ class UserProfile(Base):
     age_group = models.CharField(
         _("age group"),
         choices=AGE_GROUP_CHOICES,
-        max_length=255,
-        null=True,
-        blank=True
+        max_length=255
     )
 
     gender = models.CharField(
@@ -83,13 +77,14 @@ class UserProfile(Base):
 
     company = models.CharField(
         _("company"),
-        max_length=255,
-        null=True,
-        blank=True
+        max_length=255
     )
 
-    job_title = models.CharField(_("job title"), max_length=255, null=True,
-                                 blank=True)
+    job_title = models.CharField(
+        _("job title"),
+        max_length=255,
+        null=True,
+        blank=True)
     website = models.URLField(null=True, blank=True)
     subscribed = models.BooleanField(_("subscribed"), default=False)
 
