@@ -27,14 +27,28 @@
     border-top: 1px solid #ededed;
 }
 .ticket-inner {
-    border: .5em solid #333;
-    min-height: 50em;
+    border: .5em solid rgb(49, 102, 163);
+    min-height: 30em;
+    height: 80vh;
 }
 .ticket-inner:hover {
-    border: .5em solid #1ac11a;
+    border: .5em solid #ffd646;
+}
+.ticket-inner.active {
+    border: .5em solid #ffd646;
+}
+.card-header h4 a {
+    color: white;
+    text-transform: capitalize;
 }
 .ticket-title {
-    height: 5em;
+    font-weight: 600;
+    font-size: 2.5rem;
+}
+.price, .tax-price, .total-price {
+    text-align: right;
+    margin-right: 0;
+    padding-right: 0;
 }
 .ticket-description {
     min-height: 12em;
@@ -56,7 +70,7 @@
 }
 .card-header {
     padding:1em;
-    background-color: #363c32;
+    background-color: rgb(49, 102, 163);
 }
 .mb-3 {
     margin-bottom: 3em;

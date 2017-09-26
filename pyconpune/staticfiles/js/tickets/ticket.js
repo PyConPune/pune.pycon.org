@@ -6,13 +6,13 @@
             children.each( function (i) {
                 if ($(this).attr('id') != id) {
                     $(this).addClass('ticket-disabled');
-                    $(this).find('.fa-check').addClass('hidden');
+                    $(this).find('.ticket-inner').removeClass('active');
                 }
                 if ($(this).attr('id') === id) {
                     if ($(this).hasClass('ticket-disabled')) {
                         $(this).removeClass('ticket-disabled');
                     }
-                    $(this).find('.fa-check').removeClass('hidden');
+                    $(this).find('.ticket-inner').addClass('active');
                 }
             });
             if (!$('#ticket-row-2').hasClass('show')) {
@@ -34,9 +34,9 @@
             });
             var tax = (0.18 * sum);
             var final_sum = (sum + tax);
-            $('.payment-breakup-row#total-without-tax .total-price').html('₹' + sum);
-            $('.payment-breakup-row#total-with-tax .total-price').html('₹' + final_sum);
-            $('.payment-breakup-row#tax .tax-price').html('₹' + tax);
+            $('.payment-breakup-row#total-without-tax .total-price').html('₹' + sum.toFixed(2));
+            $('.payment-breakup-row#total-with-tax .total-price').html('₹' + final_sum.toFixed(2));
+            $('.payment-breakup-row#tax .tax-price').html('₹' + tax.toFixed(2));
         });
 
         $('input[name=email]').addClass('form-control');
@@ -55,7 +55,7 @@
             $this = $(this);
             var card_type = $this.parent().parent().data('type');
             var id = $this.parent().parent().attr('id').replace("ticket-row-2-", "");
-            $this.parent().find('.fa-check').removeClass('hidden');
+            $this.parent().find('.ticket-inner').addClass('active');
             if (card_type == 'tshirt') {
                 var tshirt_arr_id = "#tshirt-arr-" + (id - 1);
                 var tshirt_id = $this.val();
@@ -71,9 +71,9 @@
                 });
                 var tax = (0.18 * sum);
                 var final_sum = (sum + tax);
-                $('.payment-breakup-row#total-without-tax .total-price').html('₹' + sum);
-                $('.payment-breakup-row#total-with-tax .total-price').html('₹' + final_sum);
-                $('.payment-breakup-row#tax .tax-price').html('₹' + tax);
+                $('.payment-breakup-row#total-without-tax .total-price').html('₹' + sum.toFixed(2));
+                $('.payment-breakup-row#total-with-tax .total-price').html('₹' + final_sum.toFixed(2));
+                $('.payment-breakup-row#tax .tax-price').html('₹' + tax.toFixed(2));
             }
         });
 
@@ -94,9 +94,9 @@
                 return;
             }
 
-            if ($(this).find('.fa-check').hasClass('hidden')) {
+            if (!$(this).find('.ticket-inner').hasClass('active')) {
                 if (card_type == 'dinner') {
-                    $this.find('.fa-check').removeClass('hidden');
+                    $this.find('.ticket-inner').addClass('active');
                     var auxiliary_ticket_id = id;
                     $('#id_auxiliary_ticket_id').val(auxiliary_ticket_id);
                     var ticket_title = $this.find('.ticket-title').html();
@@ -110,12 +110,12 @@
                     });
                     var tax = (0.18 * sum);
                     var final_sum = (sum + tax);
-                    $('.payment-breakup-row#total-without-tax .total-price').html('₹' + sum);
-                    $('.payment-breakup-row#total-with-tax .total-price').html('₹' + final_sum);
-                    $('.payment-breakup-row#tax .tax-price').html('₹' + tax);
+                    $('.payment-breakup-row#total-without-tax .total-price').html('₹' + sum.toFixed(2));
+                    $('.payment-breakup-row#total-with-tax .total-price').html('₹' + final_sum.toFixed(2));
+                    $('.payment-breakup-row#tax .tax-price').html('₹' + tax.toFixed(2));
                 };
             } else {
-                $this.find('.fa-check').addClass('hidden');
+                $this.find('.ticket-inner').removeClass('active');
                 $('#id_auxiliary_ticket_id').val(0);
                 $('.payment-breakup-row#auxiliary-ticket .item').html('');
                 $('.payment-breakup-row#auxiliary-ticket .price').html('');
@@ -126,9 +126,9 @@
                 });
                 var tax = (0.18 * sum);
                 var final_sum = (sum + tax);
-                $('.payment-breakup-row#total-without-tax .total-price').html('₹' + sum);
-                $('.payment-breakup-row#total-with-tax .total-price').html('₹' + final_sum);
-                $('.payment-breakup-row#tax .tax-price').html('₹' + tax);
+                $('.payment-breakup-row#total-without-tax .total-price').html('₹' + sum.toFixed(2));
+                $('.payment-breakup-row#total-with-tax .total-price').html('₹' + final_sum.toFixed(2));
+                $('.payment-breakup-row#tax .tax-price').html('₹' + tax.toFixed(2));
             }
 
             if (!$('#ticket-row-3').hasClass('show')) {
