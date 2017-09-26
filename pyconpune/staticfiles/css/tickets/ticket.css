@@ -37,6 +37,10 @@
 .ticket-inner.active {
     border: .5em solid #ffd646;
 }
+.control-label.required:after {
+  content:"*";
+  color:red;
+}
 .card-header h4 a {
     color: white;
     text-transform: capitalize;

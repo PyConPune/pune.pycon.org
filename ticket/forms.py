@@ -22,6 +22,7 @@ class TicketApplicationForm(forms.ModelForm):
 class UserRegistrationForm(account.forms.SignupForm):
     first_name = forms.CharField(
         label=_('First Name'),
+        required=True,
         widget=forms.TextInput(attrs={
             'class': 'form-control',
             'placeholder': _('First Name')
@@ -29,6 +30,7 @@ class UserRegistrationForm(account.forms.SignupForm):
     ))
     last_name = forms.CharField(
         label=_('Last Name'),
+        required=True,
         widget=forms.TextInput(attrs={
             'class': 'form-control',
             'placeholder': _('Last Name')
@@ -36,6 +38,7 @@ class UserRegistrationForm(account.forms.SignupForm):
     )
     contact = forms.CharField(
         label=_('Contact'),
+        required=True,
         widget=forms.TextInput(attrs={
             'class': 'form-control',
             'placeholder': _('Contact')
@@ -43,14 +46,15 @@ class UserRegistrationForm(account.forms.SignupForm):
     ))
     location = forms.CharField(
         label=_('Location'),
+        required=False,
         widget=forms.TextInput(attrs={
             'class': 'form-control',
             'placeholder': _('Location')
         }),
-        required=False,
     )
     age_group = forms.TypedChoiceField(
         label=_('Age Group'),
+        required=True,
         choices=AGE_GROUP_CHOICES,
         widget=forms.Select(attrs={
             'class': 'form-control',
@@ -58,14 +62,15 @@ class UserRegistrationForm(account.forms.SignupForm):
     )
     gender = forms.CharField(
         label=_('Gender'),
+        required=False,
         widget=forms.TextInput(attrs={
             'class': 'form-control',
             'placeholder': _('Gender')
         }),
-        required=False,
     )
     occupation = forms.TypedChoiceField(
         label=_('Occupation'),
+        required=True,
         choices=OCCUPATION_CHOICES,
         widget=forms.Select(attrs={
             'class': 'form-control',
@@ -74,19 +79,19 @@ class UserRegistrationForm(account.forms.SignupForm):
     )
     company = forms.CharField(
         label=_('Company'),
+        required=False,
         widget=forms.TextInput(attrs={
             'class': 'form-control',
             'placeholder': _('Company')
         }),
-        required=False,
     )
     job_title = forms.CharField(
         label=_('Job Title'),
+        required=False,
         widget=forms.TextInput(attrs={
             'class': 'form-control',
             'placeholder': _('Job Title'),
         }),
-        required=False,
     )
 
     def __init__(self, *args, **kwargs):

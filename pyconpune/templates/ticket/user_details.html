@@ -2,7 +2,7 @@
                   <form id="ticket-register-form" class="form-horizontal" action="{% url 'ticket_register' %}" method="POST">{% csrf_token %}
                       {{ user_form.non_field_errors }}
                       <div class="form-group">
-                          <label class="col-sm-2 control-label" for="id_first_name">{{ user_form.first_name.label_tag }}</label>
+                          <label class="col-sm-2 control-label required" for="id_first_name">{{ user_form.first_name.label_tag }}</label>
                           <div class="col-sm-6">
                               {{ user_form.first_name }}
                           </div>
@@ -11,7 +11,7 @@
                           </div>
                       </div>
                       <div class="form-group">
-                          <label class="col-sm-2 control-label" for="id_last_name">{{ user_form.last_name.label_tag }}</label>
+                          <label class="col-sm-2 control-label required" for="id_last_name">{{ user_form.last_name.label_tag }}</label>
                           <div class="col-sm-6">
                               {{ user_form.last_name }}
                           </div>
@@ -20,7 +20,7 @@
                           </div>
                       </div>
                       <div class="form-group">
-                          <label class="col-sm-2 control-label" for="id_email">{{ user_form.email.label_tag }}</label>
+                          <label class="col-sm-2 control-label required" for="id_email">{{ user_form.email.label_tag }}</label>
                           <div class="col-sm-6">
                               {{ user_form.email }}
                           </div>
@@ -29,7 +29,7 @@
                           </div>
                       </div>
                       <div class="form-group">
-                          <label class="col-sm-2 control-label" for="id_contact">{{ user_form.contact.label_tag }}</label>
+                          <label class="col-sm-2 control-label required" for="id_contact">{{ user_form.contact.label_tag }}</label>
                           <div class="col-sm-6">
                               {{ user_form.contact }}
                           </div>
@@ -47,7 +47,7 @@
                           </div>
                       </div>
                       <div class="form-group">
-                          <label class="col-sm-2 control-label" for="id_age_group">{{ user_form.age_group.label_tag }}</label>
+                          <label class="col-sm-2 control-label required" for="id_age_group">{{ user_form.age_group.label_tag }}</label>
                           <div class="col-sm-6">
                               {{ user_form.age_group }}
                           </div>
@@ -65,7 +65,7 @@
                           </div>
                       </div>
                       <div class="form-group">
-                          <label class="col-sm-2 control-label" for="id_occupation">{{ user_form.occupation.label_tag }}</label>
+                          <label class="col-sm-2 control-label required" for="id_occupation">{{ user_form.occupation.label_tag }}</label>
                           <div class="col-sm-6">
                               {{ user_form.occupation }}
                           </div>
