@@ -37,7 +37,7 @@ class UserRegistrationForm(account.forms.SignupForm):
         }),
     )
     contact = forms.CharField(
-        label=_('Contact'),
+        label=_('Contact No.'),
         required=True,
         widget=forms.TextInput(attrs={
             'class': 'form-control',
