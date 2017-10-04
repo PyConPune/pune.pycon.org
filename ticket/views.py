@@ -259,7 +259,7 @@ class TicketApplicationView(TemplateView):
         profile.gender = form.cleaned_data.get('gender')
         profile.company = form.cleaned_data.get('company')
         profile.job_title = form.cleaned_data.get('job_title')
- 
+
         age_group = form.cleaned_data.get('age_group')
         if age_group == '0':
             age_group = None
@@ -269,6 +269,11 @@ class TicketApplicationView(TemplateView):
         if job_title == 'Z':
             job_title = None
         profile.job_title = job_title
+
+        tshirt_size = form.cleaned_data.get('tshirt_size')
+        if tshirt_size == 'XXX':
+            tshirt_size = None
+        profile.tshirt_size = tshirt_size
 
         profile.save()
 

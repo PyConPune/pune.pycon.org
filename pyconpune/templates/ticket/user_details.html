@@ -65,6 +65,15 @@
                           </div>
                       </div>
                       <div class="form-group">
+                          <label class="col-sm-2 control-label required" for="id_tshirt_size">{{ user_form.tshirt_size.label_tag }}</label>
+                          <div class="col-sm-6">
+                              {{ user_form.tshirt_size }}
+                          </div>
+                          <div class="col-sm-4">
+                              {{ user_form.tshirt_size.errors }}
+                          </div>
+                      </div>
+                      <div class="form-group">
                           <label class="col-sm-2 control-label required" for="id_occupation">{{ user_form.occupation.label_tag }}</label>
                           <div class="col-sm-6">
                               {{ user_form.occupation }}

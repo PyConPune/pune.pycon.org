@@ -21,6 +21,15 @@ OCCUPATION_CHOICES = [
     ('R', 'Retired')
 ]
 
+TSHIRT_SIZE_CHOICES = [
+    ('XS', 'Xtra Small'),
+    ('S', 'Small'),
+    ('M', 'Medium'),
+    ('L', 'Large'),
+    ('XL', 'Xtra Large'),
+    ('XXL', 'Double Xtra Large')
+]
+
 class EventUser(AbstractUser, Base):
     pass
 
@@ -65,6 +74,12 @@ class UserProfile(Base):
         max_length=255,
         null=True,
         blank=True
+    )
+
+    tshirt_size = models.CharField(
+        _("tshirt size"),
+        choices=TSHIRT_SIZE_CHOICES,
+        max_length=255
     )
 
     occupation = models.CharField(

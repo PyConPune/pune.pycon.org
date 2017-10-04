@@ -4,7 +4,7 @@ from django.utils.translation import ugettext as _
 
 import account.forms
 
-from cauth.models import AGE_GROUP_CHOICES, OCCUPATION_CHOICES
+from cauth.models import AGE_GROUP_CHOICES, OCCUPATION_CHOICES, TSHIRT_SIZE_CHOICES
 from ticket.models import UserTicket
 
 
@@ -68,6 +68,14 @@ class UserRegistrationForm(account.forms.SignupForm):
             'placeholder': _('Gender')
         }),
     )
+    tshirt_size = forms.TypedChoiceField(
+        label=_('Tshirt Size'),
+        required=True,
+        choices=TSHIRT_SIZE_CHOICES,
+        widget=forms.Select(attrs={
+            'class': 'form-control',
+        }),
+    )
     occupation = forms.TypedChoiceField(
         label=_('Occupation'),
         required=True,
@@ -108,6 +116,7 @@ class UserRegistrationForm(account.forms.SignupForm):
             "location",
             "age_group",
             "gender",
+            "tshirt_size",
             "occupation",
             "company",
             "company_title",
@@ -127,3 +136,7 @@ class UserRegistrationForm(account.forms.SignupForm):
         if OCCUPATION_CHOICES[0][0] != 'Z':
             OCCUPATION_CHOICES.insert(0, ('Z', _('Please select an occupation.')))
         self.fields['occupation'].choices = OCCUPATION_CHOICES
+
+        if TSHIRT_SIZE_CHOICES[0][0] != 'XXX':
+            TSHIRT_SIZE_CHOICES.insert(0, ('XXX', _('Please select a tshirt size.')))
+        self.fields['tshirt_size'].choices = TSHIRT_SIZE_CHOICES
