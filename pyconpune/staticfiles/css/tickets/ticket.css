@@ -48,7 +48,7 @@
 .ticket-title {
     font-size: 2.5rem;
 }
-#ticket-row-1-1 .ticket-title {
+#ticket-row-1 .ticket-title {
     min-height: 5em;
 }
 .price, .tax-price, .total-price {
