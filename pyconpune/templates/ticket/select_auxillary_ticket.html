@@ -6,8 +6,9 @@
                           <!-- Food icon by Icons8 -->
                           <img class="icon icons8-{{ auxiliary_ticket.image_base64_title }}" width="100" height="100" src="{{ auxiliary_ticket.image_base64_text }}">
                           </figure>
-                          <h4 class="no-text-transform ticket-divider ticket-title">{{ auxiliary_ticket.title }}</h4>
-                          <h1 class="no-text-transform ticket-price">₹{{ auxiliary_ticket.price }}</h1>
+                          <h4 class="no-text-transform ticket-divider
+                            ticket-title font-w-700">{{ auxiliary_ticket.title }}</h4>
+                          <h1 class="no-text-transform ticket-price font-w-700">₹{{ auxiliary_ticket.price }}</h1>
                           <div class="ticket-description ticket-divider" style="min-height: 14em">
                               <span>{{ auxiliary_ticket.description }}</span>
                           </div>
@@ -21,8 +22,9 @@
                               <!-- T-Shirt icon by Icons8 -->
                               <img class="icon icons8-T-Shirt" width="100" height="100" src="data:image/png;base64,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">
                           </figure>
-                          <h4 class="no-text-transform ticket-divider ticket-title">T-Shirts</h4>
-                          <h1 class="no-text-transform ticket-price">₹{{ tshirts.0.price }}</h1>
+                          <h4 class="no-text-transform ticket-divider
+                            ticket-title font-w-700">T-Shirts</h4>
+                          <h1 class="no-text-transform ticket-price font-w-700">₹{{ tshirts.0.price }}</h1>
                           <div class="ticket-description ticket-divider">
                               <span>You can buy a few extra tshirts for family and friends and show some Python love.</span>
                           </div>
@@ -41,8 +43,9 @@
                               <!-- T-Shirt icon by Icons8 -->
                               <img class="icon icons8-T-Shirt" width="100" height="100" src="data:image/png;base64,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">
                           </figure>
-                          <h4 class="no-text-transform ticket-divider ticket-title">T-Shirts</h4>
-                          <h1 class="no-text-transform ticket-price">₹{{ tshirts.0.price }}</h1>
+                          <h4 class="no-text-transform ticket-divider
+                            ticket-title font-w-700">T-Shirts</h4>
+                          <h1 class="no-text-transform ticket-price font-w-700">₹{{ tshirts.0.price }}</h1>
                           <div class="ticket-description ticket-divider">
                               <span>You can buy a few extra tshirts for family and friends and show some Python love.</span>
                           </div>

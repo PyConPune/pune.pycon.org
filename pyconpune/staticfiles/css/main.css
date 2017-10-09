@@ -210,6 +210,9 @@ ul.social-buttons li a {
 .no-borders{
     border-radius: 0px;
 }
+.font-w-700{
+    font-weight:700;
+}
 .google-maps {
     position: relative;
     padding-bottom: 75%; // This is the aspect ratio
