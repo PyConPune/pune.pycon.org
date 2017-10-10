@@ -22,12 +22,18 @@ OCCUPATION_CHOICES = [
 ]
 
 TSHIRT_SIZE_CHOICES = [
-    ('XS', 'Xtra Small'),
-    ('S', 'Small'),
-    ('M', 'Medium'),
-    ('L', 'Large'),
-    ('XL', 'Xtra Large'),
-    ('XXL', 'Double Xtra Large')
+    ('MXS', 'Male: Xtra Small'),
+    ('MS', 'Male: Small'),
+    ('MM', 'Male: Medium'),
+    ('ML', 'Male: Large'),
+    ('MXL', 'Male: Xtra Large'),
+    ('MXXL', 'Male: Double Xtra Large'),
+    ('FXS', 'Female: Xtra Small'),
+    ('FS', 'Female: Small'),
+    ('FM', 'Female: Medium'),
+    ('FL', 'Female: Large'),
+    ('FXL', 'Female: Xtra Large'),
+    ('FXXL', 'Female: Double Xtra Large')
 ]
 
 class EventUser(AbstractUser, Base):
