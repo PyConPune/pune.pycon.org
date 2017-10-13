@@ -18,6 +18,9 @@ $(document).ready( function() {
         if (!$('#ticket-row-2').hasClass('show')) {
             $('#ticket-row-2').addClass('show');
         }
+        if (!$('#ticket-row-3').hasClass('show')) {
+            $('#ticket-row-3').addClass('show');
+        }
         var ticket_id = id.replace("ticket-row-1-", "");
         $('#id_ticket').val(ticket_id);
         $('html, body').animate({
