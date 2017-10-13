@@ -144,10 +144,7 @@ $(document).ready( function() {
         event.preventDefault();
         $('#form-invalid').addClass('hidden')
         if (isValidForms()) {
-            $('#razorpay-message').removeClass('hidden');
-            setTimeout (function(){
-              $('#ticket-register-form').submit();
-            }, 15000);
+            $('#ticket-register-form').submit();
         }
     });
 });
