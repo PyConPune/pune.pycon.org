@@ -52,6 +52,6 @@ def about(request):
 def sponsors(request):
     return render(request, 'sponsors.html', context={'page': 'sponsors'})
 
-def traveling(request):
+def travelling(request):
     # Info taken from: https://www.mapsofindia.com/pune/travel-to-pune.html
     return render(request, 'travelling.html', context={'page': 'travelling'})
