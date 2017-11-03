@@ -16,8 +16,8 @@ urlpatterns = [
             name="about"),
         url(r'^sponsors/$', root.views.sponsors,
             name="sponsors"),
-        url(r'^traveling/$', root.views.traveling,
-            name="traveling")
+        url(r'^travelling/$', root.views.travelling,
+            name="travelling")
     ]))
 ]
 
