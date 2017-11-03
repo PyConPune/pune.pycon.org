@@ -15,7 +15,9 @@ urlpatterns = [
         url(r'^about/$', root.views.about,
             name="about"),
         url(r'^sponsors/$', root.views.sponsors,
-            name="sponsors")
+            name="sponsors"),
+        url(r'^traveling/$', root.views.traveling,
+            name="traveling")
     ]))
 ]
 
