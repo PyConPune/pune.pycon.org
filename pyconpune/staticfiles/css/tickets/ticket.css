@@ -80,3 +80,13 @@
 .mb-3 {
     margin-bottom: 3em;
 }
+/* For mobiles */
+@media only screen and (max-width : 767px) {
+    #ticket-row-1 .ticket-title {
+      min-height: 0;
+    }
+
+    h1.ticket-price {
+      font-size: 3rem;
+    }
+}
