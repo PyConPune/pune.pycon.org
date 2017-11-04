@@ -1,0 +1,65 @@
+{% extends 'site_base.html' %}
+{% load staticfiles %}
+
+{% block body %}
+    <!-- About PyCon section -->
+    <section class="no-margin section-padding float-left full-width" id="full_schedule">
+        <div class="full-width">
+            <div class="col-960 col-center full-height">
+                <h2>Full Schedule</h2>
+
+                <ul class="nav nav-tabs nav-justified">
+                    {% for i in data %}
+                        {% for key, values in i.items %}
+                            {% if key == '1' %}
+                                <li class="active">
+                                    <a data-toggle="tab" href="#{{ key }}">
+                                        <div class="text-center">{{ values.day }}</div> {{ values.date }}
+                                    </a>
+                                </li>
+                            {% else %}
+                                <li>
+                                    <a href="#{{ key }}" data-toggle="tab">
+                                        <div class="text-center">{{ values.day }}</div> {{ values.date }}
+                                    </a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+
+                <div class="tab-content gray-bg" id="tab-content">
+                    {% for i in data %}
+                        {% for key, values in i.items %}
+                            {% if key == '1' %}
+                                <div id="{{ key }}" class="tab-pane fade in active">
+                                    <h3 class="text-center"><b>{{ values.description }}</b></h3>
+                                    <br>
+                                    {% for item in values.schedule %}
+                                        <div class="cards">
+                                            <p>{{ item.time }}</p>
+                                            <p><b>{{ item.event }}</b></p>
+                                            <hr>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                <div id="{{ key }}" class="tab-pane fade in">
+                                    <h3 class="text-center"><b>{{ values.description }}</b></h3>
+                                    <br>
+                                    {% for item in values.schedule %}
+                                        <div class="cards">
+                                            <p>{{ item.time }}</p>
+                                            <p><b>{{ item.event }}</b></p>
+                                            <hr>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

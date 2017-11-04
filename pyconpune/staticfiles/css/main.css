@@ -245,13 +245,43 @@ ul.social-buttons li a {
     font-weight: 300;
     height: 70px;
 }
-
 .img-margin-top{
     margin-top: 20px;
 }
-
 #sponsor_types{
     margin-top: 50px;
+}
+#sponsor_types{
+    margin-top: 50px;
+}
+#tab-content h3{
+    margin: 0;
+}
+#tab-content{
+    padding: 20px;
+}
+#tab-content p{
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+}
+#tab-content hr{
+    border-top: 1px solid lightgray;
+    /*width: 50px;*/
+    margin-top: 10px;
+    margin-bottom: 5px;
+    /*margin-left: 30px;*/
+}
+.nav-tabs > li > a {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0 !important;
+}
+.cards{
+    background-color: white;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 3px 3px 1px #888888;
 }
 
 /* Responsive Design (Starts) */
