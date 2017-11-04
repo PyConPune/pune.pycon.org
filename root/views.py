@@ -52,6 +52,81 @@ def about(request):
 def sponsors(request):
     return render(request, 'sponsors.html', context={'page': 'sponsors'})
 
+
 def travelling(request):
     # Info taken from: https://www.mapsofindia.com/pune/travel-to-pune.html
     return render(request, 'travelling.html', context={'page': 'travelling'})
+
+
+def schedule(request):
+    context = [
+        {
+            '1':{
+                'day': 'DAY 1',
+                'date': '8 FEBRUARY',
+                'description': 'Day 1 - Conference',
+                'schedule': [
+                    {
+                        'time': '09:00 - 10:00',
+                        'event': 'Registration'
+                    },
+                    {
+                        'time': '10:00 - 11:00',
+                        'event': 'Some event'
+                    }
+                ]
+            }
+        },
+        {
+            '2':{
+                'day': 'DAY 2',
+                'date': '9 FEBRUARY',
+                'description': 'Day 2 - Conference',
+                'schedule': [
+                    {
+                        'time': '09:00 - 10:00',
+                        'event': 'Registration'
+                    },
+                    {
+                        'time': '10:00 - 11:00',
+                        'event': 'Some event'
+                    }
+                ]
+            }
+        },
+        {
+            '3':{
+                'day': 'DAY 3',
+                'date': '10 FEBRUARY',
+                'description': 'Day 3 - Dev Sprint',
+                'schedule': [
+                    {
+                        'time': '09:00 - 10:00',
+                        'event': 'Registration'
+                    },
+                    {
+                        'time': '10:00 - 11:00',
+                        'event': 'Some event'
+                    }
+                ]
+            }
+        },
+        {
+            '4':{
+                'day': 'DAY 4',
+                'date': '11 FEBRUARY',
+                'description': 'Day 4 - Dev Sprint',
+                'schedule': [
+                    {
+                        'time': '09:00 - 10:00',
+                        'event': 'Registration'
+                    },
+                    {
+                        'time': '10:00 - 11:00',
+                        'event': 'Some event'
+                    }
+                ]
+            }
+        }
+    ]
+    return render(request, 'schedule.html', context={'data': context})
