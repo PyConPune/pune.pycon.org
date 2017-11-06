@@ -31,6 +31,21 @@ class RazorpayPayments:
         invoice = self.client.invoice.create(data=data)
         return invoice
 
+    def fetch_invoices(self, invoice_id):
+
+        invoices = self.client.invoice.fetch(invoice_id)
+        return invoices
+
+    def fetch_orders(self, order_id):
+
+        orders = self.client.order.fetch(order_id)
+        return orders
+
+    def fetch_payment(self, payment_id):
+
+        invoices = self.client.payment.fetch(payment_id)
+        return invoices
+
     @staticmethod
     def save_payment(payment_entity):
 
@@ -46,7 +61,7 @@ class RazorpayPayments:
         payment.email = payment_entity['email']
         payment.contact = payment_entity['contact']
         payment.fee = payment_entity['fee']
-        payment.service_tax = payment_entity['service_tax']
+        payment.service_tax = payment_entity['tax']
         payment.created_at = str(payment_entity['created_at'])
         payment.save()
 

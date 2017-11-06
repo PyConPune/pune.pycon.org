@@ -130,7 +130,15 @@ class TicketApplicationView(TemplateView):
         return invoice
 
     def _validate_request_pre_save(self, ticket, auxiliary_ticket_ids):
-        user_ticket_count = UserTicket.objects.filter(ticket=ticket).count()
+        user_tickets = UserTicket.objects.filter(ticket=ticket)
+        user_ticket_count = 0
+        for user_ticket in user_tickets:
+            invoice_id = user_ticket.invoice
+            if invoice_id != '0':
+                invoice = Invoice.objects.get(invoice_id=invoice_id)
+                if invoice.status == 'paid':
+                    user_ticket_count = user_ticket_count + 1
+
         for id in auxiliary_ticket_ids.split(","):
             if int(id) != 0:
                 auxiliary_ticket = AuxiliaryTicket.objects.get(id=int(id))
