@@ -14,7 +14,7 @@ class Tshirt(Base):
 
     gender = models.CharField(_("gender"), max_length=255)
     size = models.CharField(_("size"), max_length=5)
-    limit = models.PositiveIntegerField(_("limit"), default=0)
+    limits = models.PositiveIntegerField(_("limits"), default=0)
     price = models.PositiveIntegerField(_("price"), default=0, db_index=True)
     description = models.CharField(_("description"), max_length=255, null=True)
     image_base64_title = models.CharField(_("image title"), max_length=255,

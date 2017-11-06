@@ -137,9 +137,9 @@ class TicketApplicationView(TemplateView):
                 auxiliary_ticket_count = UserTicket.objects.filter(
                     auxiliary_ticket_id__contains=id
                 ).count()
-                if auxiliary_ticket_count >= auxiliary_ticket.limit:
+                if auxiliary_ticket_count >= auxiliary_ticket.limits:
                     return False
-        if user_ticket_count < ticket.limit:
+        if user_ticket_count < ticket.limits:
             return True
         else:
             ticket.is_limit_reached = True

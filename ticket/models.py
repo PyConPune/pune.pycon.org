@@ -15,7 +15,7 @@ class Ticket(Base):
     """ Model to store the different types of ticket. """
 
     title = models.CharField(_("name"), max_length=255)
-    limit = models.PositiveIntegerField(_("limit"), default=0)
+    limits = models.PositiveIntegerField(_("limits"), default=0)
     price = models.PositiveIntegerField(_("price"), default=0, db_index=True)
     description = models.CharField(_("description"), max_length=255, null=True)
     image_base64_title = models.CharField(_("image title"), max_length=255,
@@ -38,7 +38,7 @@ class AuxiliaryTicket(Base):
     """ Model for the auxiliary tickets, which the user can
     buy in addition to the main ticket"""
     title = models.CharField(_('name'), max_length=255)
-    limit = models.PositiveIntegerField(_("limit"), default=0)
+    limits = models.PositiveIntegerField(_("limits"), default=0)
     price = models.PositiveIntegerField(_('price'), default=0)
     description = models.CharField(_("description"), max_length=255, null=True)
     image_base64_title = models.CharField(_("image title"), max_length=255,
