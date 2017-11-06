@@ -3,6 +3,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 from payments.models import Invoice, RazorpayKeys
 from payments.razorpay.razorpay_payments import RazorpayPayments
+from payments.models import Payment, Order
 
 import json
 
@@ -37,10 +38,16 @@ def sync(request):
         invoice_details = payment.fetch_invoices(invoice.invoice_id)
         invoice.status = invoice_details['status']
         invoice.save()
-        order_details = payment.fetch_orders(invoice_details['order_id'])
-        payment.save_order(order_details)
-        if invoice_details['payment_id']:
-            payment_details = payment.fetch_payment(invoice_details['payment_id'])
-            payment.save_payment(payment_details)
+        if invoice.status == 'paid':
+            orders = Order.objects.filter(order_id=invoice_details['order_id'])
+            if len(orders) == 0:
+                order_details = payment.fetch_orders(
+                    invoice_details['order_id'])
+                payment.save_order(order_details)
+            if invoice_details['payment_id']:
+                payments = Payment.objects.filter(payment_id=invoice_details['payment_id'])
+                if len(payments) == 0:
+                    payment_details = payment.fetch_payment(invoice_details['payment_id'])
+                    payment.save_payment(payment_details)
 
     return JsonResponse({"message": "synced"})
