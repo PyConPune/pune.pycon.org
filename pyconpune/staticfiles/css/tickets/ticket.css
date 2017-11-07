@@ -29,7 +29,7 @@
 .ticket-inner {
     border: .5em solid rgb(49, 102, 163);
     min-height: 30em;
-    height: 80vh;
+    height: auto;
 }
 .ticket-inner:hover {
     border: .5em solid #ffd646;
