@@ -44,6 +44,8 @@ def volunteer(request):
     return render(request, template_name='volunteer.html',
                 context={'page': 'volunteer', 'volunteer_list': list_of_volunteers })
 
+def be_volunteer(request):
+    return render(request, template_name='be_volunteer.html', context={'page': 'be_volunteer'})
 
 def about(request):
     return render(request, 'about.html', context={'page': 'about'})

@@ -12,6 +12,8 @@ urlpatterns = [
             name="coc"),
         url(r'^volunteer/$', root.views.volunteer,
             name="volunteer"),
+        url(r'^be_volunteer/$', root.views.be_volunteer,
+            name="be_volunteer"),
         url(r'^about/$', root.views.about,
             name="about"),
         url(r'^sponsors/$', root.views.sponsors,
