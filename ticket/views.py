@@ -30,6 +30,7 @@ class TicketApplicationView(TemplateView):
             'description',
             'image_base64_text',
             'image_base64_title',
+            'is_limit_reached'
         ).order_by('price')
 
         return tickets

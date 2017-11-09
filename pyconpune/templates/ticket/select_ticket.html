@@ -1,6 +1,6 @@
     {% for ticket in tickets %}
     <div id="ticket-row-1-{{ forloop.counter }}" class="p-ticket ticket col-xl-4 col-lg-4 col-md-12 mb-5 mb-xl-2 mb-lg-2">
-        <div class="ticket-outer">
+        <div class="ticket-outer {% if ticket.is_limit_reached %}ticket-disabled limit-reached{% endif %}">
             <div class="ticket-inner text-center" style="padding: 3em">
                 <figure>
                     <!-- {{ ticket.image_base64_title }} icon by Icons8 -->
@@ -13,5 +13,6 @@
                 </div>
             </div>
         </div>
+        {% if ticket.is_limit_reached %}<h3 class="sold-out">Sold Out</h3>{% endif %}
     </div>
     {% endfor %}
