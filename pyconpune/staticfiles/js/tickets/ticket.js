@@ -1,17 +1,17 @@
 $(document).ready( function() {
     $('.p-ticket').click(function() {
         $this = $(this);
-        if (!$(this).hasClass('limit-reached')) {
+        if (!$(this).find('.ticket-outer').hasClass('limit-reached')) {
           var id = $this.attr('id');
           var children = $this.parent().children()
           children.each( function (i) {
               if ($(this).attr('id') != id) {
-                  $(this).addClass('ticket-disabled');
+                  $(this).find('.ticket-outer').addClass('ticket-disabled');
                   $(this).find('.ticket-inner').removeClass('active');
               }
               if ($(this).attr('id') === id) {
-                  if ($(this).hasClass('ticket-disabled')) {
-                      $(this).removeClass('ticket-disabled');
+                  if ($(this).find('.ticket-outer').hasClass('ticket-disabled')) {
+                      $(this).find('.ticket-outer').removeClass('ticket-disabled');
                   }
                   $(this).find('.ticket-inner').addClass('active');
               }
