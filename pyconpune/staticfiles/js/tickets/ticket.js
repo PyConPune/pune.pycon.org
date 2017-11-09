@@ -1,45 +1,47 @@
 $(document).ready( function() {
     $('.p-ticket').click(function() {
         $this = $(this);
-        var id = $this.attr('id');
-        var children = $this.parent().children()
-        children.each( function (i) {
-            if ($(this).attr('id') != id) {
-                $(this).addClass('ticket-disabled');
-                $(this).find('.ticket-inner').removeClass('active');
-            }
-            if ($(this).attr('id') === id) {
-                if ($(this).hasClass('ticket-disabled')) {
-                    $(this).removeClass('ticket-disabled');
-                }
-                $(this).find('.ticket-inner').addClass('active');
-            }
-        });
-        if (!$('#ticket-row-2').hasClass('show')) {
-            $('#ticket-row-2').addClass('show');
+        if (!$(this).hasClass('limit-reached')) {
+          var id = $this.attr('id');
+          var children = $this.parent().children()
+          children.each( function (i) {
+              if ($(this).attr('id') != id) {
+                  $(this).addClass('ticket-disabled');
+                  $(this).find('.ticket-inner').removeClass('active');
+              }
+              if ($(this).attr('id') === id) {
+                  if ($(this).hasClass('ticket-disabled')) {
+                      $(this).removeClass('ticket-disabled');
+                  }
+                  $(this).find('.ticket-inner').addClass('active');
+              }
+          });
+          if (!$('#ticket-row-2').hasClass('show')) {
+              $('#ticket-row-2').addClass('show');
+          }
+          if (!$('#ticket-row-3').hasClass('show')) {
+              $('#ticket-row-3').addClass('show');
+          }
+          var ticket_id = id.replace("ticket-row-1-", "");
+          $('#id_ticket').val(ticket_id);
+          $('html, body').animate({
+              scrollTop: $("#ticket-row-2").offset().top - 70
+          }, 1000);
+          var ticket_title = $this.find('.ticket-title').html();
+          var ticket_price = $this.find('.ticket-price').html();
+          var sum = 0;
+          $('.payment-breakup-row#conference-ticket .item').html(ticket_title);
+          $('.payment-breakup-row#conference-ticket .price').html(ticket_price);
+          $('.price').each(function(){
+              var price = parseFloat($(this).text().replace('₹','').replace('','0'));
+              sum = sum + price;
+          });
+          var tax = (0.18 * sum);
+          var final_sum = (sum + tax);
+          $('.payment-breakup-row#total-without-tax .total-price').html('₹' + sum.toFixed(2));
+          $('.payment-breakup-row#total-with-tax .total-price').html('₹' + final_sum.toFixed(2));
+          $('.payment-breakup-row#tax .tax-price').html('₹' + tax.toFixed(2));
         }
-        if (!$('#ticket-row-3').hasClass('show')) {
-            $('#ticket-row-3').addClass('show');
-        }
-        var ticket_id = id.replace("ticket-row-1-", "");
-        $('#id_ticket').val(ticket_id);
-        $('html, body').animate({
-            scrollTop: $("#ticket-row-2").offset().top - 70
-        }, 1000);
-        var ticket_title = $this.find('.ticket-title').html();
-        var ticket_price = $this.find('.ticket-price').html();
-        var sum = 0;
-        $('.payment-breakup-row#conference-ticket .item').html(ticket_title);
-        $('.payment-breakup-row#conference-ticket .price').html(ticket_price);
-        $('.price').each(function(){
-            var price = parseFloat($(this).text().replace('₹','').replace('','0'));
-            sum = sum + price;
-        });
-        var tax = (0.18 * sum);
-        var final_sum = (sum + tax);
-        $('.payment-breakup-row#total-without-tax .total-price').html('₹' + sum.toFixed(2));
-        $('.payment-breakup-row#total-with-tax .total-price').html('₹' + final_sum.toFixed(2));
-        $('.payment-breakup-row#tax .tax-price').html('₹' + tax.toFixed(2));
     });
 
     $('input[name=email]').addClass('form-control');
