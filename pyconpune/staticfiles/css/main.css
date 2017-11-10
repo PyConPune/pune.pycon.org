@@ -281,7 +281,16 @@ ul.social-buttons li a {
     background-color: white;
     padding: 20px;
     margin: 10px;
-    box-shadow: 3px 3px 1px #888888;
+    box-shadow: 3px 3px 1px lightgray;
+}
+.all-caps{
+    text-transform: uppercase;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus{
+    color: white;
+    background-color: rgb(49, 102, 163);
 }
 
 /* Responsive Design (Starts) */
