@@ -64,5 +64,4 @@ def travelling(request):
 def schedule(request):
     with open(os.path.dirname(os.path.realpath(__file__)) + '/schedules.json', 'r') as fd:
         data = json.load(fd)
-    context = data
-    return render(request, 'schedule.html', context={'data': context})
+    return render(request, 'schedule.html', context={'data': data})
