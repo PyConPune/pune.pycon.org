@@ -1,0 +1,86 @@
+[
+    {
+        "1":{
+            "day": "DAY 1",
+            "date": "8 FEBRUARY",
+            "description": "Day 1 - Conference",
+            "schedule": [
+                {
+                    "time": "09:00 - 10:00",
+                    "duration": "60 Min",
+                    "speaker": "",
+                    "event": "Registration"
+                },
+                {
+                    "time": "10:00 - 11:00",
+                    "duration": "60 Min",
+                    "speaker": "Speaker Name",
+                    "event": "Some event"
+                }
+            ]
+        }
+    },
+    {
+        "2":{
+            "day": "DAY 2",
+            "date": "9 FEBRUARY",
+            "description": "Day 2 - Conference",
+            "schedule": [
+                {
+                    "time": "09:00 - 10:00",
+                    "duration": "60 Min",
+                    "speaker": "",
+                    "event": "Registration"
+                },
+                {
+                    "time": "10:00 - 11:00",
+                    "duration": "60 Min",
+                    "speaker": "",
+                    "event": "Some event"
+                }
+            ]
+        }
+    },
+    {
+        "3":{
+            "day": "DAY 3",
+            "date": "10 FEBRUARY",
+            "description": "Day 3 - Dev Sprint",
+            "schedule": [
+                {
+                    "time": "09:00 - 10:00",
+                    "duration": "60 Min",
+                    "speaker": "",
+                    "event": "Registration"
+                },
+                {
+                    "time": "10:00 - 11:00",
+                    "duration": "60 Min",
+                    "speaker": "",
+                    "event": "Some event"
+                }
+            ]
+        }
+    },
+    {
+        "4":{
+            "day": "DAY 4",
+            "date": "11 FEBRUARY",
+            "description": "Day 4 - Dev Sprint",
+            "schedule": [
+                {
+                    "time": "09:00 - 10:00",
+                    "duration": "60 Min",
+                    "speaker": "",
+                    "event": "Registration"
+                },
+                {
+                    "time": "10:00 - 11:00",
+                    "duration": "60 Min",
+                    "speaker": "",
+                    "event": "Some event"
+                }
+            ]
+        }
+    }
+]
