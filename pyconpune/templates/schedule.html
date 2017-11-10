@@ -33,26 +33,44 @@
                         {% for key, values in i.items %}
                             {% if key == '1' %}
                                 <div id="{{ key }}" class="tab-pane fade in active">
-                                    <h3 class="text-center"><b>{{ values.description }}</b></h3>
+                                    <p class="text-center all-caps" style="color: black; font-size: 23px">
+                                        <b>{{ values.description }}</b>
+                                        <hr>
+                                    </p>
                                     <br>
                                     {% for item in values.schedule %}
-                                        <div class="cards">
-                                            <p>{{ item.time }}</p>
-                                            <p><b>{{ item.event }}</b></p>
-                                            <hr>
+                                        <div class="row">
+                                            <div class="col-md-4 col-sm-4">
+                                                <p style="color: #FF7F50">{{ item.time }}</p>
+                                                <p style="color: black">{{ item.duration }}</p>
+                                            </div>
+                                            <div class="col-md-8 col-sm-8">
+                                                <p class="all-caps" style="color: rgb(49, 102, 163)"><b>{{ item.event }}</b></p>
+                                                <p style="font-size: 18px; color: black;">{{ item.speaker }}</p>
+                                            </div>
                                         </div>
+                                        <hr>
                                     {% endfor %}
                                 </div>
                             {% else %}
                                 <div id="{{ key }}" class="tab-pane fade in">
-                                    <h3 class="text-center"><b>{{ values.description }}</b></h3>
+                                    <p class="text-center all-caps" style="color: black; font-size: 23px">
+                                        <b>{{ values.description }}</b>
+                                        <hr>
+                                    </p>
                                     <br>
                                     {% for item in values.schedule %}
-                                        <div class="cards">
-                                            <p>{{ item.time }}</p>
-                                            <p><b>{{ item.event }}</b></p>
-                                            <hr>
+                                        <div class="row">
+                                            <div class="col-md-4 col-sm-4">
+                                                <p style="color: #FF7F50">{{ item.time }}</p>
+                                                <p style="color: black">{{ item.duration }}</p>
+                                            </div>
+                                            <div class="col-md-8 col-sm-8">
+                                                <p class="all-caps" style="color: rgb(49, 102, 163)"><b>{{ item.event }}</b></p>
+                                                <p style="font-size: 18px; color: black;">{{ item.speaker }}</p>
+                                            </div>
                                         </div>
+                                        <hr>
                                     {% endfor %}
                                 </div>
                             {% endif %}

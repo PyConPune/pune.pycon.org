@@ -70,10 +70,14 @@ def schedule(request):
                 'schedule': [
                     {
                         'time': '09:00 - 10:00',
+                        'duration': '60 Min',
+                        'speaker': '',
                         'event': 'Registration'
                     },
                     {
                         'time': '10:00 - 11:00',
+                        'duration': '60 Min',
+                        'speaker': 'Speaker Name',
                         'event': 'Some event'
                     }
                 ]
@@ -87,10 +91,14 @@ def schedule(request):
                 'schedule': [
                     {
                         'time': '09:00 - 10:00',
+                        'duration': '60 Min',
+                        'speaker': '',
                         'event': 'Registration'
                     },
                     {
                         'time': '10:00 - 11:00',
+                        'duration': '60 Min',
+                        'speaker': '',
                         'event': 'Some event'
                     }
                 ]
@@ -104,10 +112,14 @@ def schedule(request):
                 'schedule': [
                     {
                         'time': '09:00 - 10:00',
+                        'duration': '60 Min',
+                        'speaker': '',
                         'event': 'Registration'
                     },
                     {
                         'time': '10:00 - 11:00',
+                        'duration': '60 Min',
+                        'speaker': '',
                         'event': 'Some event'
                     }
                 ]
@@ -121,10 +133,14 @@ def schedule(request):
                 'schedule': [
                     {
                         'time': '09:00 - 10:00',
+                        'duration': '60 Min',
+                        'speaker': '',
                         'event': 'Registration'
                     },
                     {
                         'time': '10:00 - 11:00',
+                        'duration': '60 Min',
+                        'speaker': '',
                         'event': 'Some event'
                     }
                 ]
