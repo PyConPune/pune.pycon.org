@@ -2,6 +2,7 @@ from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
+import json, os
 
 
 def homepage(request):
@@ -61,90 +62,7 @@ def travelling(request):
 
 
 def schedule(request):
-    context = [
-        {
-            '1':{
-                'day': 'DAY 1',
-                'date': '8 FEBRUARY',
-                'description': 'Day 1 - Conference',
-                'schedule': [
-                    {
-                        'time': '09:00 - 10:00',
-                        'duration': '60 Min',
-                        'speaker': '',
-                        'event': 'Registration'
-                    },
-                    {
-                        'time': '10:00 - 11:00',
-                        'duration': '60 Min',
-                        'speaker': 'Speaker Name',
-                        'event': 'Some event'
-                    }
-                ]
-            }
-        },
-        {
-            '2':{
-                'day': 'DAY 2',
-                'date': '9 FEBRUARY',
-                'description': 'Day 2 - Conference',
-                'schedule': [
-                    {
-                        'time': '09:00 - 10:00',
-                        'duration': '60 Min',
-                        'speaker': '',
-                        'event': 'Registration'
-                    },
-                    {
-                        'time': '10:00 - 11:00',
-                        'duration': '60 Min',
-                        'speaker': '',
-                        'event': 'Some event'
-                    }
-                ]
-            }
-        },
-        {
-            '3':{
-                'day': 'DAY 3',
-                'date': '10 FEBRUARY',
-                'description': 'Day 3 - Dev Sprint',
-                'schedule': [
-                    {
-                        'time': '09:00 - 10:00',
-                        'duration': '60 Min',
-                        'speaker': '',
-                        'event': 'Registration'
-                    },
-                    {
-                        'time': '10:00 - 11:00',
-                        'duration': '60 Min',
-                        'speaker': '',
-                        'event': 'Some event'
-                    }
-                ]
-            }
-        },
-        {
-            '4':{
-                'day': 'DAY 4',
-                'date': '11 FEBRUARY',
-                'description': 'Day 4 - Dev Sprint',
-                'schedule': [
-                    {
-                        'time': '09:00 - 10:00',
-                        'duration': '60 Min',
-                        'speaker': '',
-                        'event': 'Registration'
-                    },
-                    {
-                        'time': '10:00 - 11:00',
-                        'duration': '60 Min',
-                        'speaker': '',
-                        'event': 'Some event'
-                    }
-                ]
-            }
-        }
-    ]
+    with open(os.path.dirname(os.path.realpath(__file__)) + '/schedules.json', 'r') as fd:
+        data = json.load(fd)
+    context = data
     return render(request, 'schedule.html', context={'data': context})
