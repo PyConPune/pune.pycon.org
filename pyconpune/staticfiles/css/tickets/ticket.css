@@ -28,8 +28,8 @@
 }
 .ticket-inner {
     border: .5em solid rgb(49, 102, 163);
-    min-height: 30em;
-    height: auto;
+    min-height: 40em;
+    height: 80vh;
 }
 .ticket-inner:hover {
     border: .5em solid #ffd646;
