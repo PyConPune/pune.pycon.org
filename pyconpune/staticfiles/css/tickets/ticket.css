@@ -28,7 +28,7 @@
 }
 .ticket-inner {
     border: .5em solid rgb(49, 102, 163);
-    min-height: 40em;
+    min-height: 30em;
     height: 80vh;
 }
 .ticket-inner:hover {
@@ -48,7 +48,7 @@
     font-size: 2.5rem;
 }
 #ticket-row-1 .ticket-title {
-    min-height: 5em;
+    min-height: 3em;
 }
 .price, .tax-price, .total-price {
     text-align: right;
@@ -59,7 +59,7 @@
     min-height: 12em;
 }
 .ticket-row {
-    margin-top: 3em;
+    margin-top: 2em;
 }
 .ticket-disabled {
     opacity: 0.1;
