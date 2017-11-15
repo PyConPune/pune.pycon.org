@@ -66,6 +66,8 @@ class TicketApplicationView(TemplateView):
         for id in tshirt_ids:
             if id != '':
                 tshirt = Tshirt.objects.get(id=int(id))
+                if tshirt.is_limit_reached:
+                    return False
                 tshirts.append(tshirt)
 
         return tshirts
@@ -203,7 +205,8 @@ class TicketApplicationView(TemplateView):
                         ticket,
                         auxiliary_ticket_id)
 
-        if is_ticket_form_valid and is_user_form_valid and is_ticket_left:
+        if is_ticket_form_valid and is_user_form_valid \
+                and is_ticket_left and selected_tshirts != False:
             user = self.create_user(user_form)
             profile = self.create_profile(user_form, user=user)
 

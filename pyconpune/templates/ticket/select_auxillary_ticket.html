@@ -28,7 +28,7 @@
                           <div class="ticket-description ticket-divider">
                               <span>You can buy a few extra tshirts for family and friends and show some Python love.</span>
                           </div>
-                          <select class="form-control" id="sel1" class="ticket-tshirt">
+                          <select class="form-control" id="sel1" class="ticket-tshirt" disabled>
                               <option>Select Tshirt Size</option>
                               {% for tshirt in tshirts %}
                               <option value="{{ tshirt.id }}">{{ tshirt.gender }}: {{ tshirt.size }}</option>
@@ -49,7 +49,7 @@
                           <div class="ticket-description ticket-divider">
                               <span>You can buy a few extra tshirts for family and friends and show some Python love.</span>
                           </div>
-                          <select class="form-control" id="sel2" class="ticket-tshirt">
+                          <select class="form-control" id="sel2" class="ticket-tshirt" disabled>
                               <option>Select Tshirt Size</option>
                               {% for tshirt in tshirts %}
                               <option value="{{ tshirt.id }}">{{ tshirt.gender }}: {{ tshirt.size }}</option>
