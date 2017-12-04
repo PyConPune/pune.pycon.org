@@ -1,0 +1,272 @@
+{% extends 'site_base.html' %}
+{% load staticfiles %}
+
+{% block body %}
+    <!-- About PyCon section -->
+    <section class="no-margin section-padding float-left full-width" id="full_schedule">
+        <div class="full-width">
+            <div class="col-960 col-center full-height">
+                <div>
+                    <h2>Keynote Speakers</h2>
+                    <p class="standard-margin-top">
+                        Pycon is not focused on any particular language or area of technology. We encourage diverse topics oriented towards the future of Computer Science.
+                    </p>
+                </div>
+                <div class="image-block-container">
+                    <div class="image-block">
+                        <img class="speaker-image" src="{% static 'img/brettcannon.jpeg' %}"/>
+                        <div class="speaker-name float-left blue-bg text-white full-width">Brett Cannon</div>
+                        <div class="clearfix"></div>
+                        <p class="speaker-title float-left blue-bg text-white full-width">CPython Core Dev, Microsoft</p>
+                        <ul class="list-inline social-buttons">
+                            <li>
+                                <a href="https://twitter.com/brettsky"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/brettcannon"><i class="fa fa-github"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="image-block">
+                        <img class="speaker-image" src="{% static 'img/carolwilling.jpeg' %}"/>
+                        <div class="speaker-name float-left blue-bg text-white full-width">Carol Willing</div>
+                        <div class="clearfix"></div>
+                        <p class="speaker-title float-left blue-bg text-white full-width">CPython Core Dev, Project Jupyter</p>
+                        <ul class="list-inline social-buttons">
+                            <li>
+                                <a href="https://twitter.com/WillingCarol"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/willingc"><i class="fa fa-github"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="image-block">
+                        <img class="speaker-image" src="{% static 'img/ntoll.jpeg' %}"/>
+                        <div class="speaker-name float-left blue-bg text-white full-width">Nicholas Tollervey</div>
+                        <div class="clearfix"></div>
+                        <p class="speaker-title float-left blue-bg text-white full-width">Micro:bit, mu editor</p>
+                        <ul class="list-inline social-buttons">
+                            <li>
+                                <a href="https://twitter.com/ntoll"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/ntoll"><i class="fa fa-github"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="image-block-container">
+                    <div class="image-block">
+                        <img class="speaker-image" src="{% static 'img/paulh.jpeg' %}"/>
+                        <div class="speaker-name float-left blue-bg text-white full-width">Paul Hildebrandt</div>
+                        <div class="clearfix"></div>
+                        <p class="speaker-title float-left blue-bg text-white full-width">Senior Engineer, Walt Disney Animation Studios (WDAS)</p>
+                        <ul class="list-inline social-buttons">
+                            <li>
+                                <a href="https://twitter.com/paulhildebrandt"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/paulhildebrandt"><i class="fa fa-github"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="image-block">
+                        <img class="speaker-image" src="{% static 'img/pauleveritt.jpg' %}"/>
+                        <div class="speaker-name float-left blue-bg text-white full-width">Paul Everitt</div>
+                        <div class="clearfix"></div>
+                        <p class="speaker-title float-left blue-bg text-white full-width">PyCharm & WebStorm Developer Advocate, JetBrains</p>
+                        <ul class="list-inline social-buttons">
+                            <li>
+                                <a href="https://twitter.com/paulweveritt"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/pauleveritt"><i class="fa fa-github"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="image-block">
+                        <img class="speaker-image" src="{% static 'img/andrewg.jpeg' %}"/>
+                        <div class="speaker-name float-left blue-bg text-white full-width">Andrew Godwin</div>
+                        <div class="clearfix"></div>
+                        <p class="speaker-title float-left blue-bg text-white full-width">Django Core Developer, Engineer at Eventbrite</p>
+                        <ul class="list-inline social-buttons">
+                            <li>
+                                <a href="https://twitter.com/andrewgodwin"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/andrewgodwin"><i class="fa fa-github"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <h2 style="text-align: center;">Guest Speaker</h2>
+                </div>
+                <div class="image-block-container">
+                    <div class="image-block">
+                        <img class="speaker-image" src="{% static 'img/ejodlowska.jpg' %}"/>
+                        <div class="speaker-name float-left blue-bg text-white full-width">Ewa Jodlowska</div>
+                        <div class="clearfix"></div>
+                        <p class="speaker-title float-left blue-bg text-white full-width">Director of Operations, Python Software Foundation</p>
+                        <ul class="list-inline social-buttons">
+                            <li>
+                                <a href="https://twitter.com/ewa_jodlowska"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/ejodlowska"><i class="fa fa-github"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-960 col-center full-height" id="other-talks">
+                <h2>Speakers</h2>
+
+                <div class="tab-content gray-bg" id="tab-content">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-1">
+                            <p class="tag">Cryptography</p>
+                            <p class="tag">TLS/SSL</p>
+                        </div>
+                        <div class="col-md-8 col-sm-9">
+                            <a href="https://pyconpune.talkfunnel.com/2018/64-gentle-introduction-to-tls-pki-and-pythons-ssl-mod">
+                              <p class="all-caps" style="color: rgb(49, 102, 163)"><b>Gentle introduction to TLS, PKI, and Python's ssl module</b></p>
+                            </a>
+                            <p style="font-size: 18px; color: black;">by Christian Heimes</p>
+                        </div>
+                        <div class="col-md-2 col-sm-2">
+                            <p style="color: #FF7F50">Intermediate</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-1">
+                            <p class="tag">Ansible</p>
+                        </div>
+                        <div class="col-md-8 col-sm-9">
+                            <a href="https://pyconpune.talkfunnel.com/2018/51-extending-ansible">
+                              <p class="all-caps" style="color: rgb(49, 102, 163)"><b>Extending Ansible</b></p>
+                            </a>
+                            <p style="font-size: 18px; color: black;">by Florian Fuchs</p>
+                        </div>
+                        <div class="col-md-2 col-sm-2">
+                            <p style="color: #FF7F50">Intermediate</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-1">
+                            <p class="tag">Patterns</p>
+                            <p class="tag">Simulation</p>
+                        </div>
+                        <div class="col-md-8 col-sm-9">
+                            <a href="https://pyconpune.talkfunnel.com/2018/47-simulating-the-beautiful-complexity-of-patterns-in">
+                              <p class="all-caps" style="color: rgb(49, 102, 163)"><b>Simulating the beautiful complexity of patterns in nature with Python</b></p>
+                            </a>
+                            <p style="font-size: 18px; color: black;">by Praveen Patil</p>
+                        </div>
+                        <div class="col-md-2 col-sm-2">
+                            <p style="color: #FF7F50">Beginner</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-1">
+                            <p class="tag">Mentoring</p>
+                        </div>
+                        <div class="col-md-8 col-sm-9">
+                            <a href="https://pyconpune.talkfunnel.com/2018/44-mentoring-the-paper-chase">
+                              <p class="all-caps" style="color: rgb(49, 102, 163)"><b>Mentoring: The Paper Chase</b></p>
+                            </a>
+                            <p style="font-size: 18px; color: black;">by Stephen Turnbull </p>
+                        </div>
+                        <div class="col-md-2 col-sm-2">
+                            <p style="color: #FF7F50">Beginner</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-1">
+                            <p class="tag">Ansible</p>
+                            <p class="tag">Network Infrastructure</p>
+                        </div>
+                        <div class="col-md-8 col-sm-9">
+                            <a href="https://pyconpune.talkfunnel.com/2018/34-network-infrastructure-automation-with-ansible">
+                              <p class="all-caps" style="color: rgb(49, 102, 163)"><b>Network Infrastructure Automation with Ansible</b></p>
+                            </a>
+                            <p style="font-size: 18px; color: black;">by Trishna Guha </p>
+                        </div>
+                        <div class="col-md-2 col-sm-2">
+                            <p style="color: #FF7F50">Intermediate</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-1">
+                            <p class="tag">Security</p>
+                            <p class="tag">Web</p>
+                        </div>
+                        <div class="col-md-8 col-sm-9">
+                            <a href="https://pyconpune.talkfunnel.com/2018/34-network-infrastructure-automation-with-ansible">
+                              <p class="all-caps" style="color: rgb(49, 102, 163)"><b>The Complexity of Security</b></p>
+                            </a>
+                            <p style="font-size: 18px; color: black;">by heartsucker </p>
+                        </div>
+                        <div class="col-md-2 col-sm-2">
+                            <p style="color: #FF7F50">Advanced</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-1">
+                            <p class="tag">Programming</p>
+                        </div>
+                        <div class="col-md-8 col-sm-9">
+                            <a href="https://pyconpune.talkfunnel.com/2018/23-my-journey-of-teaching-python-to-my-9-year-old-son">
+                              <p class="all-caps" style="color: rgb(49, 102, 163)"><b>My journey of teaching Python to my 9 year old son !</b></p>
+                            </a>
+                            <p style="font-size: 18px; color: black;">by Vishwesh Jirgale </p>
+                        </div>
+                        <div class="col-md-2 col-sm-2">
+                            <p style="color: #FF7F50">Beginner</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-1">
+                            <p class="tag">Astronomy</p>
+                            <p class="tag">Data Science</p>
+                        </div>
+                        <div class="col-md-8 col-sm-9">
+                            <a href="https://pyconpune.talkfunnel.com/2018/48-astronomical-research-using-python">
+                              <p class="all-caps" style="color: rgb(49, 102, 163)"><b>Astronomical Research using Python</b></p>
+                            </a>
+                            <p style="font-size: 18px; color: black;">by Yogesh Wadadekar </p>
+                        </div>
+                        <div class="col-md-2 col-sm-2">
+                            <p style="color: #FF7F50">Intermediate</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-1">
+                            <p class="tag">Machine Learning</p>
+                        </div>
+                        <div class="col-md-8 col-sm-9">
+                            <a href="https://pyconpune.talkfunnel.com/2018/32-introduction-to-machine-learning-with-scikit-learn">
+                              <p class="all-caps" style="color: rgb(49, 102, 163)"><b>Introduction to Machine Learning with Scikit-Learn</b></p>
+                            </a>
+                            <p style="font-size: 18px; color: black;">by Sudarshan Gadhave </p>
+                        </div>
+                        <div class="col-md-2 col-sm-2">
+                            <p style="color: #FF7F50">Beginner</p>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -65,3 +65,7 @@ def schedule(request):
     with open(os.path.dirname(os.path.realpath(__file__)) + '/schedules.json', 'r') as fd:
         data = json.load(fd)
     return render(request, 'schedule.html', context={'data': data})
+
+
+def speakers(request):
+    return render(request, 'speakers.html')

@@ -21,7 +21,9 @@ urlpatterns = [
         url(r'^travelling/$', root.views.travelling,
             name="travelling"),
         url(r'^schedule/$', root.views.schedule,
-            name="schedule")
+            name="schedule"),
+        url(r'^speakers/$', root.views.speakers,
+            name="speakers")
     ]))
 ]
 

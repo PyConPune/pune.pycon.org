@@ -265,6 +265,16 @@ ul.social-buttons li a {
     padding: 0;
     margin: 0;
 }
+#tab-content p.tag {
+    color: black;
+    border-radius: 10px;
+    padding: 3px;
+    font-size: 15px;
+    margin-bottom: 3px;
+    width: fit-content;
+    width: -moz-fit-content;
+    background: #ffd646;
+}
 #tab-content hr{
     border-top: 1px solid lightgray;
     /*width: 50px;*/
@@ -293,6 +303,10 @@ ul.social-buttons li a {
     background-color: rgb(49, 102, 163);
 }
 
+.tab-content a:hover {
+  text-decoration: underline;
+}
+
 /* Responsive Design (Starts) */
 /* For mobiles */
 @media only screen and (max-width : 767px) {
@@ -316,6 +330,9 @@ ul.social-buttons li a {
     }
     .sponsor-logo-container {
         display: block;
+    }
+    #tab-content p.tag {
+        display: inline-block;
     }
 }
 
