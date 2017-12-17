@@ -4,6 +4,7 @@ from string import ascii_lowercase, digits
 from django.contrib.auth import get_user_model
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from django.core.urlresolvers import reverse
 from django.views.generic import TemplateView
 
 from cauth.models import UserProfile
@@ -158,6 +159,7 @@ class TicketApplicationView(TemplateView):
             return False
 
     def get(self, request, *args, **kwargs):
+        return HttpResponseRedirect(reverse('homepage'))
         ticket_form = self.ticket_form_cls()
         user_form = self.user_form_cls()
         tickets = self._get_tickets()
@@ -175,6 +177,7 @@ class TicketApplicationView(TemplateView):
         )
 
     def post(self, request, *args, **kwargs):
+        return HttpResponseRedirect(reverse('homepage'))
         ticket_form = self.ticket_form_cls(request.POST)
         user_form = self.user_form_cls(request.POST)
         tshirt_ids = request.POST.getlist('tshirts[]')
