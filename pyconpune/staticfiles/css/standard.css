@@ -271,6 +271,11 @@ input {
     outline: none;
 }
 
+
+.modal-cancel a {
+    color: #337ab7;
+}
+
 /* Header */
 .header {
     position: fixed;
